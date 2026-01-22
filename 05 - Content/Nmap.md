@@ -18,7 +18,7 @@ sudo apt install nmap
 ````
 
 ## Common Commands
-Scanning ports, specify version and output in a file, mostly used for machines in ha.
+Scanning ports, specify version and output in a file, mostly used for machines in HackTheBox.
 ```bash
 nmap -p- -min-rate=1000 -T4 -sC -sV -oA <outfile> <target_ip> 
 ```
