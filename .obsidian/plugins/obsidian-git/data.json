@@ -3,7 +3,7 @@
   "autoCommitMessage": "Date: {{date}}\nChanged Files: {{files}}\n",
   "commitMessageScript": "",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
-  "autoSaveInterval": 0,
+  "autoSaveInterval": 1,
   "autoPushInterval": 0,
   "autoPullInterval": 1,
   "autoPullOnBoot": true,
