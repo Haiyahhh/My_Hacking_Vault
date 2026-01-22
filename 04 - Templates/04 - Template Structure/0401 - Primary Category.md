@@ -7,12 +7,12 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 # 🗺️ [[<% tp.file.title %>]]
 **Parent:** [[000 - Global Index]]
 
-## 📖 Overview
+## Overview
 (Write a brief description of this domain here.)
 
 ---
 
-## 🗂️ Secondary Categories (Topics)
+## Secondary Categories 
 
 ```dataview
 TABLE creation_date AS "Created"

@@ -1,16 +1,16 @@
 ---
-tags: [🗺️]
-up: ["[[01 - ...]]"]
+tags:
+  - 🗺️
+up:
+  - "[[01 - Network Security]]"
 aliases: []
-creation_date: <% tp.file.creation_date("YYYY-MM-DD") %>
-last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
+creation_date: 2026-01-22
+last_modified: 2026-01-22
 ---
-# 📂 [[<% tp.file.title %>]] 
+# 📂 [[02 - Network Reconnaissance]] 
 
-## Overview 
-(Explain what this vulnerability class or topic is.)
-
----
+## Topic Overview 
+Notes of this category is about how to do enumeration on network services.
 
 ## 🧠 Techniques (Concepts)
 

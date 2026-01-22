@@ -1,5 +1,6 @@
 ---
 tags: [🚩]
+up: ["[[01 - ...]]"]
 platform: HackTheBox  # Change to TryHackMe/PortSwigger as needed
 difficulty: Easy      # Easy / Medium / Hard / Insane
 creation_date: <% tp.file.creation_date("YYYY-MM-DD") %>
@@ -11,9 +12,7 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 **Secondary:**
 
-**Tertiary:**
-
-## 1. 🚨 Executive Summary
+## Executive Summary
 * **IP:** `10.10.10.x`
 * **OS:** Linux / Windows
 * **Key Technique:** (e.g., SQLi -> Cron Job Escalation)
@@ -21,7 +20,7 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 ---
 
-## 2. 🔭 Reconnaissance
+## Reconnaissance
 ### Nmap Scan
 ```bash
 # Paste initial scan here
@@ -40,7 +39,7 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 ---
 
-## 3. 🚪 The Foothold (User)
+## Foothold (User)
 
 **Path:** <% tp.file.cursor(1) %>
 
@@ -59,7 +58,7 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 ---
 
-## 4. 👑 Privilege Escalation (Root)
+## Privilege Escalation (Root)
 
 **Current User:** `www-data`
 
@@ -78,7 +77,7 @@ Bash
 
 ---
 
-## 5. 💎 Loot & Flags
+## Loot & Flags
 
 - [ ] **User Flag:** `hash_here`
     
