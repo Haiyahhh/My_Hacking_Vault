@@ -34,7 +34,7 @@
               "type": "markdown",
               "state": {
                 "file": "05 - Content/CVE-2026-24061.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
@@ -231,7 +231,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "d28f70a91427ba6e",
+  "active": "2aae82a55b67c7a0",
   "lastOpenFiles": [
     "05 - Content/Nmap.md",
     "05 - Content/CVE-2026-24061.md",
