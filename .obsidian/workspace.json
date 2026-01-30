@@ -34,7 +34,7 @@
               "type": "markdown",
               "state": {
                 "file": "05 - Content/Nmap.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
@@ -231,7 +231,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "28ff58d92e01b32e",
+  "active": "d28f70a91427ba6e",
   "lastOpenFiles": [
     "Untitled.base",
     "05 - Content/Nmap.md",
