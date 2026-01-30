@@ -10,7 +10,7 @@ last_modified: 2026-01-30
 # 📂 [[02 - Remote Code Execution]] 
 
 ## Overview 
-Contents of this topic will revolve allow remote command execution on a target machine as any users.
+Contents of this topic will revolve around vulnerabilities that allow remote command execution on a target machine as any users.
 
 ---
 
