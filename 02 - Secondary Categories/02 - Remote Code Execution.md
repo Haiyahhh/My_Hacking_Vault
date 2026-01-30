@@ -2,12 +2,12 @@
 tags:
   - 🗺️
 up:
-  - "[[01 - Network Security]]"
+  - "[[01 - ...]]"
 aliases: []
 creation_date: 2026-01-30
 last_modified: 2026-01-30
 ---
-# 📂 [[02 - Argument Injection]] 
+# 📂 [[02 - Remote Code Execution]] 
 
 ## Overview 
 (Explain what this vulnerability class or topic is.)
