@@ -231,12 +231,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "3ad90d3488476b00",
+  "active": "d28f70a91427ba6e",
   "lastOpenFiles": [
     "02 - Secondary Categories/02 - Argument Injection.md",
+    "02 - Secondary Categories/02 - Remote Code Execution.md",
     "05 - Content/CVE-2026-24061.md",
     "05 - Content/Nmap.md",
-    "02 - Secondary Categories/02 - Remote Code Execution.md",
     "01 - Primary Categories/01 - Network Security.md",
     "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "Untitled.base",

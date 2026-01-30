@@ -10,7 +10,6 @@ last_modified: 2026-01-30
 # 📂 [[02 - Argument Injection]] 
 
 ## Overview 
-(Explain what this vulnerability class or topic is.)
 
 ---
 
