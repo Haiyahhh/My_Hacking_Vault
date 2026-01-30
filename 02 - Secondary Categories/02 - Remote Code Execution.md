@@ -2,7 +2,7 @@
 tags:
   - 🗺️
 up:
-  - "[[01 - ...]]"
+  - "[[01 - Network Security]]"
 aliases: []
 creation_date: 2026-01-30
 last_modified: 2026-01-30
