@@ -10,7 +10,7 @@ last_modified: 2026-01-30
 # 📂 [[02 - Remote Code Execution]] 
 
 ## Overview 
-(Explain what this vulnerability class or topic is.)
+Contents of this topic will revolve allow remote access to 
 
 ---
 

@@ -13,32 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/CVE-2026-24061.md",
+                "file": "02 - Secondary Categories/02 - Remote Code Execution.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "CVE-2026-24061"
+              "title": "02 - Remote Code Execution"
             }
           }
         ]
       },
       {
-        "id": "fddb73c9e71d2d74",
+        "id": "51f2e1a30aaf262d",
         "type": "tabs",
         "children": [
           {
-            "id": "2aae82a55b67c7a0",
+            "id": "3ad90d3488476b00",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/CVE-2026-24061.md",
+                "file": "02 - Secondary Categories/02 - Remote Code Execution.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "CVE-2026-24061"
+              "title": "02 - Remote Code Execution"
             }
           }
         ]
@@ -231,12 +231,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "2aae82a55b67c7a0",
+  "active": "3ad90d3488476b00",
   "lastOpenFiles": [
-    "05 - Content/Nmap.md",
-    "05 - Content/CVE-2026-24061.md",
-    "02 - Secondary Categories/02 - Remote Code Execution.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
+    "05 - Content/CVE-2026-24061.md",
+    "05 - Content/Nmap.md",
+    "02 - Secondary Categories/02 - Remote Code Execution.md",
     "01 - Primary Categories/01 - Network Security.md",
     "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "Untitled.base",
