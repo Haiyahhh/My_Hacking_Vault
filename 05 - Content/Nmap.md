@@ -34,7 +34,7 @@ nmap -sL 192.162.1.0/24
 ```
 
 **2. Host discovery**
- 
+ There maybe dead IP addr, this step helps indentifying them.
 
 **3. Port enumeration**
 
