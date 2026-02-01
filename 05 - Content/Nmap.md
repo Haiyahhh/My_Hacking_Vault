@@ -21,7 +21,7 @@ sudo apt install nmap
 ### Hack The Box / CTFs
 Scanning ports, specify version and output in a file, mostly used for machines in **HackTheBox**.
 ```bash
-nmap -p- -min-rate=1000 -T4 -sC -sV -oN <outfile> <target_ip> 
+nmap -p- -min-rate=1000 -T4 -sC -sV -oN [outfile] [target_ip] 
 ```
 
 ### Scanning Phases (maybe a little more practical?)
@@ -36,7 +36,7 @@ nmap -sL 192.162.1.0/24
 **2. Host discovery**
  There may be dead IPs, this step helps indentifying them.
 ```bash
-nmap -sn -PS443,80 192.162.1.0/24
+nmap -sn -PS443,80 [target]
 ```
 **3. Port enumeration**
 This is the main things and the hardest problem. Key things to remember:
@@ -44,7 +44,7 @@ This is the main things and the hardest problem. Key things to remember:
 - Scan only a small number of ports (50 ports) only. We can know what port we may need to know by looking for services' default ports on the Internet.
 - Break packets into small chunks using `-f` flag.
 ```bash
-
+nmap -sn -PS443,80 <target]
 ```
  
 **4. Obfuscation**
