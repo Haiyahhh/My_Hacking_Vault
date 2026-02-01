@@ -39,7 +39,8 @@ nmap -sL 192.162.1.0/24
 nmap -sn -PS443,80 192.162.1.0/24
 ```
 **3. Port enumeration**
-
+This is the main things and the hardest problem. Key things to remember:
+- 
 
 **4. Obfuscation**
 
