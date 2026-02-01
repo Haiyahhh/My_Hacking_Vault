@@ -29,7 +29,8 @@ The above command is actually quite noisy as it scans every ports with high `--m
 
 **1. Host detection**
 List out target in the IP range and resolve their hostnames.
-```
+```bash
+nmap -sL 192.162.1.0/24
 ```
 
 **2. Host discovery**
