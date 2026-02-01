@@ -28,9 +28,7 @@ nmap -p- -min-rate=1000 -T4 -sC -sV -oN <outfile> <target_ip>
 The above command is actually quite noisy as it scans every ports with high `--min-rate` and `T4` speed. In real-life cases, quieter scans are often preferred and the scan are split into difference phases in order to avoid detection.
 
 1. Host detections
-```bash
-nmap 
-```
+2. Host 
 ## Tips & Tricks
 
 - Tip 1...
