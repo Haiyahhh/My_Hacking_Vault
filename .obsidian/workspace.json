@@ -4,6 +4,26 @@
     "type": "split",
     "children": [
       {
+        "id": "7f1ea05e42fed671",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28ff58d92e01b32e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Content/Nmap.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Nmap"
+            }
+          }
+        ]
+      },
+      {
         "id": "f97cc4a715805e88",
         "type": "tabs",
         "children": [
@@ -13,32 +33,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - Secondary Categories/02 - Argument Injection.md",
-                "mode": "source",
+                "file": "05 - Content/Nmap.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "02 - Argument Injection"
-            }
-          }
-        ]
-      },
-      {
-        "id": "5920aaeaa3cc3548",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "a1526dbcff69247c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02 - Secondary Categories/02 - Argument Injection.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "02 - Argument Injection"
+              "title": "Nmap"
             }
           }
         ]
@@ -231,17 +231,17 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "d28f70a91427ba6e",
+  "active": "28ff58d92e01b32e",
   "lastOpenFiles": [
+    "05 - Content/CVE-2026-24061.md",
     "02 - Secondary Categories/02 - Remote Code Execution.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
-    "05 - Content/CVE-2026-24061.md",
-    "05 - Content/Nmap.md",
-    "01 - Primary Categories/01 - Network Security.md",
-    "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "Untitled.base",
+    "05 - Content/Nmap.md",
+    "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "04 - Templates/04 - Template Structure/0401 - Primary Category.md",
     "04 - Templates/04 - Template Structure/0402 - Secondary Category.md",
+    "01 - Primary Categories/01 - Network Security.md",
     "04 - Templates/04 - Template Structure/0407 - README.md",
     "04 - Templates/04 - Template Structure/0406 - Writeup.md",
     "04 - Templates/04 - Template Structure/0405 - Tool.md",
