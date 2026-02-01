@@ -22,7 +22,7 @@ Scanning ports, specify version and output in a file, mostly used for machines i
 ```bash
 nmap -p- -min-rate=1000 -T4 -sC -sV -oN <outfile> <target_ip> 
 ```
-This command is actually quite noisy. In real-life cases, quieter scans are often preferred and the scan are split into difference p
+This command is actually quite noisy. In real-life cases, quieter scans are often preferred and the scan are split into difference phases in order to avoid detection.
 ```bash
 nmap 
 ```
