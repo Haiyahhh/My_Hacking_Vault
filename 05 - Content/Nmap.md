@@ -43,9 +43,12 @@ This is the main things and the hardest problem. Key things to remember:
 - Use slow timing (`-T1` or `-T2`) only.
 - Scan only a small number of ports (50 ports) only. We can know what port we may need to know by looking for services' default ports on the Internet.
 - Break packets into small chunks using `-f` flag.
+```bash
+
+```
  
 **4. Obfuscation**
-This is where we utilize sm
+This is where we utilize evasion techniques, something like using decoy IP addresses to hide our own addresses to avoid being blocked
 
 ## Tips & Tricks
 
