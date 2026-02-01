@@ -20,9 +20,12 @@ sudo apt install nmap
 ## Common Commands
 Scanning ports, specify version and output in a file, mostly used for machines in **HackTheBox**.
 ```bash
-nmap -p- -min-rate=1000 -T4 -sC -sV -oA <outfile> <target_ip> 
+nmap -p- -min-rate=1000 -T4 -sC -sV -oN <outfile> <target_ip> 
 ```
-This command is actually quite noisy. In real-life cases, quieter scans are often preferred
+This command is actually quite noisy. In real-life cases, quieter scans are often preferred and the scan are split into difference p
+```bash
+nmap 
+```
 ## Tips & Tricks
 
 - Tip 1...
