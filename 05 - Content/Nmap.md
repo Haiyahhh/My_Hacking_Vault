@@ -18,12 +18,14 @@ sudo apt install nmap
 ````
 
 ## Common Commands
-### Hack The Box / CTF
+### Hack The Box / CTFs
 Scanning ports, specify version and output in a file, mostly used for machines in **HackTheBox**.
 ```bash
 nmap -p- -min-rate=1000 -T4 -sC -sV -oN <outfile> <target_ip> 
 ```
-This command is actually quite noisy. In real-life cases, quieter scans are often preferred and the scan are split into difference phases in order to avoid detection.
+
+### Scanning Phases (maybe a little more practical?)
+The above command is actually quite noisy as it scans every ports a. In real-life cases, quieter scans are often preferred and the scan are split into difference phases in order to avoid detection.
 ```bash
 nmap 
 ```
