@@ -49,6 +49,10 @@ nmap -T1 --top-ports 50 -f [target]
  
 **4. Obfuscation**
 This is where we utilize evasion techniques, something like using decoy IP addresses to hide our own addresses to avoid being blocked
+```bash
+nmap -D RND:10 [target]
+```
+The above command spoofs scan from 10 different source 
 
 ## Tips & Tricks
 
