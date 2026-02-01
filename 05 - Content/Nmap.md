@@ -21,7 +21,7 @@ sudo apt install nmap
 ### Hack The Box / CTFs
 Scanning ports, specify version and output in a file, mostly used for machines in **HackTheBox**.
 ```bash
-nmap -p- -T4 -sC -sV -oN [outfile] [target_ip] 
+nmap -p- -T4 -sC -sV -oN -oX [outfile] [target_ip] 
 ```
 
 ### Scanning Phases (maybe a little more practical?)
@@ -56,7 +56,10 @@ The above command spoofs scan from 10 different source to sneak through the IDS.
 
 ## Tips & Tricks
 
-- Scanning for vulnerability (SMB misconfigurations or old SSL versions, etc.)
+- Scanning for vulnerability (SMB misconfigurations or old SSL versions, etc.
+```bash
+nmap -sV --script=vuln [target]
+```
     
 
 ---
