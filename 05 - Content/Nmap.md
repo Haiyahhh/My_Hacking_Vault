@@ -25,7 +25,9 @@ nmap -p- -min-rate=1000 -T4 -sC -sV -oN <outfile> <target_ip>
 ```
 
 ### Scanning Phases (maybe a little more practical?)
-The above command is actually quite noisy as it scans every ports a. In real-life cases, quieter scans are often preferred and the scan are split into difference phases in order to avoid detection.
+The above command is actually quite noisy as it scans every ports with high `--min-rate` and `T4` speed. In real-life cases, quieter scans are often preferred and the scan are split into difference phases in order to avoid detection.
+
+1. Host detections
 ```bash
 nmap 
 ```
