@@ -56,7 +56,7 @@ The above command spoofs scan from 10 different source to sneak through the IDS.
 
 ## Tips & Tricks
 
-- Tip 1...
+- Scanning for vulnerability (SMB misconfigurations or old SSL versions, etc.)
     
 
 ---
