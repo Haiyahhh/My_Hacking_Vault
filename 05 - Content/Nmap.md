@@ -22,7 +22,7 @@ Scanning ports, specify version and output in a file, mostly used for machines i
 ```bash
 nmap -p- -min-rate=1000 -T4 -sC -sV -oA <outfile> <target_ip> 
 ```
-In case where slower and quieter co
+In case where slower and quieter consider using more suitable flag.
 ## Tips & Tricks
 
 - Tip 1...
