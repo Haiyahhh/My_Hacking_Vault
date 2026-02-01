@@ -34,11 +34,12 @@ nmap -sL 192.162.1.0/24
 ```
 
 **2. Host discovery**
- There may be dead IPs, this step helps indentifying them
+ There may be dead IPs, this step helps indentifying them.
 ```bash
-nmap -sn -PS443
+nmap -sn -PS443,80 192.162.1.0/24
 ```
 **3. Port enumeration**
+
 
 **4. Obfuscation**
 
