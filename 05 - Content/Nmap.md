@@ -40,8 +40,9 @@ nmap -sn -PS443,80 192.162.1.0/24
 ```
 **3. Port enumeration**
 This is the main things and the hardest problem. Key things to remember:
-- 
-
+- Use slow timing (`-T1` or `-T2`) only.
+- Scan only a small number of ports (50 ports) only.
+ 
 **4. Obfuscation**
 
 ## Tips & Tricks
