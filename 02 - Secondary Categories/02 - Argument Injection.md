@@ -10,7 +10,7 @@ last_modified: 2026-01-30
 # 📂 [[02 - Argument Injection]] 
 
 ## Overview 
-Contents of this topic will revolve around vulnerabilities that allow malicious or dangerous arguments to be passed to .
+Contents of this topic will revolve around vulnerabilities that allow malicious or dangerous arguments to be passed to a remote command. (Often ones that allow authentications bypass, etc.)
 
 ---
 
