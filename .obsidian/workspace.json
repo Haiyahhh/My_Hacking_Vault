@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "Nmap"
             }
-          },
-          {
-            "id": "1d4033452fb1bc38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "5920aaeaa3cc3548",
@@ -246,12 +231,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "1d4033452fb1bc38",
+  "active": "d28f70a91427ba6e",
   "lastOpenFiles": [
-    "05 - Content/Nmap.md",
-    "conflict-files-obsidian-git.md",
     "05 - Content/CVE-2026-24061.md",
+    "05 - Content/Nmap.md",
     "000 - Global Index.md",
+    "conflict-files-obsidian-git.md",
     "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
     "01 - Primary Categories/01 - Network Security.md",
