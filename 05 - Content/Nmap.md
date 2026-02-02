@@ -19,7 +19,7 @@ sudo apt install nmap
 
 ## Common Commands
 ### Hack The Box / CTFs
-Scanning ports, specify version and output in a file, mostly used for machines in **HackTheBox**.
+Scan ports, specify version and output in a file, mostly used for machines in **HackTheBox**.
 ```bash
 nmap -p- -T4 -sC -sV -oN -oX [outfile] [target_ip] 
 ```
