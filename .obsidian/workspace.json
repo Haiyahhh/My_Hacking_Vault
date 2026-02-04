@@ -28,30 +28,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04 - Templates/04 - Template Structure/0406 - Writeup.md",
+                "file": "05 - Content/HTB - GiveBack.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "0406 - Writeup"
-            }
-          },
-          {
-            "id": "1f7190e9a8a55adf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "HTB - GiveBack"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       },
       {
         "id": "49d6439c3f8cc218",
@@ -262,11 +248,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "1f7190e9a8a55adf",
+  "active": "a9d809adcbe00506",
   "lastOpenFiles": [
-    "05 - Content/HTB - GiveBack.md",
-    "conflict-files-obsidian-git.md",
     "04 - Templates/04 - Template Structure/0406 - Writeup.md",
+    "conflict-files-obsidian-git.md",
+    "05 - Content/HTB - GiveBack.md",
     "06 - Images/Pasted image 20260204113245.png",
     "06 - Images/Pasted image 20260204113047.png",
     "06 - Images/Pasted image 20260204111726.png",
