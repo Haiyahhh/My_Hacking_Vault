@@ -6,6 +6,7 @@
       {
         "id": "7f1ea05e42fed671",
         "type": "tabs",
+        "dimension": 50.8248730964467,
         "children": [
           {
             "id": "28ff58d92e01b32e",
@@ -20,12 +21,27 @@
               "icon": "lucide-file",
               "title": "HTB - GiveBack"
             }
+          },
+          {
+            "id": "a9d809adcbe00506",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04 - Templates/04 - Template Structure/0406 - Writeup.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "0406 - Writeup"
+            }
           }
         ]
       },
       {
         "id": "49d6439c3f8cc218",
         "type": "tabs",
+        "dimension": 49.1751269035533,
         "children": [
           {
             "id": "f5c6b537b9cdf965",
@@ -233,9 +249,18 @@
   },
   "active": "28ff58d92e01b32e",
   "lastOpenFiles": [
+    "04 - Templates/04 - Template Structure/0406 - Writeup.md",
+    "05 - Content/HTB - GiveBack.md",
+    "06 - Images/Pasted image 20260204113245.png",
+    "06 - Images/Pasted image 20260204113047.png",
+    "06 - Images/Pasted image 20260204111726.png",
+    "06 - Images/Pasted image 20260204111717.png",
+    "06 - Images/Pasted image 20260204111419.png",
+    "06 - Images/Pasted image 20260204111329.png",
+    "06 - Images/Pasted image 20260204111256.png",
+    "06 - Images",
     "05 - Content/CVE-2026-24061.md",
     "05 - Content/Nmap.md",
-    "05 - Content/HTB - GiveBack.md",
     "000 - Global Index.md",
     "02 - Secondary Categories/02 - Remote Code Execution.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
@@ -245,7 +270,6 @@
     "04 - Templates/04 - Template Structure/0402 - Secondary Category.md",
     "01 - Primary Categories/01 - Network Security.md",
     "04 - Templates/04 - Template Structure/0407 - README.md",
-    "04 - Templates/04 - Template Structure/0406 - Writeup.md",
     "04 - Templates/04 - Template Structure/0405 - Tool.md",
     "04 - Templates/04 - Template Structure/0404 - Technique.md",
     "04 - Templates/04 - Template Structure/0403 - Tertiary Category.md",
@@ -262,10 +286,6 @@
     "06 - Images/obsidian git settings.png",
     "06 - Images/obsidian general settings.png",
     "01 - Administration.md",
-    "05 - Content/Templater.md",
-    "06 - Images/templater.png",
-    "06 - Images/templater-hotkey.png",
-    "06 - Images/obsidian-git-cp.png",
     "03 - Content",
     "04 - Templates/04 - Template Structure",
     "04 - Templates",
