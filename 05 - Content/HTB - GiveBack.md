@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[01 - ...]]"
+  - "[[01 - Web Security]]"
 platform: HackTheBox
 difficulty: Easy
 creation_date: 2026-02-04
@@ -17,7 +17,7 @@ last_modified: 2026-02-04
 ## Executive Summary
 * **IP:** `10.10.10.x`
 * **OS:** Linux / Windows
-* **Key Technique:** (e.g., SQLi -> Cron Job Escalation)
+* **Key Technique:** 
 * **Status:** `In Progress`
 
 ---
