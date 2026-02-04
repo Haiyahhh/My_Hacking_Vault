@@ -272,6 +272,62 @@ I have no name!@beta-vino-wp-wordpress-679c4d5d5c-cq4f4:/secrets$ cat mariadb-pa
 sW5sp4spa3u7RLyetrekE4oS
 ```
 
+Check out the "Legacy Intranet":
+```bash
+php -r 'echo file_get_contents("http://10.43.2.241:5000");'
+<echo file_get_contents("http://10.43.2.241:5000");'                     
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GiveBack LLC Internal CMS</title>
+  <!-- Developer note: phpinfo accessible via debug mode during migration window -->
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+    .header { color: #333; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+    .info { background: #eef; padding: 15px; margin: 20px 0; border-radius: 5px; }
+    .warning { background: #fff3cd; border: 1px solid #ffeeba; padding: 10px; margin: 10px 0; }
+    .resources { margin: 20px 0; }
+    .resources li { margin: 5px 0; }
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏢 GiveBack LLC Internal CMS System</h1>
+    <p><em>Development Environment – Internal Use Only</em></p>
+  </div>
+
+  <div class="warning">
+    <h4>⚠️ Legacy Notice</h4>
+    <p>**SRE** - This system still includes legacy CGI support. Cluster misconfiguration may likely expose internal scripts.</p>
+  </div>
+
+  <div class="resources">
+    <h3>Internal Resources</h3>
+    <ul>
+      <li><a href="/admin/">/admin/</a> — VPN Required</li>
+      <li><a href="/backups/">/backups/</a> — VPN Required</li>
+      <li><a href="/runbooks/">/runbooks/</a> — VPN Required</li>
+      <li><a href="/legacy-docs/">/legacy-docs/</a> — VPN Required</li>
+      <li><a href="/debug/">/debug/</a> — Disabled</li>
+      <li><a href="/cgi-bin/info">/cgi-bin/info</a> — CGI Diagnostics</li>
+      <li><a href="/cgi-bin/php-cgi">/cgi-bin/php-cgi</a> — PHP-CGI Handler</li>
+      <li><a href="/phpinfo.php">/phpinfo.php</a></li>
+      <li><a href="/robots.txt">/robots.txt</a> — Crawlers: Disallowed</li>
+    </ul>
+  </div>
+
+  <div class="info">
+    <h3>Developer Note</h3>
+    <p>This CMS was originally deployed on Windows IIS using <code>php-cgi.exe</code>.
+    During migration to Linux, the Windows-style CGI handling was retained to ensure
+    legacy scripts continued to function without modification.</p>
+  </div>
+</body>
+</html>
+```
+
 ---
 
 
