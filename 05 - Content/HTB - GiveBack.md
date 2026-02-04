@@ -228,6 +228,13 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 [...]
 ```
+
+```bash
+# Check Apache config file
+cat /opt/bitnami/apache/conf/httpd.conf
+
+
+```
 ---
 
 
