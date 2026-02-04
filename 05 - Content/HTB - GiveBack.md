@@ -233,7 +233,26 @@ define( 'DB_COLLATE', '' );
 # Check Apache config file
 cat /opt/bitnami/apache/conf/httpd.conf
 
+[...]
+ServerAdmin you@example.com
+ServerName localhost:8080
 
+<Directory />
+  AllowOverride none
+  Require all denied
+</Directory>
+
+DocumentRoot "/opt/bitnami/apache/htdocs"
+<Directory "/opt/bitnami/apache/htdocs">
+  Options Indexes FollowSymLinks
+  AllowOverride None
+  Require all granted
+</Directory>
+
+<IfModule dir_module>
+  DirectoryIndex index.html
+</IfModule>
+[...]
 ```
 ---
 
