@@ -15,7 +15,7 @@ last_modified: 2026-02-04
 **Secondary:**
 
 ## Executive Summary
-* **IP:** `10.10.10.x`
+* **IP:** `10.129.242.171`
 * **OS:** Linux / Windows
 * **Key Technique:** 
 * **Status:** `In Progress`
