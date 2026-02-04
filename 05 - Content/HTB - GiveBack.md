@@ -254,6 +254,24 @@ DocumentRoot "/opt/bitnami/apache/htdocs"
 </IfModule>
 [...]
 ```
+
+In the root directory there is a folder called secrets:
+```bash
+I have no name!@beta-vino-wp-wordpress-679c4d5d5c-cq4f4:/secrets$ ls  
+mariadb-password
+mariadb-root-password
+wordpress-password
+
+I have no name!@beta-vino-wp-wordpress-679c4d5d5c-cq4f4:/secrets$ cat wordpress-password            
+O8F7KR5zGi
+
+I have no name!@beta-vino-wp-wordpress-679c4d5d5c-cq4f4:/secrets$ cat mariadb-root-password             
+sW5sp4syetre32828383kE4oS
+
+I have no name!@beta-vino-wp-wordpress-679c4d5d5c-cq4f4:/secrets$ cat mariadb-password             
+sW5sp4spa3u7RLyetrekE4oS
+```
+
 ---
 
 
