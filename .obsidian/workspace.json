@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "000 - Global Index.md",
+                "file": "05 - Content/HTB - GiveBack.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "000 - Global Index"
+              "title": "HTB - GiveBack"
             }
           }
         ]
@@ -213,9 +213,10 @@
   },
   "active": "28ff58d92e01b32e",
   "lastOpenFiles": [
+    "000 - Global Index.md",
+    "05 - Content/HTB - GiveBack.md",
     "05 - Content/CVE-2026-24061.md",
     "05 - Content/Nmap.md",
-    "000 - Global Index.md",
     "02 - Secondary Categories/02 - Remote Code Execution.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
     "Untitled.base",
@@ -242,7 +243,6 @@
     "06 - Images/obsidian general settings.png",
     "01 - Administration.md",
     "05 - Content/Templater.md",
-    "README.md",
     "06 - Images/templater.png",
     "06 - Images/templater-hotkey.png",
     "06 - Images/obsidian-git-cp.png",
