@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC -.md",
+                "file": "05 - Content/BKSEC - Report the violation.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC -"
+              "title": "BKSEC - Report the violation"
             }
           }
         ]
@@ -35,12 +35,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Low Effort SNS.md",
+                "file": "05 - Content/BKSEC - Report the violation.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Low Effort SNS"
+              "title": "BKSEC - Report the violation"
             }
           }
         ]
@@ -235,14 +235,22 @@
   },
   "active": "d28f70a91427ba6e",
   "lastOpenFiles": [
+    "06 - Images/Pasted image 20260208115651.png",
     "05 - Content/BKSEC - Low Effort SNS.md",
-    "05 - Content/BKSEC -.md",
+    "05 - Content/BKSEC - Report the violation.md",
+    "06 - Images/Pasted image 20260208115207.png",
+    "05 - Content/(incomplete) Cross-site Scripting.md",
+    "05 - Content/(incomplete) SQLmap.md",
+    "05 - Content/(incomplete) SQL Injection.md",
+    "05 - Content/(incomplete) Gobuster.md",
+    "02 - Secondary Categories/02 - (incomplete) Data Exfiltration.md",
+    "04 - Templates/04 - Template Structure/0405 - Tool.md",
+    "05 - Content/CVE-2026-24061.md",
+    "05 - Content/Nmap.md",
+    "02 - Secondary Categories/02 - Enumeration.md",
+    "04 - Templates/04 - Template Structure/0406 - Writeup.md",
     "06 - Images/Pasted image 20260208105516.png",
     "06 - Images/Pasted image 20260208104705.png",
-    "05 - Content/BKSEC -.md",
-    "05 - Content/SQLmap (incomplete).md",
-    "05 - Content/SQL Injection (incomplete).md",
-    "02 - Secondary Categories/02 - Data Exfiltration (incomplete).md",
     "01 - Primary Categories/01 - Web Security.md",
     "05 - Content/HTB - GiveBack.md",
     "06 - Images/Pasted image 20260204113245.png",
@@ -252,26 +260,18 @@
     "06 - Images/Pasted image 20260204111419.png",
     "06 - Images/Pasted image 20260204111329.png",
     "06 - Images/Pasted image 20260204111256.png",
-    "05 - Content/Nmap.md",
     "01 - Primary Categories/01 - Network Security.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
     "000 - Global Index.md",
-    "05 - Content/CVE-2026-24061.md",
     "conflict-files-obsidian-git.md",
-    "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "02 - Secondary Categories/02 - Remote Code Execution.md",
     "Untitled.base",
     "04 - Templates/04 - Template Structure/0401 - Primary Category.md",
     "04 - Templates/04 - Template Structure/0402 - Secondary Category.md",
     "04 - Templates/04 - Template Structure/0407 - README.md",
-    "04 - Templates/04 - Template Structure/0406 - Writeup.md",
-    "04 - Templates/04 - Template Structure/0405 - Tool.md",
     "04 - Templates/04 - Template Structure/0404 - Technique.md",
     "04 - Templates/04 - Template Structure/0403 - Tertiary Category.md",
     "01 - Primary Categories/01 - Operations (CTF).md",
-    "01 - Primary Categories/01 - Cloud Security.md",
-    "01 - Primary Categories/01 - Active Directory.md",
-    "06 - Images/obsidian-files-and-links.png",
     "03 - Content",
     "04 - Templates/04 - Template Structure",
     "04 - Templates",

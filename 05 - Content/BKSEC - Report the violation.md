@@ -1,0 +1,84 @@
+---
+tags:
+  - 🚩
+up:
+  - "[[02 - (incomplete) Data Exfiltration]]"
+platform: HackTheBox
+difficulty: Easy
+creation_date: 2026-02-08
+last_modified: 2026-02-08
+---
+
+# 🚩 [[BKSEC - Report the violation]]
+**Primary:** [[01 - Web Security]]
+
+**Secondary:** [[02 - (incomplete) Data Exfiltration]]
+
+**Related Techniques:** [[(incomplete) Cross-site Scripting|XSS]]
+
+## Executive Summary
+* **URL:** `http://103.77.175.40:8051/`
+* **Key Technique:** Cross-site Scripting into cookies exfiltration
+* **Status:** `Completed`
+
+---
+
+## Reconnaissance
+### Gobuster Enumeration
+I tried running `Gobuster` against the URL:
+```bash
+
+````
+
+### Website Recon
+I tried look the around the website will running `Gobuster` in the background. It seems like I can only work with the home page and nothing else. Testing other buttons on the navigation bar did not do anything. At the end of the page there is a comment feature. When I tried adding  a comment, there is a new comment was displayed in the page with a `Report` button attached to it.
+
+![[Pasted image 20260208115207.png]]
+
+---
+
+## Cross-site Scripting
+
+This looks oddly similar to some of the challenge I've met so from experience I suspect there might be an **XSS** vulnerability.
+
+I tested the theory by trying the payload: `<script>alert(1)</script>`
+
+![[Pasted image 20260208115651.png]]
+
+The message is blocked from displaying. I posted another payload and intercept the request in `BurpSuite`
+
+---
+
+## Privilege Escalation (Root)
+
+**Current User:** `www-data`
+
+### Enumeration
+
+- **LinPeas Findings:** `Vulnerable Sudo version`
+    
+
+### Exploitation
+
+Bash
+
+```
+# Commands to get root
+```
+
+---
+
+## Loot & Flags
+
+- [ ] **User Flag:** `hash_here`
+    
+- [ ] **Root Flag:** `hash_here`
+    
+- [ ] **Credentials:**
+    
+    - `user:password`
+        
+
+---
+
+**References:** [Link](https://www.google.com/search?q=url)

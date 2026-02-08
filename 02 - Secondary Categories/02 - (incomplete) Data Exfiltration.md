@@ -2,15 +2,17 @@
 tags:
   - 🗺️
 up:
-  - "[[01 - Network Security]]"
+  - "[[01 - Web Security]]"
 aliases: []
-creation_date: 2026-01-22
-last_modified: 2026-01-22
+creation_date: 2026-02-08
+last_modified: 2026-02-08
 ---
-# 📂 [[02 - Network Reconnaissance]] 
+# 📂 [[02 - (incomplete) Data Exfiltration]] 
 
-## Topic Overview 
-Notes of this category is about how to do enumeration on network services.
+## Overview 
+(Explain what this vulnerability class or topic is.)
+
+---
 
 ## 🧠 Techniques (Concepts)
 

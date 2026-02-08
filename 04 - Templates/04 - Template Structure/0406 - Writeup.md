@@ -12,7 +12,10 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 **Secondary:**
 
-**Related Techniques or Tools:** 
+**Related Techniques:**
+
+**Related Tools:** 
+
 
 ## Executive Summary
 * **IP:** `10.10.10.x`

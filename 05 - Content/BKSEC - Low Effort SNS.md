@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[02 - Data Exfiltration (incomplete)]]"
+  - "[[02 - (incomplete) Data Exfiltration]]"
 platform: BKSec Training
 difficulty: Easy
 creation_date: 2026-02-08
@@ -12,11 +12,11 @@ last_modified: 2026-02-08
 # 🚩 [[BKSEC - Low Effort SNS]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - Data Exfiltration (incomplete)]]
+**Secondary:** [[02 - (incomplete) Data Exfiltration]]
 
-**Related Techniques:** [[SQL Injection (incomplete)]]
+**Related Techniques:** [[(incomplete) SQL Injection]]
 
-**Related Tools:** [[SQLmap (incomplete)] [[Gobuster (incomplete)]]
+**Related Tools:** [[(incomplete) SQLmap]] [[(incomplete) Gobuster]]
 
 ## Executive Summary
 * **URL:** `http://103.77.175.40:8021`
