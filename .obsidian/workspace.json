@@ -20,25 +20,19 @@
               "icon": "lucide-file",
               "title": "BKSEC - Low Effort SNS"
             }
-          }
-        ]
-      },
-      {
-        "id": "13c7aae43fc4e6ce",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "623095c4a9610604",
+            "id": "a97099ae20eb4550",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Low Effort SNS.md",
-                "mode": "preview",
+                "file": "01 - Primary Categories/01 - Network Security.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Low Effort SNS"
+              "title": "01 - Network Security"
             }
           }
         ]
@@ -235,13 +229,22 @@
   "lastOpenFiles": [
     "06 - Images/Pasted image 20260208105516.png",
     "06 - Images/Pasted image 20260208104705.png",
-    "05 - Content/BKSEC -.md",
     "05 - Content/SQLmap (incomplete).md",
     "05 - Content/SQL Injection (incomplete).md",
+    "04 - Templates/04 - Template Structure/0405 - Tool.md",
+    "04 - Templates/04 - Template Structure/0404 - Technique.md",
     "05 - Content/BKSEC - Low Effort SNS.md",
-    "02 - Secondary Categories/02 - Data Exfiltration (incomplete).md",
+    "04 - Templates/04 - Template Structure/0406 - Writeup.md",
+    "05 - Content/Nmap.md",
+    "02 - Secondary Categories/02 - Remote Code Execution.md",
+    "02 - Secondary Categories/02 - Argument Injection.md",
     "01 - Primary Categories/01 - Web Security.md",
+    "01 - Primary Categories/01 - Network Security.md",
+    "02 - Secondary Categories/02 - Data Exfiltration (incomplete).md",
+    "02 - Secondary Categories/02 - Network Reconnaissance.md",
+    "04 - Templates/04 - Template Structure/0401 - Primary Category.md",
     "05 - Content/HTB - GiveBack.md",
+    "05 - Content/CVE-2026-24061.md",
     "06 - Images/Pasted image 20260204113245.png",
     "06 - Images/Pasted image 20260204113047.png",
     "06 - Images/Pasted image 20260204111726.png",
@@ -249,25 +252,16 @@
     "06 - Images/Pasted image 20260204111419.png",
     "06 - Images/Pasted image 20260204111329.png",
     "06 - Images/Pasted image 20260204111256.png",
-    "05 - Content/Nmap.md",
-    "01 - Primary Categories/01 - Network Security.md",
-    "02 - Secondary Categories/02 - Argument Injection.md",
     "000 - Global Index.md",
-    "05 - Content/CVE-2026-24061.md",
     "conflict-files-obsidian-git.md",
-    "02 - Secondary Categories/02 - Network Reconnaissance.md",
-    "02 - Secondary Categories/02 - Remote Code Execution.md",
     "Untitled.base",
-    "04 - Templates/04 - Template Structure/0401 - Primary Category.md",
     "04 - Templates/04 - Template Structure/0402 - Secondary Category.md",
     "04 - Templates/04 - Template Structure/0407 - README.md",
-    "04 - Templates/04 - Template Structure/0406 - Writeup.md",
-    "04 - Templates/04 - Template Structure/0405 - Tool.md",
-    "04 - Templates/04 - Template Structure/0404 - Technique.md",
     "04 - Templates/04 - Template Structure/0403 - Tertiary Category.md",
     "01 - Primary Categories/01 - Operations (CTF).md",
     "01 - Primary Categories/01 - Cloud Security.md",
     "01 - Primary Categories/01 - Active Directory.md",
+    "04 - Templates/0400 - General Template.md",
     "06 - Images/obsidian-files-and-links.png",
     "06 - Images/obsidian git settings.png",
     "03 - Content",
