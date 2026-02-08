@@ -1,14 +1,17 @@
 ---
-tags: [🛠️]
-up: ["[[01 - ...]]"]
+tags:
+  - 🛠️
+up:
+  - "[[02 - Data Exfiltration (incomplete)]]"
+  - "[[02 - Remote Code Execution]]"
 aliases: []
-creation_date: <% tp.file.creation_date("YYYY-MM-DD") %>
-last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
+creation_date: 2026-02-08
+last_modified: 2026-02-08
 ---
-# 🛠️ [[<% tp.file.title %>]]
-**Primary:** <% tp.file.cursor(1) %>
+# 🛠️ [[SQLmap (incomplete)]]
+**Primary:** [[01 - Web Security]]
 
-**Secondary:**
+**Secondary:** [[02 - Data Exfiltration (incomplete)]] [[02 - Remote Code Execution]]
 
 ## Installation
 ```bash
@@ -30,8 +33,9 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 ## Related Usage
 
 ### CTFs
+[[BKSEC - Low Effort SNS]]
 
-### Techniques
+
 
 ---
 

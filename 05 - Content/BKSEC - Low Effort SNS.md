@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[02 - SQL Injection]]"
+  - "[[02 - Data Exfiltration (incomplete)]]"
 platform: BKSec Training
 difficulty: Easy
 creation_date: 2026-02-08
@@ -10,12 +10,16 @@ last_modified: 2026-02-08
 ---
 
 # 🚩 [[BKSEC - Low Effort SNS]]
-**Primary:** <% tp.file.cursor(1) %>
+**Primary:** [[01 - Web Security]]
 
-**Secondary:**
+**Secondary:** [[02 - Data Exfiltration (incomplete)]]
+
+**Related Techniques:** [[SQL Injection (incomplete)]]
+
+**Related Tools:** [[SQLmap (incomplete)]
 
 ## Executive Summary
-* **IP:** `10.10.10.x`
+* **URL:** `[http://103.77.175.40:8021](http://103.77.175.40:8021/)`
 * **OS:** Linux / Windows
 * **Key Technique:** (e.g., SQLi -> Cron Job Escalation)
 * **Status:** `In Progress`
