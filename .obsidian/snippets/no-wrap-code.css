@@ -1,9 +1,0 @@
-/* Disable wrapping for notes with the "code-nowrap" cssclass property */
-.code-nowrap pre > code,
-.code-nowrap code[class*="language-"],
-.code-nowrap .HyperMD-codeblock,
-.code-nowrap span.cm-inline-code {
-  white-space: pre !important;
-  word-wrap: normal !important;
-  overflow-x: auto !important;
-}

