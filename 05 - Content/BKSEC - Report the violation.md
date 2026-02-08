@@ -65,7 +65,7 @@ The tools also help me generate the test payload:
 
 ![[Pasted image 20260208121153.png]]
 
-The payload works so
+The payload worked so all I had to do left is setup a webhook using `webhook.site` and send th
 
 ---
 
