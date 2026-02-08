@@ -105,6 +105,10 @@ available databases [6]:
 
 **Dump the suspicious database:**
 ```bash
+---
+cssclasses: code-nowrap
+---
+
 sqlmap -r request.txt -D BKSEC_TRAINING --dump --batch
 
 Database: BKSEC_TRAINING                                                                                                                                                                                                                  
