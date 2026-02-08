@@ -19,29 +19,15 @@ last_modified: 2026-02-08
 **Related Tools:** [[SQLmap (incomplete)]
 
 ## Executive Summary
-* **URL:** `[http://103.77.175.40:8021](http://103.77.175.40:8021/)`
-* **OS:** Linux / Windows
-* **Key Technique:** (e.g., SQLi -> Cron Job Escalation)
-* **Status:** `In Progress`
+* **URL:** `http://103.77.175.40:8021`
+* **Key Technique:** SQL injection into credential exfiltration
+* **Status:** `Completed`
 
 ---
 
 ## Reconnaissance
-### Nmap Scan
-```bash
-# Paste initial scan here
-````
-
 ### Web Enumeration
-
-- **Technologies:** (Apache, PHP, etc.)
-    
-- **Fuzzing Results:**
-    
-    - `/admin` (403)
-        
-    - `/images` (200)
-        
+Running `Gobuster` against the URL, there are 
 
 ---
 
