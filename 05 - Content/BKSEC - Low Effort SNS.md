@@ -54,9 +54,9 @@ Starting gobuster in directory enumeration mode
 /server-status        (Status: 403) [Size: 280]
 ```
 
-I checked the pages out and look around the website. It seems like the status of action we do will be reflected to us through URL redirection back to the home page.
+I checked the pages out and look around the website. It seems like the status of action we do will be reflected to us through the URL.
 
-
+![[Pasted image 20260208104705.png]]
 
 I  suspected that this challenge might be an SQL injection challenge. 
 
