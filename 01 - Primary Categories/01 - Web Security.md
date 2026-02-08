@@ -9,7 +9,11 @@ last_modified: 2026-02-08
 **Parent:** [[000 - Global Index]]
 
 ## Overview
+**Scope:** Application level.
 
+**Focus:** Vulnerabilities involving HTTP/S, web servers, APIs, and client-side logic.
+
+This domain covers all attacks against web applications and their underlying logic. It includes the OWASP Top 10, input validation flaws (SQLi, XSS), authentication bypasses, and API security. Notes here focus on manipulating the communication between a client (browser) and the server to access unauthorized data or execute arbitrary code.
 
 ---
 
