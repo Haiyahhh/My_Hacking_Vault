@@ -27,7 +27,7 @@ last_modified: 2026-02-08
 
 ## Reconnaissance
 ### Web Enumeration
-First look around the website, we see the pages are served  using `PHP`, therefore we can try enumerating pages using `Gobuster` with the `-x php` option.
+First look around the website, I saw the pages were served  using `PHP`, therefore I tried enumerating pages using `Gobuster` with the `-x php` option.
 ```bash
 gobuster dir --url http://103.77.175.40:8021 --wordlist ~/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt -x php
 
@@ -54,26 +54,16 @@ Starting gobuster in directory enumeration mode
 /server-status        (Status: 403) [Size: 280]
 ```
 
-We check out the `login.php` page and the `signup.php` pages.
+I checked the pages out and look around the website. It seems like the status of action we do will be reflected to us through URL redirection back to the home page.
+
+
+
+I  suspected that this challenge might be an SQL injection challenge. 
 
 ---
 
-## Foothold (User)
-
-**Path:** <% tp.file.cursor(1) %>
-
-### Step 1: Discovery
-
-(What did you find?)
-
-### Step 2: Exploitation
-
-(The exact payload or exploit used).
-
-> [!failure] 🐇 Rabbit Hole I spent time trying to brute force SSH.
-> 
-> - **Correction:** Always check for `id_rsa` keys in web directories first.
->     
+## Data Exfiltration
+Based on the things we observed
 
 ---
 
