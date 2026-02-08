@@ -47,6 +47,22 @@ I tested the theory by trying the payload: `<script>alert(1)</script>`
 
 The message is blocked from displaying. I posted another payload and intercept the request in `BurpSuite`
 
+![[Pasted image 20260208115912.png]]
+
+Two things I found that were critical:
+* Flag was included as part of the cookies.
+* The Website blacklisted forbidden HTML tags.
+
+This confirmed that the vulnerability was indeed XSS and I needed to somehow inject my script into the page and make the admin sees it by sending it through the comment report function and make him reveal the cookie (aka. the flag).
+
+Blacklisting is never a good idea since it can sometimes be fooled through obfuscation or if the blacklist is not thorough there will be a way to bypass. I copied the list of blacklisted tags and send it to Gemini for it to help me identify injectable tags: `<h1>` to `<h6>` and `<style>`.
+
+The tools also help me generate the test payload:
+```html
+<style>@keyframes x{}</style>
+<h1 style="animation-name:x" onanimationstart="alert(1)"></h1>
+```
+
 ---
 
 ## Privilege Escalation (Root)
