@@ -63,6 +63,10 @@ The tools also help me generate the test payload:
 <h1 style="animation-name:x" onanimationstart="alert(1)"></h1>
 ```
 
+![[Pasted image 20260208121153.png]]
+
+The payload works so
+
 ---
 
 ## Privilege Escalation (Root)
