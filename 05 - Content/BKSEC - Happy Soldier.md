@@ -119,26 +119,34 @@ O:6:"Player":4:{
 	s:6:"weapon";s:12:"Wooden Sword";}
 ```
 
-It seemed like the web send to the endpoint the cookie, the endpoint update the endpoint 
+It seemed like the web send to the endpoint the player's stats, the endpoint update the stats and send back to the client. It seems like some sort of game, with enough stats I might be able to defeat the monster. 
+
+At this point, I was thinking about writing a script that helps me click the `FIGHT MONSTER` button indefinitely until I have enough stats. However, after clicking the button for a few more times, I got redirected to a forbidden page, this may be a rate limiting logic behind this. If I write a script that spam the web it might takes a long time to finish, so I decide to make it my last resort.
+
+Looking a bit more, there seems to be nothing more so I decide to dig into modifying the base64 string.
 
 ---
 
-## Foothold (User)
+## Exploit the Cookie
 
-**Path:** <% tp.file.cursor(1) %>
+I looked for the information about the format and tried modifying each field of the string with different payloads to look for an injection point.
 
-### Step 1: Discovery
+Sending an error cookie will lead to a rejection and return standard object:
 
-(What did you find?)
+```php
+// Request 
+O:7:"Player":4:{         // Wrong String length
+	s:6:"health";i:100;
+	s:6:"attack";i:10;
+	s:5:"coins";i:0;
+	s:6:"weapon";s:12:"Wooden Sword";
+}
 
-### Step 2: Exploitation
-
-(The exact payload or exploit used).
-
-> [!failure] 🐇 Rabbit Hole I spent time trying to brute force SSH.
-> 
-> - **Correction:** Always check for `id_rsa` keys in web directories first.
->     
+// Response
+O:8:"stdClass":2:{
+	s:5:"coins";i:10;
+	s:6:"attack";i:1;}
+```
 
 ---
 
