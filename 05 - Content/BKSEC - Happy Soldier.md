@@ -184,7 +184,7 @@ O:7:"Player":4:{
 	s:6:"health";i:100;
 	s:6:"attack";i:10;
 	s:5:"coins";i:0;
-	O:2:"ok":0:{};       // Random Object
+	O:2:"ok":0:{}       // Random Object
 }
 
 // Response
@@ -192,7 +192,7 @@ O:7:"Player":4:{
 	s:6:"health";i:100;
 	s:6:"attack";i:10;
 	s:5:"coins";i:0;
-	O:2:"ok":0:{};
+	O:2:"ok":0:{}
 }
 ```
 
