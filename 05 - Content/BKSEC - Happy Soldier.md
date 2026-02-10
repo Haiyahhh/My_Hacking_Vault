@@ -274,6 +274,8 @@ Based on the error, we can finally confirmed that the logic was indeed using `un
 After stucking for some hours, I realize there is one thing I haven't tried. That is **hidden parameter**. Whenever I hit `FIGHT MONSTER`, a request is sent to `/?action=fight`, what if there are some other parameters that I did not know? So I fuzzed the parameter with `ffuf`:
 ```bash
 ffuf -u http://103.77.175.40:8141/?FUZZ=fight -w ~/Downloads/SecLists/Discovery/Web-Content/burp-parameter-names -fs 280,16265
+
+
 ```
 However, contrary to my expectation, nothing was found. There were only 2 types of page size: **280** for `status 403` and **16265** for `status 200`, with thousands of duplication. This meant the tool failed to find the correct parameter. 
 
