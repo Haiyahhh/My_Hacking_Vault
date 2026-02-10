@@ -75,8 +75,11 @@ Take a look at the source code of the page, at the end there is a script about s
 	const fightButton = document.querySelector('.action-button'); 
 	fightButton.addEventListener('click', (e) => { 
 		monster.classList.add('shake'); 
-		setTimeout(() => monster.classList.remove('shake'), 500); }); </script>
+		setTimeout(() => monster.classList.remove('shake'), 500); 
+	}); 
+</script>
 ```
+The page will record the
 
 ---
 
