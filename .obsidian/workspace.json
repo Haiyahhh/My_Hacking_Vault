@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/HTB - GiveBack.md",
-                "mode": "source",
+                "file": "05 - Content/BKSEC - Happy Soldier.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "HTB - GiveBack"
+              "title": "BKSEC - Happy Soldier"
             }
           }
         ],
@@ -228,8 +228,8 @@
   },
   "active": "a97099ae20eb4550",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "05 - Content/HTB - GiveBack.md",
+    "conflict-files-obsidian-git.md",
     "06 - Images/Pasted image 20260210093656.png",
     "06 - Images/Pasted image 20260210092903.png",
     "06 - Images/Pasted image 20260210091426.png",
