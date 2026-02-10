@@ -32,17 +32,15 @@ last_modified: 2026-02-10
 ```bash
 # Paste initial scan here
 ````
+Both `vhost` and `dir` scans revealed nothing so I decided to move on.
+Looking at `Wappalyzer` I saw that the website seem to be using PHP so I decided to try finding out if any PHP pages were exposed.
+```bash
 
+```
+Again, I saw nothing, so `Gobuster` seemed to reveal nothing significant.
 ### Web Enumeration
+Based on `Wappalyzer` the page is using PHP version 8.0.30 so I tried to find out if there were any known vulnerabilities for this version on the Internet, and the results suggests that 8.0.30 seems to be a secure version.
 
-- **Technologies:** (Apache, PHP, etc.)
-    
-- **Fuzzing Results:**
-    
-    - `/admin` (403)
-        
-    - `/images` (200)
-        
 
 ---
 
