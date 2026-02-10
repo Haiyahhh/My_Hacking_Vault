@@ -199,11 +199,21 @@ O:7:"Player":4:{
 After consulting Gemini, it seemed like PHP often uses a method like `unserialize()` for deserialization and a method called `__to_string()` if they were to utilize the string representation of an object. So I need to find the object that allows serialization and it has to have a `__to_string()` method implemented.
 
 ### Inject Payloads
-> [!failure] Payload 1: Infinite Stats.
-> 
-> - As the challenge worked similar to a game, I decide to try buff the stats of the character to infinity. In PHP, infinity is d:INF and as 3 stats field all can hold double, just let them all have the INF value. I even tried changing the name of the sword to something else as the system may have some background check whether the sword is a wooden sword but it did not work.
-> - ![[Pasted image 20260210090057.png]]
+1. **Payload 1: Infinite Stats**
+As the challenge worked similar to a game, I decide to try buff the stats of the character to infinity. In PHP, infinity is d:INF and as 3 stats field all can hold double, just let them all have the INF value. I even tried changing the name of the sword to something else as the system may have some background check whether the sword is a wooden sword but it did not work.
+
+![[Pasted image 20260210090057.png]]
+
 ```php
+// Request
+O:7:"Player":4:{         
+	s:6:"health";d:INF;
+	s:6:"attack";d:INF;
+	s:5:"coins";d:INF;
+	s:6:"weapon";s:13:"Infinity Edge";
+}
+
+// Response
 O:7:"Player":4:{         
 	s:6:"health";d:INF;
 	s:6:"attack";d:INF;
@@ -212,11 +222,37 @@ O:7:"Player":4:{
 }
 ```
 
-> [!failure] Payload 2: Object Injection.
-> 
-> - After many tried of the previous method, it still does not work, so I decided to move on to another way. Since the `weapon` field can hold objects, I tried inject a known object like `Player` to see how things goes.
-> 
-> - ![[Pasted image 20260210090057.png]]
+2. **Payload 2: Object Injection.**
+After many tried of the previous method, it still does not work, so I decided to move on to another way. Since the `weapon` field can hold objects, I tried inject a known object like `Player` to see how things goes.
+
+![[Pasted image 20260210091426.png]]
+
+```php
+// Request 
+O:7:"Player":4:{         
+	s:6:"health";i:100;
+	s:6:"attack";i:10;
+	s:5:"coins";i:0;
+	O:6:"Player":0:{}      
+}
+
+// Response
+O:6:"Player":4:{
+	s:6:"health";d:INF;
+	s:6:"attack";d:INF;
+	s:5:"coins";d:INF;
+	s:6:"weapon";O:6:"Player":4:{
+		s:6:"health";N;
+		s:6:"attack";N;
+		s:5:"coins";N;
+		s:6:"weapon";N;
+	}
+}
+```
+The previously empty `Player` object had been initialized with all attributes being **NULL** after being passed to the endpoint, however, nothing was printed to the screen at the weapon's name. Maybe it is because the `Player` does not have a `__to_string()` method. However, we can still know the name of the fields of the object, so I tested out some class name that might existed and maybe held a field called `flag` or something like that, so I spent more time on guessing names like `Monster`, `Guardian`, `Demon`, `Admin`, `Flag`,... But none works so I move on to maybe use built-in classes that can be serialized and has a `__to_string()` method.
+
+I can only find two classes that may be satisfy the conditions: `SimpleXMLElement` and `Error` (or `Exception`) 
+
 ---
 
 ## Privilege Escalation (Root)
