@@ -201,7 +201,8 @@ After consulting Gemini, it seemed like PHP often uses a method like `unserializ
 ### Inject Payloads
 > [!failure] Payload 1: Infinite Stats.
 > 
-> - As the challenge worked similar to a game, I decide to try buff the stats of the character to infinity. In PHP, infinity is d:INF and as 3 stats field all can hold double, just let them all have the INF value. I even trued changing the name of the sword to something else as the system may have some background check whether the sword is a wooden sword.
+> - As the challenge worked similar to a game, I decide to try buff the stats of the character to infinity. In PHP, infinity is d:INF and as 3 stats field all can hold double, just let them all have the INF value. I even tried changing the name of the sword to something else as the system may have some background check whether the sword is a wooden sword but it did not work.
+> - ![[Pasted image 20260210090057.png]]
 ```php
 O:7:"Player":4:{         
 	s:6:"health";d:INF;
@@ -211,7 +212,11 @@ O:7:"Player":4:{
 }
 ```
 
-
+> [!failure] Payload 2: Object Injection.
+> 
+> - After many tried of the previous method, it still does not work, so I decided to move on to another way. Since the `weapon` field can hold objects, I tried inject a known object like `Player` to see how things goes.
+> 
+> - ![[Pasted image 20260210090057.png]]
 ---
 
 ## Privilege Escalation (Root)
