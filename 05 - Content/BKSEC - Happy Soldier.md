@@ -66,7 +66,16 @@ Take a look at the source code of the page, at the end there is a script about s
 			const entry = document.createElement('div'); 
 			entry.className = 'log-entry'; 
 			entry.style.color = '#ff0'; 
-			entry.textContent = '> 🎮 CHEAT CODE ACTIVATED! But can you serialize your way to victory? 🎮'; log.appendChild(entry); log.scrollTop = log.scrollHeight; } }); const monster = document.getElementById('monster'); const fightButton = document.querySelector('.action-button'); fightButton.addEventListener('click', (e) => { monster.classList.add('shake'); setTimeout(() => monster.classList.remove('shake'), 500); }); </script>
+			entry.textContent = '> 🎮 CHEAT CODE ACTIVATED! But can you serialize your way to victory? 🎮'; 
+			log.appendChild(entry); 
+			log.scrollTop = log.scrollHeight; 
+		} 
+	}); 
+	const monster = document.getElementById('monster'); 
+	const fightButton = document.querySelector('.action-button'); 
+	fightButton.addEventListener('click', (e) => { 
+		monster.classList.add('shake'); 
+		setTimeout(() => monster.classList.remove('shake'), 500); }); </script>
 ```
 
 ---
