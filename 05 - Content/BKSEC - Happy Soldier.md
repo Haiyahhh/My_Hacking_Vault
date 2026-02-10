@@ -30,7 +30,30 @@ last_modified: 2026-02-10
 ## Reconnaissance
 ### Gobuster Scan
 ```bash
-# Paste initial scan here
+# dir scan
+gobuster dir --url http://103.77.175.40:8141 --wordlist ~/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt --exclude-length 280
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://103.77.175.40:8141
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /home/kali/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt
+[+] Negative Status codes:   404
+[+] Exclude Length:          280
+[+] User Agent:              gobuster/3.8
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+Progress: 17769 / 17769 (100.00%)
+===============================================================
+Finished
+===============================================================
+
+# vhost scan
+
 ````
 Both `vhost` and `dir` scans revealed nothing so I decided to move on.
 Looking at `Wappalyzer` I saw that the website seem to be using PHP so I decided to try finding out if any PHP pages were exposed.
