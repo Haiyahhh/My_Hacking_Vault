@@ -129,8 +129,9 @@ Looking a bit more, there seems to be nothing more so I decide to dig into modif
 
 ## Exploit the Cookie
 
-I looked for the information about the format and tried modifying each field of the string with different payloads to look for an injection point.
+I looked for the information about the format (the server was using PHP version `7.4.33` based on the response) and tried modifying each field of the string with different payloads to look for an injection point.
 
+### Try with the Object
 Sending an error cookie will lead to a rejection and return standard object:
 
 ```php
@@ -147,6 +148,25 @@ O:8:"stdClass":2:{
 	s:5:"coins";i:10;
 	s:6:"attack";i:1;}
 ```
+Changing the name of the objects does nothing, apparently.
+```php
+// Request 
+O:8:"okokokko":4:{         // Wrong some random name
+	s:6:"health";i:100;
+	s:6:"attack";i:10;
+	s:5:"coins";i:0;
+	s:6:"weapon";s:12:"Wooden Sword";
+}
+
+// Response
+O:8:"okokokko":4{
+	s:6:"health";i:100;
+	s:6:"attack";i:10;
+	s:5:"coins";i:0;
+	s:6:"weapon";s:12:"Wooden Sword";
+}
+```
+
 
 ---
 
