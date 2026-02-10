@@ -176,7 +176,7 @@ s:8:"okokokko";
 ```
 however the page does not display anything, so it seems like for the page to display anything, we can only keep the object as `Player` as it was.
 
-The same pattern appeared when I tried to manipulate other fields. Integer fields like `health`, `attack` and `coins` can hold **double**, **boolean**.
+The same pattern appeared when I tried to manipulate other fields. Integer fields like `health`can hold **string**, **double** and **boolean**, `attack` and `coins` has some math going in the background so they can not be injected with **string** or **boolean**. `Weapon` is really flexible in a sense
 
 ---
 
