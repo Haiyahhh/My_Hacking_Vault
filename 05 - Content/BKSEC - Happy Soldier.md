@@ -253,26 +253,33 @@ The previously empty `Player` object had been initialized with all attributes be
 
 Gemini suggested me two classes that may work that were: `SimpleXMLElement` and `Exception` (or `Error`). However, only `Exception` works, as it printed error message and the stack trace to the weapon name while `SimpleXMLElement` gave me a blank page.
 
+![[Pasted image 20260210093656.png]]
 
+```php
+O:6:"Player":4:{
+	s:6:"health";d:INF;
+	s:6:"attack";d:INF;
+	s:5:"coins";d:INF;
+	s:6:"weapon";O:5:"Error":1:{
+		s:7:"message";s:2:"ok";
+	}
+}
+```
+
+Based on the error, we can finally confirmed that the logic was indeed using `unserialize()`.
 
 ---
 
-## Privilege Escalation (Root)
-
-**Current User:** `www-data`
-
-### Enumeration
-
-- **LinPeas Findings:** `Vulnerable Sudo version`
-    
-
-### Exploitation
-
-Bash
-
+## Back To Recon
+After stucking for some hours, I realize there is one thing I haven't tried. That is **hidden parameter**. Whenever I hit `FIGHT MONSTER`, a request is sent to `/?action=fight`, what if there are some other parameters that I did not know? So I fuzzed the parameter with `ffuf`:
+```bash
+ffuf -u http://103.77.175.40:8141/?FUZZ=fight -w ~/Downloads/SecLists/Discovery/Web-Content/burp-parameter-names -fs 280,16265
 ```
-# Commands to get root
-```
+However, contrary to my expectation, nothing was found. There were only 2 types of page size: **280** for `status 403` and **16265** for `status 200`, with thousands of duplication. This meant the tool failed to find the correct parameter. 
+
+I tried fuzzing the value of the parameter, hoping to find something, with or without adding cookie, the tool still failed.
+
+
 
 ---
 
