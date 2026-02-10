@@ -97,7 +97,9 @@ Looking at the source code again, it seemed like whenever the button is pressed 
 
 Firing up `BurpSuite`, and looking at the traffic. I take a look at the request to `/?action=fight`
 
+![[Pasted image 20260210041857.png]]
 
+The request's cookie was attached with a flag? and a **base64** and **URL encoded** string. The decoding revealed that the encoded is the player's stats serialized in the **PHP serialization format**. 
 
 ---
 
