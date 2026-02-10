@@ -289,6 +289,22 @@ However, contrary to my expectation, nothing was found. There were only 2 types 
 
 I tried fuzzing the value of the parameter, hoping to find something, with or without adding cookie, the tool still failed.
 
+Gemini then suggested me to change the tool and tell me to use a tool called `Arjun` that was specialized in finding hidden parameter. I tried install the tool and run the command:
+```
+arjun -u http://103.77.175.40:8141                       
+
+   /_| _ '                                                                        
+  (  |/ /(//) v2.2.7                                              
+      _/                                                                                                            
+
+[*] Scanning 0/1: http://103.77.175.40:8141
+[*] Probing the target for stability
+[*] Analysing HTTP response for anomalies
+[*] Logicforcing the URL endpoint
+[✓] parameter detected: src, based on: http headers
+[+] Parameters found: src
+```
+For this I manage to find the source code for the background process that was responsible for processing the stats and checking it to defeat the the demon:
 
 
 ---
