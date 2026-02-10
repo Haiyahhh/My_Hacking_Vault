@@ -423,7 +423,7 @@ I can just change the cookie accordingly and get the flag.
 
 ## Loot & Flags
 
-**Flag:**
+**Flag:** BKSEC{h0w_c4n_y0u_b3c0m3_5tr0ng3r_50_qu1ckly_f4b9e1}
 
 **Lessons:**
 >- Always do the recon thoroughly.

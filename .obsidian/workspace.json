@@ -28,7 +28,7 @@
               "type": "markdown",
               "state": {
                 "file": "05 - Content/BKSEC - Happy Soldier.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
@@ -228,6 +228,9 @@
   },
   "active": "a97099ae20eb4550",
   "lastOpenFiles": [
+    "05 - Content/BKSEC - Low Effort SNS.md",
+    "05 - Content/BKSEC - Report the violation.md",
+    "05 - Content/BKSEC - Happy Soldier.md",
     "06 - Images/Pasted image 20260210230305.png",
     "05 - Content/HTB - GiveBack.md",
     "conflict-files-obsidian-git.md",
@@ -240,9 +243,6 @@
     "06 - Images/Pasted image 20260208121153.png",
     "06 - Images/Pasted image 20260208115912.png",
     "06 - Images/Pasted image 20260208115651.png",
-    "06 - Images/Pasted image 20260208115207.png",
-    "05 - Content/BKSEC - Report the violation.md",
-    "05 - Content/BKSEC - Happy Soldier.md",
     "05 - Content/(incomplete) SQLmap.md",
     "05 - Content/(incomplete) SQL Injection.md",
     "05 - Content/(incomplete) PHP Object Injection.md",
@@ -254,7 +254,6 @@
     "02 - Secondary Categories/02 - Enumeration.md",
     "02 - Secondary Categories/02 - (incomplete) Data Exfiltration.md",
     "05 - Content/CVE-2026-24061.md",
-    "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/SQL Injection (incomplete).md",
     "05 - Content/Nmap.md",
     "01 - Primary Categories/01 - Network Security.md",
