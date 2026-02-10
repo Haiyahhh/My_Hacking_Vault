@@ -166,7 +166,14 @@ O:8:"okokokko":4{
 	s:6:"weapon";s:12:"Wooden Sword";
 }
 ```
+Even changing the type of the object also does not trigger any errors, however the page does not display anything:
+```php
+// Request 
+s:8:"okokokko";
 
+// Response
+s:8:"okokokko";
+```
 
 ---
 
