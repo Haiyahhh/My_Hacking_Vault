@@ -99,7 +99,27 @@ Firing up `BurpSuite`, and looking at the traffic. I take a look at the request 
 
 ![[Pasted image 20260210041857.png]]
 
-The request's cookie was attached with a flag? and a **base64** and **URL encoded** string. The decoding revealed that the encoded is the player's stats serialized in the **PHP serialization format**. 
+The request's cookie was attached with a flag? and a **base64** and **URL encoded** string. The decoding revealed that the encoded is the player's stats formatted in the **PHP serialization format**.
+
+The response also have a similar string:
+```php
+// Request 
+O:6:"Player":4:{
+	s:6:"health";i:100;
+	s:6:"attack";i:10;
+	s:5:"coins";i:0;
+	s:6:"weapon";s:12:"Wooden Sword";
+}
+
+// Response
+O:6:"Player":4:{
+	s:6:"health";i:100;
+	s:6:"attack";i:11;
+	s:5:"coins";i:10;
+	s:6:"weapon";s:12:"Wooden Sword";}
+```
+
+It seemed like the web send to the endpoint the cookie, the endpoint update the endpoint 
 
 ---
 
