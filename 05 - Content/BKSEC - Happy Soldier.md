@@ -41,6 +41,9 @@ Again, I saw nothing, so `Gobuster` seemed to reveal nothing significant.
 ### Web Enumeration
 Based on `Wappalyzer` the page is using PHP version 8.0.30 so I tried to find out if there were any known vulnerabilities for this version on the Internet, and the results suggests that 8.0.30 seems to be a secure version.
 
+[insert image from Windows machine]
+
+Take a look at the source code of the page, at the end there is a script about the che
 
 ---
 
