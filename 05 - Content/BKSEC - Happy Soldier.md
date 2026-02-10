@@ -176,7 +176,24 @@ s:8:"okokokko";
 ```
 however the page does not display anything, so it seems like for the page to display anything, we can only keep the object as `Player` as it was.
 
-The same pattern appeared when I tried to manipulate other fields. Integer fields like `health`can hold **string**, **double** and **boolean**, `attack` and `coins` has some math going in the background so they can not be injected with **string** or **boolean**. `Weapon` is really flexible in a sense
+The same pattern appeared when I tried to manipulate other fields. Integer fields like `health`can hold **string**, **double** and **boolean**, but it can not hold **object**; `attack` and `coins` has some math going in the background so they can not be injected with **string** or **boolean** (as they will be turned to integers afterward). `Weapon` is really flexible in a sense as the field accept everything out of the four, when I inject a random object the field just accept it.
+
+```php
+// Request 
+O:7:"Player":4:{         // Wrong String length
+	s:6:"health";i:100;
+	s:6:"attack";i:10;
+	s:5:"coins";i:0;
+	s:6:"weapon";s:12:"Wooden Sword";
+}
+
+// Response
+O:8:"stdClass":2:{
+	s:5:"coins";i:10;
+	s:6:"attack";i:1;}
+```
+
+After consulting Gemini, it seems like PHP often use a method like `unserialize()` for deserialization and a method called __to_
 
 ---
 
