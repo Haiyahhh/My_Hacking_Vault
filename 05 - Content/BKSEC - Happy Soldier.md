@@ -196,7 +196,7 @@ O:7:"Player":4:{
 }
 ```
 
-After consulting Gemini, it seems like PHP often uses a method like `unserialize()` for deserialization and a method called `__to_string()` if they were to utilize the string representation of an object. So I need to 
+After consulting Gemini, it seems like PHP often uses a method like `unserialize()` for deserialization and a method called `__to_string()` if they were to utilize the string representation of an object. So I need to find the 
 
 ---
 
