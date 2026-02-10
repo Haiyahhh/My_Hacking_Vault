@@ -273,9 +273,17 @@ Based on the error, we can finally confirmed that the logic was indeed using `un
 ## Back To Recon
 After stucking for some hours, I realize there is one thing I haven't tried. That is **hidden parameter**. Whenever I hit `FIGHT MONSTER`, a request is sent to `/?action=fight`, what if there are some other parameters that I did not know? So I fuzzed the parameter with `ffuf`:
 ```bash
-ffuf -u http://103.77.175.40:8141/?FUZZ=fight -w ~/Downloads/SecLists/Discovery/Web-Content/burp-parameter-names -fs 280,16265
+ffuf -u http://103.77.175.40:8141/?FUZZ=fight -w ~/Downloads/SecLists/Discovery/Web-Content/burp-parameter-names.txt -fs 280
 
-
+[...]
+parentid                [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 76ms]
+parenttab               [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 76ms]
+partner                 [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 74ms]
+periodo                 [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 79ms]
+phone                   [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 75ms]
+playlistTitle           [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 86ms]
+postid                  [Status: 200, Size: 16265, Words: 6499, Lines: 564, Duration: 75ms]
+:: Progress: [6453/6453] :: Job [1/1] :: 560 req/sec :: Duration: [0:00:12] :: Errors: 0 ::
 ```
 However, contrary to my expectation, nothing was found. There were only 2 types of page size: **280** for `status 403` and **16265** for `status 200`, with thousands of duplication. This meant the tool failed to find the correct parameter. 
 
