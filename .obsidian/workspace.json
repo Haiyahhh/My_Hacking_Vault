@@ -35,7 +35,8 @@
               "title": "01 - Network Security"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -225,21 +226,22 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "d28f70a91427ba6e",
+  "active": "a97099ae20eb4550",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "01 - Primary Categories/01 - Network Security.md",
+    "05 - Content/BKSEC - Low Effort SNS.md",
     "06 - Images/Pasted image 20260208105516.png",
     "06 - Images/Pasted image 20260208104705.png",
     "05 - Content/SQLmap (incomplete).md",
     "05 - Content/SQL Injection (incomplete).md",
     "04 - Templates/04 - Template Structure/0405 - Tool.md",
     "04 - Templates/04 - Template Structure/0404 - Technique.md",
-    "05 - Content/BKSEC - Low Effort SNS.md",
     "04 - Templates/04 - Template Structure/0406 - Writeup.md",
     "05 - Content/Nmap.md",
     "02 - Secondary Categories/02 - Remote Code Execution.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
     "01 - Primary Categories/01 - Web Security.md",
-    "01 - Primary Categories/01 - Network Security.md",
     "02 - Secondary Categories/02 - Data Exfiltration (incomplete).md",
     "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "04 - Templates/04 - Template Structure/0401 - Primary Category.md",
@@ -253,7 +255,6 @@
     "06 - Images/Pasted image 20260204111329.png",
     "06 - Images/Pasted image 20260204111256.png",
     "000 - Global Index.md",
-    "conflict-files-obsidian-git.md",
     "Untitled.base",
     "04 - Templates/04 - Template Structure/0402 - Secondary Category.md",
     "04 - Templates/04 - Template Structure/0407 - README.md",
@@ -263,7 +264,6 @@
     "01 - Primary Categories/01 - Active Directory.md",
     "04 - Templates/0400 - General Template.md",
     "06 - Images/obsidian-files-and-links.png",
-    "06 - Images/obsidian git settings.png",
     "03 - Content",
     "04 - Templates/04 - Template Structure",
     "04 - Templates",

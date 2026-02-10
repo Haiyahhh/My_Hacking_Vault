@@ -9,11 +9,7 @@ last_modified: 2026-01-22
 **Parent:** [[000 - Global Index]]
 
 ## Overview
-**Scope:** Transport and Network layers.
-
-**Focus:** Infrastructure, Protocols, Ports, Traffic Analysis.
-
-This category focuses on the underlying infrastructure that connects systems. It covers port scanning, protocol enumeration (SMB, FTP, SSH), firewall evasion, and traffic analysis. Notes here define how to find and exploit misconfigurations in network services.
+ob
 
 ## Secondary Categories (Topics)
 
