@@ -22,8 +22,8 @@ last_modified: 2026-02-10
 ## Executive Summary
 * **URL:** `http://103.77.175.40:8141`
 * **OS:** Linux
-* **Key Technique:** Argument Fuzzing to reveal hidden argument, this leads to 
-* **Status:** `In Progress`
+* **Key Technique:** Argument Fuzzing to reveal hidden argument, this leads to a local file content revelation, then we change the PHP object to get the flag.
+* **Status:** `Completed`
 
 ---
 
