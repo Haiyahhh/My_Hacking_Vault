@@ -251,7 +251,9 @@ O:6:"Player":4:{
 ```
 The previously empty `Player` object had been initialized with all attributes being **NULL** after being passed to the endpoint, however, nothing was printed to the screen at the weapon's name. Maybe it is because the `Player` does not have a `__to_string()` method. However, we can still know the name of the fields of the object, so I tested out some class name that might existed and maybe held a field called `flag` or something like that, so I spent more time on guessing names like `Monster`, `Guardian`, `Demon`, `Admin`, `Flag`,... But none works so I move on to maybe use built-in classes that can be serialized and has a `__to_string()` method.
 
-Gemini suggested me two classes that may work that were: `SimpleXMLElement` and `Exception` (or `Error`). However, only Exception works 
+Gemini suggested me two classes that may work that were: `SimpleXMLElement` and `Exception` (or `Error`). However, only `Exception` works, as it printed error message and the stack trace to the weapon name while `SimpleXMLElement` gave me a blank page.
+
+
 
 ---
 
