@@ -79,7 +79,12 @@ Take a look at the source code of the page, at the end there is a script about s
 	}); 
 </script>
 ```
-The page it seems like the page will record the key press of the user and output the "Cheat Code Activated" string to the `combatLog`. Which is pretty weird considering there were no 
+The page it seems like the page will record the key press of the user and output the "Cheat Code Activated" string to the `combatLog`. Which is pretty weird considering there were no element in the HTML when I inspect the code.
+
+So to test this out, I asked Gemini to generate a script to help me trigger the cheat code to see what happen.
+
+```
+```
 
 ---
 
