@@ -87,6 +87,18 @@ So to test this out, I asked Gemini to generate a script to help me trigger the 
 
 ```
 
+[insert the image of the result]
+
+The only thing happen was just the small box at the end of the page appear saying the string. Other than that it did nothing, though I expected it to trigger some client-side errors or something more.
+
+Next thing I did was pressing the `FIGHT MONSTER` button. The result was that the coins and the attack of user increased by 1 after the page reloaded.
+
+Looking at the source code again, it seemed like whenever the button is pressed the page sends a request with parameter `action=fight`.
+
+Firing up `BurpSuite`, and looking at the traffic. I take a look at the request to `/?action=fight`
+
+
+
 ---
 
 ## Foothold (User)
