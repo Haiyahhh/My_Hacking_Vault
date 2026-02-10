@@ -166,7 +166,7 @@ O:8:"okokokko":4{
 	s:6:"weapon";s:12:"Wooden Sword";
 }
 ```
-Even changing the type of the object also does not trigger any errors, however the page does not display anything:
+Even changing the type of the object also does not trigger any errors:
 ```php
 // Request 
 s:8:"okokokko";
@@ -174,6 +174,9 @@ s:8:"okokokko";
 // Response
 s:8:"okokokko";
 ```
+however the page does not display anything, so it seems like for the page to display anything, we can only keep the object as `Player` as it was.
+
+The same pattern appeared when I tried to manipulate other fields, even integer fields like health, attack or coins can hold string, double, boolean.
 
 ---
 
