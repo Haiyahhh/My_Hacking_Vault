@@ -28,7 +28,7 @@ last_modified: 2026-02-10
 ---
 
 ## Reconnaissance
-### Nmap Scan
+### Gobuster Scan
 ```bash
 # Paste initial scan here
 ````
