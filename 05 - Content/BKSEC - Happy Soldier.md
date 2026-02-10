@@ -147,11 +147,39 @@ The page it seems like the page will record the key press of the user and output
 
 So to test this out, I asked Gemini to generate a script to help me trigger the cheat code to see what happen.
 
-```python
+```javascript
+// 1. Create and add the missing 'combatLog' element
+if (!document.getElementById('combatLog')) {
+    const logDiv = document.createElement('div');
+    logDiv.id = 'combatLog';
+    logDiv.className = 'combat-log';
+    document.querySelector('.container').appendChild(logDiv);
+    console.log("✅ Combat Log element added to the page.");
+}
 
+// 2. Define the Konami Code sequence
+const sequence = [
+    'ArrowUp', 'ArrowUp', 
+    'ArrowDown', 'ArrowDown', 
+    'ArrowLeft', 'ArrowRight', 
+    'ArrowLeft', 'ArrowRight', 
+    'b', 'a'
+];
+
+// 3. Simulate pressing the keys
+sequence.forEach((keyName, index) => {
+    setTimeout(() => {
+        const event = new KeyboardEvent('keydown', {
+            key: keyName,
+            bubbles: true,
+            cancelable: true
+        });
+        document.dispatchEvent(event);
+    }, index * 100);
+});
 ```
 
-[insert the image of the result]
+![[Pasted image 20260210230305.png]]
 
 The only thing happen was just the small box at the end of the page appear saying the string. Other than that it did nothing, though I expected it to trigger some client-side errors or something more.
 
