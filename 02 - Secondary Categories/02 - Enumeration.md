@@ -2,17 +2,15 @@
 tags:
   - 🗺️
 up:
-  - "[[01 - Web Security]]"
+  - "[[01 - Network Security]]"
 aliases: []
-creation_date: 2026-02-08
-last_modified: 2026-02-08
+creation_date: 2026-01-22
+last_modified: 2026-01-22
 ---
-# 📂 [[02 - Data Exfiltration (incomplete)]] 
+# 📂 [[02 - Enumeration]] 
 
-## Overview 
-(Explain what this vulnerability class or topic is.)
-
----
+## Topic Overview 
+Notes of this category is about how to do enumeration.
 
 ## 🧠 Techniques (Concepts)
 

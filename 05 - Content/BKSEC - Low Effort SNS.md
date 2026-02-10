@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[02 - Data Exfiltration (incomplete)]]"
+  - "[[02 - (incomplete) Data Exfiltration]]"
 platform: BKSec Training
 difficulty: Easy
 creation_date: 2026-02-08
@@ -12,11 +12,11 @@ last_modified: 2026-02-08
 # 🚩 [[BKSEC - Low Effort SNS]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - Data Exfiltration (incomplete)]]
+**Secondary:** [[02 - (incomplete) Data Exfiltration]]
 
-**Related Techniques:** [[SQL Injection (incomplete)]]
+**Related Techniques:** [[(incomplete) SQL Injection]]
 
-**Related Tools:** [[SQLmap (incomplete)] [[Gobuster (incomplete)]]
+**Related Tools:** [[(incomplete) SQLmap]] [[(incomplete) Gobuster]]
 
 ## Executive Summary
 * **URL:** `http://103.77.175.40:8021`
@@ -119,38 +119,17 @@ Table: user_info
 | 4  | 327a6c4304ad5938eaf0efb6cc3e53dc (flag)          | flag                     | flag                                                           |
 ```
 
+The flag can easily be obtained this way.
+
 ---
 
-## Privilege Escalation (Root)
-
-**Current User:** `www-data`
-
-### Enumeration
-
-- **LinPeas Findings:** `Vulnerable Sudo version`
-    
-
-### Exploitation
-
-Bash
-
-```
-# Commands to get root
-```
+## Try it again without SQLmap
+The SQLmap above is straight forward. However, it's kind of like "cheating" in my opinion so I'll try using a more... manual way this time.
 
 ---
 
 ## Loot & Flags
 
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
+**Flag:** BKSEC{c0nv3n13nc3_1nv3rs3_pr0p0rt10n4l_t0_s3cur1ty_huh_b7e4c1}
 
 ---
-
-**References:** [Link](https://www.google.com/search?q=url)

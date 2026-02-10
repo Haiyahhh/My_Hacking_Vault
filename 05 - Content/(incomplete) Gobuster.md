@@ -2,16 +2,15 @@
 tags:
   - 🛠️
 up:
-  - "[[02 - Data Exfiltration (incomplete)]]"
-  - "[[02 - Remote Code Execution]]"
+  - "[[02 - Enumeration]]"
 aliases: []
 creation_date: 2026-02-08
 last_modified: 2026-02-08
 ---
-# 🛠️ [[SQLmap (incomplete)]]
+# 🛠️ [[(incomplete) Gobuster]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - Data Exfiltration (incomplete)]] [[02 - Remote Code Execution]]
+**Secondary:** [[02 - Enumeration]]
 
 ## Installation
 ```bash
@@ -33,9 +32,8 @@ last_modified: 2026-02-08
 ## Related Usage
 
 ### CTFs
-[[BKSEC - Low Effort SNS]]
 
-
+### Techniques
 
 ---
 

@@ -2,7 +2,7 @@
 tags:
   - 🛠️
 up:
-  - "[[02 - Network Reconnaissance]]"
+  - "[[02 - Enumeration]]"
 aliases: []
 creation_date: 2026-01-22
 last_modified: 2026-01-22
@@ -10,7 +10,7 @@ last_modified: 2026-01-22
 # 🛠️ [[Nmap]]
 **Primary:** [[01 - Network Security]]
 
-**Secondary:** [[02 - Network Reconnaissance]]
+**Secondary:** [[02 - Enumeration]]
 
 ## Installation
 ```bash
