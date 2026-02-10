@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Primary Categories/01 - Network Security.md",
+                "file": "05 - Content/HTB - GiveBack.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "01 - Network Security"
+              "title": "HTB - GiveBack"
             }
           }
         ],
@@ -228,25 +228,25 @@
   },
   "active": "a97099ae20eb4550",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "01 - Primary Categories/01 - Network Security.md",
+    "05 - Content/CVE-2026-24061.md",
     "05 - Content/BKSEC - Low Effort SNS.md",
+    "05 - Content/SQL Injection (incomplete).md",
+    "05 - Content/Nmap.md",
+    "05 - Content/HTB - GiveBack.md",
+    "01 - Primary Categories/01 - Network Security.md",
+    "conflict-files-obsidian-git.md",
     "06 - Images/Pasted image 20260208105516.png",
     "06 - Images/Pasted image 20260208104705.png",
     "05 - Content/SQLmap (incomplete).md",
-    "05 - Content/SQL Injection (incomplete).md",
     "04 - Templates/04 - Template Structure/0405 - Tool.md",
     "04 - Templates/04 - Template Structure/0404 - Technique.md",
     "04 - Templates/04 - Template Structure/0406 - Writeup.md",
-    "05 - Content/Nmap.md",
     "02 - Secondary Categories/02 - Remote Code Execution.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
     "01 - Primary Categories/01 - Web Security.md",
     "02 - Secondary Categories/02 - Data Exfiltration (incomplete).md",
     "02 - Secondary Categories/02 - Network Reconnaissance.md",
     "04 - Templates/04 - Template Structure/0401 - Primary Category.md",
-    "05 - Content/HTB - GiveBack.md",
-    "05 - Content/CVE-2026-24061.md",
     "06 - Images/Pasted image 20260204113245.png",
     "06 - Images/Pasted image 20260204113047.png",
     "06 - Images/Pasted image 20260204111726.png",
