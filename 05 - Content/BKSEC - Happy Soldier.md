@@ -198,9 +198,9 @@ O:7:"Player":4:{
 
 After consulting Gemini, it seemed like PHP often uses a method like `unserialize()` for deserialization and a method called `__to_string()` if they were to utilize the string representation of an object. So I need to find the object that allows serialization and it has to have a `__to_string()` method implemented.
 
-### Inject payloads
-
-
+### Inject Payloads
+1. **Payload 1: Buff the stats**
+	This is because the challenge worked like a game, so I decided to try t
 ---
 
 ## Privilege Escalation (Root)
