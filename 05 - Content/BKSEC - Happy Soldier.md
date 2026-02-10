@@ -48,7 +48,16 @@ Take a look at the source code of the page, at the end there is a script about s
 ```html
 <script> 
 	const particlesContainer = document.getElementById('particles'); 
-	for (let i = 0; i < 30; i++) { const particle = document.createElement('div'); particle.className = 'particle'; particle.style.left = Math.random() * 100 + '%'; particle.style.animationDelay = Math.random() * 15 + 's'; particle.style.animationDuration = (Math.random() * 10 + 10) + 's'; particlesContainer.appendChild(particle); } let konamiCode = []; const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']; document.addEventListener('keydown', (e) => { konamiCode.push(e.key); konamiCode = konamiCode.slice(-10); if (konamiCode.join(',') === konamiSequence.join(',')) { const log = document.getElementById('combatLog'); const entry = document.createElement('div'); entry.className = 'log-entry'; entry.style.color = '#ff0'; entry.textContent = '> 🎮 CHEAT CODE ACTIVATED! But can you serialize your way to victory? 🎮'; log.appendChild(entry); log.scrollTop = log.scrollHeight; } }); const monster = document.getElementById('monster'); const fightButton = document.querySelector('.action-button'); fightButton.addEventListener('click', (e) => { monster.classList.add('shake'); setTimeout(() => monster.classList.remove('shake'), 500); }); </script>
+	for (let i = 0; i < 30; i++) { 
+		const particle = document.createElement('div'); 
+		particle.className = 'particle'; 
+		particle.style.left = Math.random() * 100 + '%'; 
+		particle.style.animationDelay = Math.random() * 15 + 's'; 
+		particle.style.animationDuration = (Math.random() * 10 + 10) + 's'; 
+		particlesContainer.appendChild(particle); 
+	} 
+	let konamiCode = []; 
+	const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']; document.addEventListener('keydown', (e) => { konamiCode.push(e.key); konamiCode = konamiCode.slice(-10); if (konamiCode.join(',') === konamiSequence.join(',')) { const log = document.getElementById('combatLog'); const entry = document.createElement('div'); entry.className = 'log-entry'; entry.style.color = '#ff0'; entry.textContent = '> 🎮 CHEAT CODE ACTIVATED! But can you serialize your way to victory? 🎮'; log.appendChild(entry); log.scrollTop = log.scrollHeight; } }); const monster = document.getElementById('monster'); const fightButton = document.querySelector('.action-button'); fightButton.addEventListener('click', (e) => { monster.classList.add('shake'); setTimeout(() => monster.classList.remove('shake'), 500); }); </script>
 ```
 
 ---
