@@ -83,7 +83,8 @@ The page it seems like the page will record the key press of the user and output
 
 So to test this out, I asked Gemini to generate a script to help me trigger the cheat code to see what happen.
 
-```
+```python
+
 ```
 
 ---
