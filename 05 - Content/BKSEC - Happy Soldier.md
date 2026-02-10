@@ -131,7 +131,7 @@ Looking a bit more, there seems to be nothing more so I decide to dig into modif
 
 I looked for the information about the format (the server was using PHP version `7.4.33` based on the response) and tried modifying each field of the string with different payloads to look for an injection point.
 
-### Try with the Object
+### Test the fields
 Sending an error cookie will lead to a rejection and return standard object:
 
 ```php
@@ -198,7 +198,7 @@ O:7:"Player":4:{
 
 After consulting Gemini, it seems like PHP often uses a method like `unserialize()` for deserialization and a method called `__to_string()` if they were to utilize the string representation of an object. So I need to find the object that allows serialization and it has to has a `__to_string()` method implemented.
 
-
+### 
 
 ---
 
