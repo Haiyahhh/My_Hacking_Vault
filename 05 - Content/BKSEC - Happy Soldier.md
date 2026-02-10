@@ -20,9 +20,9 @@ last_modified: 2026-02-10
 
 
 ## Executive Summary
-* **URL:** `10.10.10.x`
-* **OS:** Linux / Windows
-* **Key Technique:** (e.g., SQLi -> Cron Job Escalation)
+* **URL:** `http://103.77.175.40:8141`
+* **OS:** Linux
+* **Key Technique:** Argument Fuzzing to reveal hidden argument, this leads to 
 * **Status:** `In Progress`
 
 ---
