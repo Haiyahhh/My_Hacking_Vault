@@ -201,8 +201,9 @@ After consulting Gemini, it seemed like PHP often uses a method like `unserializ
 ### Inject Payloads
 > [!failure] Payload 1: Infinite Stats.
 > 
-> - As the challenge worked similar to a game, I decide to try buff the stats of the character to infinity. In PHP, infinity is d:INF and as 3 stats field all can hold double, just let them all have the INF value. I even change the name of the sword to something else as the system may have some background check whether the sword is .
-> 
+> - As the challenge worked similar to a game, I decide to try buff the stats of the character to infinity. In PHP, infinity is d:INF and as 3 stats field all can hold double, just let them all have the INF value. I even trued changing the name of the sword to something else as the system may have some background check whether the sword is a wooden sword.
+
+
 ---
 
 ## Privilege Escalation (Root)
