@@ -305,21 +305,34 @@ arjun -u http://103.77.175.40:8141
 [+] Parameters found: src
 ```
 For this I manage to find the source code for the background process that was responsible for processing the stats and checking it to defeat the the demon:
-
+```php
+[...]
+public function __wakeup() {        
+// if ($this->attack === 99999999999999999 || $this->weapon === "Golden Sword") {        
+if ($this->attack === 99999999999999999 && $this->weapon === "Golden Ultimate Extra Length Sword") {  
+            echo '<div class="flag-victory">  
+                    <div class="victory-content">  
+                        <div class="victory-icon">🏆</div>  
+                        <div class="victory-title">VICTORY!</div>  
+                        <div class="victory-subtitle">You have conquered the Serialized Demon!</div>  
+                        <div class="flag-box">  
+                            <div class="flag-label">YOUR FLAG:</div>  
+                            <div class="flag-text">' . htmlspecialchars(file_get_contents('/flag.txt')) . '</div>  
+                        </div>  
+                    </div>  
+                  </div>';  
+        }  
+    }
+[...]
+```
+I can just change the cookie accordingly and get the flag.
 
 ---
 
 ## Loot & Flags
 
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
+**Flag:**
 
----
-
-**References:** [Link](https://www.google.com/search?q=url)
+**Lessons:**
+>- Always do the recon thoroughly.
+>- Focus on more rewarding attack vector.
