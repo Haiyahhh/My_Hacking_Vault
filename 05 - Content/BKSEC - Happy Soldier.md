@@ -53,7 +53,28 @@ Finished
 ===============================================================
 
 # vhost scan
-
+gobuster vhost --url http://103.77.175.40:8141 --wordlist ~/Downloads/SecLists/Discovery/DNS/subdomains-top1million-20000.txt --append-domain 
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                       http://103.77.175.40:8141
+[+] Method:                    GET
+[+] Threads:                   10
+[+] Wordlist:                  /home/kali/Downloads/SecLists/Discovery/DNS/subdomains-top1million-20000.txt
+[+] User Agent:                gobuster/3.8
+[+] Timeout:                   10s
+[+] Append Domain:             true
+[+] Exclude Hostname Length:   false
+===============================================================
+Starting gobuster in VHOST enumeration mode
+===============================================================
+#www.103.77.175.40:8141 Status: 400 [Size: 302]
+#mail.103.77.175.40:8141 Status: 400 [Size: 302]
+Progress: 19966 / 19966 (100.00%)
+===============================================================
+Finished
+===============================================================
 ````
 Both `vhost` and `dir` scans revealed nothing so I decided to move on.
 Looking at `Wappalyzer` I saw that the website seem to be using PHP so I decided to try finding out if any PHP pages were exposed.
