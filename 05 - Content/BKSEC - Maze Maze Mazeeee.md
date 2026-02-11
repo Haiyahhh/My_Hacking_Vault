@@ -37,7 +37,11 @@ Following the link I got to things that seems to be the real content of this cha
 
 ![[Pasted image 20260211212141.png]]
 
-I tried clicking on one of the rectangle but nothing happened. Then I view the page source.
+I tried clicking on one of the rectangle but nothing happened. Then I inspect the page:
+
+![[Pasted image 20260211212925.png]]
+
+There is the title, and hundreds of rectangle elements inside `maze-container` element. I check out the cookie but seems like the page does not uses cookie. To find out more about what I need to do, I open `BurpSuite`:
 
 
 
