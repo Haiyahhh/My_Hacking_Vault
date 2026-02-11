@@ -105,7 +105,39 @@ Clicking on the html file (all files were html apparently) leads me to the html 
 
 The I wrote a script using simple BFS:
 ```python
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+from collections import deque
 
+START_URL = "http://103.77.175.40:8031/round2_qncdl1248dbsl/index.html"
+
+s = requests.Session()
+queue = deque([START_URL])
+visited = set([START_URL])
+
+while queue:
+    url = queue.popleft()
+    
+    try:
+        response = s.get(url, timeout=10)
+        page_content = response.text
+        if "BKSEC{" in page_content:
+            print(f"flag at: {url}")
+            break
+
+        soup = BeautifulSoup(page_content, 'html.parser')
+        links = soup.select('.directory-list a')
+        for link in links:
+            href = link.get('href')
+            full_url = urljoin(url, href)
+            if full_url not in visited:
+                visited.add(full_url)
+                queue.append(full_url)
+
+    except Exception as e:
+        print(f"ERROR: {e}")
+        pass
 ```
 
 ---
