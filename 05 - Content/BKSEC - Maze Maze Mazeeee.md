@@ -31,7 +31,9 @@ I instinctively know this might be a hint for me to check out the page's `robots
 
 ![[Pasted image 20260211211735.png]]
 
-The base64 encoded string `L3BhZ2VzL3BhZ2UtMS1Ub21ic3RvbmUuaHRtbA==` means
+There was a base64 encoded string `L3BhZ2VzL3BhZ2UtMS1Ub21ic3RvbmUuaHRtbA==` decoded to be `/pages/page-1-Tombstone.html`
+
+Accessing the page I got 
 
 ---
 
