@@ -139,6 +139,8 @@ while queue:
         print(f"ERROR: {e}")
         pass
 ```
+The code returned one link to a fake flag. There can be more than one fake flag so I decide to modify the code so that 
+
 
 ---
 
