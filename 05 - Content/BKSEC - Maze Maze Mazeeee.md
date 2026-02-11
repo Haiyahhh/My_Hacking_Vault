@@ -41,8 +41,9 @@ I tried clicking on one of the rectangle but nothing happened. Then I inspect th
 
 ![[Pasted image 20260211212925.png]]
 
-There is the title, and hundreds of rectangle elements inside `maze-container` element. I check out the cookie but seems like the page does not uses cookie. To find out more about what I need to do, I open `BurpSuite`:
+There is the title, and hundreds of rectangle elements inside `maze-container` element. I check out the cookie but seems like the page does not uses cookie. To find out more about what I need to do, I open `BurpSuite` but nothing notable was found.
 
+Then I tried asking Gemini for the challenge and it suggested me to find a rectangle that contains a link to next challenge (aka. one that contain an `<a>` tag)
 
 
 ---
