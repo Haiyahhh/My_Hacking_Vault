@@ -123,7 +123,7 @@ while queue:
         response = s.get(url, timeout=10)
         page_content = response.text
         if "BKSEC{" in page_content:
-            print(f"flag at: {url}")
+            print(f"Flag at: {url}")
             break
 
         soup = BeautifulSoup(page_content, 'html.parser')
@@ -139,26 +139,53 @@ while queue:
         print(f"ERROR: {e}")
         pass
 ```
-The code returned one link to a fake flag. There can be more than one fake flag so I decide to modify the code so that I print every flag I could find:
+
+The code returned one link to a fake flag. There could be more than one fake flag so I decided to modify the code so that printed every flag:
 
 ```python
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+from collections import deque
+import re
 
+START_URL = "http://103.77.175.40:8031/round2_qncdl1248dbsl/index.html"
+
+s = requests.Session()
+queue = deque([START_URL])
+visited = set([START_URL])
+
+while queue:
+    url = queue.popleft()
+    
+    try:
+        response = s.get(url, timeout=10)
+        page_content = response.text
+        
+        match = re.search(r"BKSEC\{.*?\}", page_content)
+        if match:
+            print(f"Flag: {match.group(0)}")
+        
+        soup = BeautifulSoup(page_content, 'html.parser')
+        links = soup.select('.directory-list a')
+        for link in links:
+            href = link.get('href')
+            full_url = urljoin(url, href)
+            if full_url not in visited:
+                visited.add(full_url)
+                queue.append(full_url)
+                
+    except Exception as e:
+        print(f"ERROR: {e}")
+        pass
 ```
 
+The result that had the real flag:
+
+![[Pasted image 20260211235502.png]]
 
 ---
 
 ## Loot & Flags
+Flag: BKSEC{f4st_runn3r_f4st_runn3r_f1a9c4!!!!!!!!}
 
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
-
----
-
-**References:** [Link](https://www.google.com/search?q=url)
