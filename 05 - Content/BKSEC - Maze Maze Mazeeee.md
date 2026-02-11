@@ -45,6 +45,49 @@ There is the title, and hundreds of rectangle elements inside `maze-container` e
 
 Then I tried asking Gemini for the challenge and it suggested me to find a rectangle that contains a link to next challenge (aka. one that contain an `<a>` tag)
 
+Looking at the response I got from `Burpsuite` and look for an `<a>` tag, there is indeed one single tag existed.
+
+![[Pasted image 20260211230941.png]]
+
+I saw the way and starts repeatedly doing the same thing as finding the `<a>` tag for about 20 times, and I realized maybe there can be hundreds of such levels, doing it manually would takes tremendous time. So I decide to write a script to navigate through the challenge.
+
+```python
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+import sys
+
+current_url = "http://103.77.175.40:8031/pages/page-1-Tombstone.html"  
+
+while True:
+
+    print(f"Checking: {current_url}")
+    try:
+        response = requests.get(current_url)
+        page_content = response.text
+        if "BKSEC{" in page_content:
+            print("flag at:" + current_url)
+            break
+
+        soup = BeautifulSoup(page_content, 'html.parser')
+        link_tag = soup.select_one('.rect a')
+        
+        if link_tag is None:
+            print("[-] No hidden link found on this page. Stopping.")
+            break
+
+        relative_link = link_tag.get('href')
+        if not relative_link:
+            print("[-] Found an anchor tag, but it has no href! Stopping.")
+            break
+        next_url = urljoin(current_url, relative_link)
+        current_url = next_url
+        
+    except Exception as e:
+        print(f"ERROR: {e}")
+        break
+```
+
 
 ---
 
