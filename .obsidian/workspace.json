@@ -37,6 +37,26 @@
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "a7d6352b61a06777",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "356b2a638e246ec6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "BKSEC - Maze Maze Mazeeee"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -226,8 +246,9 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a97099ae20eb4550",
+  "active": "356b2a638e246ec6",
   "lastOpenFiles": [
+    "06 - Images/Pasted image 20260211211735.png",
     "06 - Images/Pasted image 20260211211343.png",
     "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/BKSEC - Maze Maze Mazeeee.md",
@@ -248,7 +269,6 @@
     "06 - Images/Pasted image 20260208122024.png",
     "06 - Images/Pasted image 20260208121153.png",
     "06 - Images/Pasted image 20260208115912.png",
-    "06 - Images/Pasted image 20260208115651.png",
     "05 - Content/(incomplete) PHP Object Injection.md",
     "05 - Content/(incomplete) Cross-site Scripting.md",
     "05 - Content/(incomplete) BurpSuite.md",
