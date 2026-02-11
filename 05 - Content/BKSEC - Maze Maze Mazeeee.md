@@ -23,7 +23,7 @@ last_modified: 2026-02-11
 
 ## Reconnaissance
 ### Web Enumeration
-The page served a static home page that has an `<h1>` element saying "ARE YOU ROBOT?".
+The page served a static home page that has an `<h1>` element saying "ARE YOU ROBOT?", inspecting the page gives me know that the title of this page is called `Maze Entrance`, interesting 
 
 ![[Pasted image 20260211211343.png]]
 
