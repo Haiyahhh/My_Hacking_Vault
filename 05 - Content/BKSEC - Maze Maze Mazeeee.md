@@ -110,30 +110,30 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from collections import deque
 
-START_URL = "http://103.77.175.40:8031/round2_qncdl1248dbsl/index.html"
+start_url = "http://103.77.175.40:8031/round2_qncdl1248dbsl/index.html"
 
 s = requests.Session()
-queue = deque([START_URL])
-visited = set([START_URL])
+queue = deque([start_url])
+visited = set([start_url])
 
 while queue:
-    url = queue.popleft()
+    current_url = queue.popleft()
     
     try:
-        response = s.get(url, timeout=10)
+        response = s.get(current_url, timeout=10)
         page_content = response.text
         if "BKSEC{" in page_content:
-            print(f"Flag at: {url}")
+            print(f"Flag at: {current_url}")
             break
 
         soup = BeautifulSoup(page_content, 'html.parser')
         links = soup.select('.directory-list a')
         for link in links:
             href = link.get('href')
-            full_url = urljoin(url, href)
-            if full_url not in visited:
-                visited.add(full_url)
-                queue.append(full_url)
+            next_url = urljoin(current_url, href)
+            if next_url not in visited:
+                visited.add(next_url)
+                queue.append(next_url)
 
     except Exception as e:
         print(f"ERROR: {e}")
