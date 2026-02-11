@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Happy Soldier.md",
-                "mode": "preview",
+                "file": "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Happy Soldier"
+              "title": "BKSEC - Maze Maze Mazeeee"
             }
           }
         ],
@@ -228,8 +228,9 @@
   },
   "active": "a97099ae20eb4550",
   "lastOpenFiles": [
-    "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/BKSEC - Happy Soldier.md",
+    "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+    "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/(incomplete) SQLmap.md",
     "05 - Content/(incomplete) SQL Injection.md",
     "05 - Content/(incomplete) Gobuster.md",
