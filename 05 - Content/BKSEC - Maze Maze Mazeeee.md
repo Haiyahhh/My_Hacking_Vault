@@ -103,7 +103,7 @@ Clicking on the **PROCEED TO ROUND 2** led me to a webpage that was format like 
 Clicking on the html file (all files were html apparently) leads me to the html file of the same directory.
 - `/round2_qncdl1248dbsl/index.html` -> `/round2_qncdl1248dbsl/dnvgzrekzl.html`
 
-The script I used this time is:
+The I wrote a script using simple BFS:
 ```python
 
 ```
