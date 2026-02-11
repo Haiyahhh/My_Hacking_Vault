@@ -3,7 +3,7 @@ tags:
   - 🚩
 up:
   - "[[02 - Enumeration]]"
-platform: HackTheBox
+platform: BKSEC Training
 difficulty: Easy
 creation_date: 2026-02-11
 last_modified: 2026-02-11
@@ -22,21 +22,9 @@ last_modified: 2026-02-11
 ---
 
 ## Reconnaissance
-###  Scan
-```bash
-# Paste initial scan here
-````
-
 ### Web Enumeration
+First look into the page: 
 
-- **Technologies:** (Apache, PHP, etc.)
-    
-- **Fuzzing Results:**
-    
-    - `/admin` (403)
-        
-    - `/images` (200)
-        
 
 ---
 
