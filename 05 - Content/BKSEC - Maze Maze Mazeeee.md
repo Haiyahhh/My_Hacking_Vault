@@ -37,7 +37,7 @@ Following the link I got to things that seems to be the real content of this cha
 
 ![[Pasted image 20260211212141.png]]
 
-I tried cl
+I tried clicking on one of the rectangle but nothing happened. Then I view the page source.
 
 ---
 
