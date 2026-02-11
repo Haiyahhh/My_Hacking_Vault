@@ -23,7 +23,11 @@ last_modified: 2026-02-11
 
 ## Reconnaissance
 ### Web Enumeration
-The page served a static home page that has an `<h1>` element saying "A"
+The page served a static home page that has an `<h1>` element saying "ARE YOU ROBOT?".
+
+![[Pasted image 20260211211343.png]]
+
+I instinctively know this might be a hint for me to check out the page's `robots.txt` file 
 
 ---
 
