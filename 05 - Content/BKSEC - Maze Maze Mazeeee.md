@@ -39,6 +39,8 @@ Following the link I got to things that seems to be the real content of this cha
 
 I tried clicking on one of the rectangle but nothing happened. Then I view the page source.
 
+
+
 ---
 
 ## Foothold (User)
