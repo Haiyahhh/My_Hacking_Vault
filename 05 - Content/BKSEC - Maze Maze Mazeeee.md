@@ -23,8 +23,7 @@ last_modified: 2026-02-11
 
 ## Reconnaissance
 ### Web Enumeration
-First look into the page: 
-
+The page served a static home page that has an `<h1>` element saying "A"
 
 ---
 
