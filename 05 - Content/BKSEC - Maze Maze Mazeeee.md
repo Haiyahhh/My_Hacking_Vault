@@ -49,6 +49,8 @@ Looking at the response I got from `Burpsuite` and look for an `<a>` tag, there 
 
 ![[Pasted image 20260211230941.png]]
 
+---
+## Round 1: Find the `<a>` tag
 I saw the way and starts repeatedly doing the same thing as finding the `<a>` tag for about 20 times, and I realized maybe there can be hundreds of such levels, doing it manually would takes tremendous time. So I decide to write a script to navigate through the challenge.
 
 ```python
@@ -57,10 +59,9 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import sys
 
-current_url = "http://103.77.175.40:8031/pages/page-1-Tombstone.html"  
-
+current_url = "http://103.77.175.40:8031/pages/page-1-Tombstone.html"
+  
 while True:
-
     print(f"Checking: {current_url}")
     try:
         response = requests.get(current_url)
@@ -68,18 +69,10 @@ while True:
         if "BKSEC{" in page_content:
             print("flag at:" + current_url)
             break
-
+            
         soup = BeautifulSoup(page_content, 'html.parser')
         link_tag = soup.select_one('.rect a')
-        
-        if link_tag is None:
-            print("[-] No hidden link found on this page. Stopping.")
-            break
-
         relative_link = link_tag.get('href')
-        if not relative_link:
-            print("[-] Found an anchor tag, but it has no href! Stopping.")
-            break
         next_url = urljoin(current_url, relative_link)
         current_url = next_url
         
@@ -88,43 +81,31 @@ while True:
         break
 ```
 
+The code did not return a flag but stopped at level 101, when I entered the page at that level there is a button that leads to a second round.
 
----
-
-## Foothold (User)
-
-**Path:** <% tp.file.cursor(1) %>
-
-### Step 1: Discovery
-
-(What did you find?)
-
-### Step 2: Exploitation
-
-(The exact payload or exploit used).
-
-> [!failure] 🐇 Rabbit Hole I spent time trying to brute force SSH.
-> 
-> - **Correction:** Always check for `id_rsa` keys in web directories first.
->     
-
----
-
-## Privilege Escalation (Root)
-
-**Current User:** `www-data`
-
-### Enumeration
-
-- **LinPeas Findings:** `Vulnerable Sudo version`
-    
-
-### Exploitation
-
-Bash
-
+```powershell
+Checking: http://103.77.175.40:8031/pages/page-96-Avra_Valley.html
+Checking: http://103.77.175.40:8031/pages/page-97-Altar_Valley.html
+Checking: http://103.77.175.40:8031/pages/page-98-San_Rafael_Valley.html
+Checking: http://103.77.175.40:8031/pages/page-99-Sonoita_Valley.html
+Checking: http://103.77.175.40:8031/pages/page-100-Sulphur_Springs_Valley.html
+Checking: http://103.77.175.40:8031/pages/page-101-qncdl1248dbsl.html
+ERROR: 'NoneType' object has no attribute 'get'
 ```
-# Commands to get root
+
+![[Pasted image 20260211232402.png]]
+
+---
+## Round 2: Find the flag.
+Clicking on the **PROCEED TO ROUND 2** led me to a webpage that was format like a file system, where there were folders and files. Clicking on the folder led me to the `index.html` file of the directory of that folder, which had the same system file interface. For example:
+-	`/round2_qncdl1248dbsl/index.html` (parent) ->  `/round2_qncdl1248dbsl/giftsgssul/index.html`
+
+Clicking on the html file (all files were html apparently) leads me to the html file of the same directory.
+- `/round2_qncdl1248dbsl/index.html` -> `/round2_qncdl1248dbsl/dnvgzrekzl.html`
+
+The script I used this time is:
+```python
+
 ```
 
 ---
