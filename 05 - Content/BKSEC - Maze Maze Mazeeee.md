@@ -27,7 +27,7 @@ The page served a static home page that has an `<h1>` element saying "ARE YOU RO
 
 ![[Pasted image 20260211211343.png]]
 
-I instinctively know this might be a hint for me to check out the page's `robots.txt` file 
+I instinctively know this might be a hint for me to check out the page's `robots.txt` file (which is a page that was normally made to guide search engines' bots)
 
 ---
 
