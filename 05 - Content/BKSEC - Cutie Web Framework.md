@@ -126,6 +126,33 @@ const authPlugin = new Elysia({ name: 'auth' })
     })
   })
 ```
+
+```typescript
+// admin routes
+const adminPlugin = new Elysia({ prefix: '/admin' })
+    // Inherits the authPlugin to protect all admin routes, only logged in users can access these routes
+  .use(authPlugin)
+
+    // A profile route that returns the username and role of the logged in user, it does not need any parameters
+  .get('/profile', ({ session }) => {
+    return {
+      message: 'Admin profile',
+      user: session?.username,
+      role: session?.role
+    }
+  })
+
+    // A secrets route that returns all secrets in the database, only users with admin role can access this route
+  .get('/secrets', async ({ session }) => {
+    if (session?.role !== 'admin') {
+      return { error: 'Admin access required' }
+    }
+    const secrets = await sql`SELECT * FROM secrets`
+    return { secrets }
+  })
+```
+
+
 ### Web Enumeration
 
 - **Technologies:** (Apache, PHP, etc.)
