@@ -152,7 +152,59 @@ const adminPlugin = new Elysia({ prefix: '/admin' })
   })
 ```
 
+**Main app**
+```typescript
+// Main app
+const app = new Elysia()
+    // Inherits the adminPlugin
+  .use(adminPlugin)
 
+    // A public route that anyone can access, it just returns a welcome message
+  .get('/', () => ({
+    message: 'Welcome to SecureAPI v1.0'
+  }))
+
+    // A search route that allows users to search for other users by username
+  // It accepts a query parameter "username" and an optional "orderBy" parameter to sort the results by username or role
+  .use(
+    yoga({
+    // Type defintion for the GraphQL API
+    // Query type: has a search field that takes username and orderBy as arguments and return a list of User objects
+    // User type: has username and role fields
+      typeDefs: `
+        type Query {
+          search(username: String!, orderBy: String): [User]
+        }
+        type User {
+          username: String
+          role: String
+        }
+      `,
+      resolvers: {
+        Query: {
+          search: async (_: any, { username, orderBy }: { username: string; orderBy?: string }) => {
+            if (!username) {
+              throw new Error('Please provide username parameter')
+            }
+            try {
+              let results
+              if (orderBy) {
+                results = await sql.unsafe(`SELECT username, role FROM users WHERE username LIKE '%${username}%' ORDER BY ${orderBy}`)
+              } else {
+                results = await sql.unsafe(`SELECT username, role FROM users WHERE username LIKE '%${username}%'`)
+
+              }
+              return results
+            } catch (e: any) {
+              throw new Error(`Search failed: ${e.message}`)
+            }
+          }
+        }
+      }
+    })
+  )
+  .listen(3000)
+```
 ### Web Enumeration
 
 - **Technologies:** (Apache, PHP, etc.)
