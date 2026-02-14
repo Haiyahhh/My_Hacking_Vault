@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+                "file": "05 - Content/BKSEC - Cutie Web Framework.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Maze Maze Mazeeee"
+              "title": "BKSEC - Cutie Web Framework"
             }
           }
         ],
@@ -48,12 +48,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+                "file": "05 - Content/BKSEC - Cutie Web Framework.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Maze Maze Mazeeee"
+              "title": "BKSEC - Cutie Web Framework"
             }
           }
         ]
@@ -246,15 +246,18 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a97099ae20eb4550",
+  "active": "356b2a638e246ec6",
   "lastOpenFiles": [
+    "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+    "05 - Content/BKSEC - Cutie Web Framework.md",
+    "05 - Content/BKSEC - Report the violation.md",
+    "05 - Content/CVE-2026-24061.md",
+    "05 - Content/HTB - GiveBack.md",
+    "05 - Content/BKSEC - Low Effort SNS.md",
+    "05 - Content/BKSEC - Happy Soldier.md",
     "06 - Images/Pasted image 20260211235502.png",
     "06 - Images/Pasted image 20260211232402.png",
     "06 - Images/Pasted image 20260211230941.png",
-    "05 - Content/BKSEC - Report the violation.md",
-    "05 - Content/BKSEC - Maze Maze Mazeeee.md",
-    "05 - Content/BKSEC - Low Effort SNS.md",
-    "05 - Content/BKSEC - Happy Soldier.md",
     "05 - Content/(incomplete) SQLmap.md",
     "06 - Images/Pasted image 20260211212925.png",
     "06 - Images/Pasted image 20260211212141.png",
@@ -264,18 +267,15 @@
     "05 - Content/(incomplete) Gobuster.md",
     "05 - Content/(incomplete) FFUF.md",
     "06 - Images/Pasted image 20260210230305.png",
-    "05 - Content/HTB - GiveBack.md",
     "conflict-files-obsidian-git.md",
     "06 - Images/Pasted image 20260210093656.png",
     "06 - Images/Pasted image 20260210092903.png",
-    "06 - Images/Pasted image 20260210091426.png",
     "05 - Content/(incomplete) PHP Object Injection.md",
     "05 - Content/(incomplete) Cross-site Scripting.md",
     "05 - Content/(incomplete) BurpSuite.md",
     "05 - Content/(incomplete) Arjun.md",
     "02 - Secondary Categories/02 - Enumeration.md",
     "02 - Secondary Categories/02 - (incomplete) Data Exfiltration.md",
-    "05 - Content/CVE-2026-24061.md",
     "05 - Content/SQL Injection (incomplete).md",
     "05 - Content/Nmap.md",
     "01 - Primary Categories/01 - Network Security.md",
