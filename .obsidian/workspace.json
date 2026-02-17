@@ -206,13 +206,23 @@
               "icon": "lucide-file-signature",
               "title": "Footnotes"
             }
+          },
+          {
+            "id": "eec856571e37fbc0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -231,7 +241,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "b97813b33fb6939c",
+  "active": "a97099ae20eb4550",
   "lastOpenFiles": [
     "05 - Content/BKSEC - Happy Soldier.md",
     "05 - Content/BKSEC - Happy Soldier Revenge.md",
