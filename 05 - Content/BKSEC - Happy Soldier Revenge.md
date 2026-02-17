@@ -26,7 +26,7 @@ last_modified: 2026-02-17
 
 ## Reconnaissance
 ### Gobuster Scan
-The result is the same as the previous version of this challenge: [[BKSEC - Happy Soldier]]
+The result was the same as the previous version of this challenge: [[BKSEC - Happy Soldier]]
 
 ### Arjun Scan
 The first scan without any argument actually revealed nothing.
@@ -38,30 +38,60 @@ The second scan using the `common.txt` wordlist in `SecList` revealed the famili
 
 ---
 ## Exploit The Exposed file
-Based on the content of the exposed file, it seems like what we need to do is the same as in the previous version, that is changing the content of the `save_data` cookie so that it matches the win condition.
+Based on the content of the exposed file, it seemed like what I needed to do was the same as in the previous version, that was changing the content of the `save_data` cookie so that it matches the win condition.
 
-This is the function that defines the win condition
+This is the format of the `Player` object:
 ```php
-public function __wakeup() {        $secret = file_get_contents('/secret.txt');  
-        if($this->sig == md5($secret . $this->weapon))  
-        {  
-            if (stripos($this->weapon, "Golden") !== false) {  
-                echo '<div class="flag-victory">  
-                    <div class="victory-content">  
-                        <div class="victory-icon">🏆</div>  
-                        <div class="victory-title">VICTORY!</div>  
-                        <div class="victory-subtitle">You have conquered the Serialized Demon!</div>  
-                        <div class="flag-box">  
-                            <div class="flag-label">YOUR FLAG:</div>  
-                            <div class="flag-text">' . htmlspecialchars(file_get_contents('/flag.txt')) . '</div>  
-                        </div>  
-                    </div>  
-                  </div>';  
-            }  
-        }  
-    }
+public $health;
+public $attack;
+public $coins;
+public $weapon;
+public $sig;
+  
+public function __construct($health, $attack, $coins, $weapon) {
+    $this->health = $health;
+    $this->attack = $attack;
+    $this->coins = $coins;
+    $this->weapon = $weapon;
+    $secret = file_get_contents('/secret.txt');
+    $this->sig = md5($secret . "Wooden Sword");  
+}
 ```
+Again, there were no constraint for the data type of the attributes. 
 
+This was the function that defines the win condition
+```php
+public function __wakeup() {
+    $secret = file_get_contents('/secret.txt');
+    if($this->sig == md5($secret . $this->weapon)) {
+        if (stripos($this->weapon, "Golden") !== false) {
+            echo '<div class="flag-victory">
+                <div class="victory-content">
+                    <div class="victory-icon">🏆</div>
+                    <div class="victory-title">VICTORY!</div>
+                    <div class="victory-subtitle">You have conquered the Serialized Demon!</div>
+                    <div class="flag-box">
+                        <div class="flag-label">YOUR FLAG:</div>
+                        <div class="flag-text">' . htmlspecialchars(file_get_contents('/flag.txt')) . '</div>
+                    </div>
+                </div>
+                </div>';
+        }
+    }
+}
+```
+There were two conditions:
+*  The signature must match the concatenation between the `secret` and the name of the weapon.
+*  The name of the weapon must contain the word "Golden"
+
+**Guess the Secret**
+I assumed that the secret may be able to be cracked using a rainbow table. Since I already got the hash for `Wooden Sword` by decode the `save data` cookie. I can just pass the hash into `hashcat` to see if I get anything.
+
+(insert hashcat output)
+
+The secret was not cracked. So we have to move to another method.
+
+**Exploit the Loose Comparison**
 
 ---
 
