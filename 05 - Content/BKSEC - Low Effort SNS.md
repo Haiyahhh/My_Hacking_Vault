@@ -3,7 +3,7 @@ tags:
   - 🚩
 up:
   - "[[02 - (incomplete) Data Exfiltration]]"
-platform: BKSec Training
+platform: BKSEC Training
 difficulty: Easy
 creation_date: 2026-02-08
 last_modified: 2026-02-08

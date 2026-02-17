@@ -3,7 +3,7 @@ tags:
   - 🚩
 up:
   - "[[02 - Enumeration]]"
-platform: HackTheBox
+platform: BKSEC Training
 difficulty: Easy
 creation_date: 2026-02-10
 last_modified: 2026-02-10
