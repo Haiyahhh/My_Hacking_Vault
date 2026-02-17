@@ -109,11 +109,4 @@ O:6:"Player":5 {
 
 ## Loot & Flags
 
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
+**Flag:** BKSEC{c0ngratulat10ns_y0u_h4ve_m4st3red_th1s_g4me_d3a7b9}
