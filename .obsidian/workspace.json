@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Happy Soldier Revenge.md",
+                "file": "01 - Primary Categories/01 - CTF operation.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Happy Soldier Revenge"
+              "title": "01 - CTF operation"
             }
           }
         ]
@@ -243,13 +243,14 @@
   },
   "active": "a97099ae20eb4550",
   "lastOpenFiles": [
-    "05 - Content/BKSEC - Happy Soldier.md",
+    "05 - Content/BKSEC - Report the violation.md",
+    "01 - Primary Categories/01 - CTF operation.md",
     "05 - Content/BKSEC - Happy Soldier Revenge.md",
+    "05 - Content/BKSEC - Happy Soldier.md",
     "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/BKSEC - Cutie Web Framework.md",
     "05 - Content/(incomplete) Hashcat.md",
     "05 - Content/BKSEC - Maze Maze Mazeeee.md",
-    "05 - Content/BKSEC - Report the violation.md",
     "05 - Content/CVE-2026-24061.md",
     "05 - Content/HTB - GiveBack.md",
     "06 - Images/Pasted image 20260211235502.png",
@@ -278,7 +279,6 @@
     "01 - Primary Categories/01 - Network Security.md",
     "05 - Content/SQLmap (incomplete).md",
     "04 - Templates/04 - Template Structure/0405 - Tool.md",
-    "04 - Templates/04 - Template Structure/0404 - Technique.md",
     "Untitled.base",
     "03 - Content",
     "04 - Templates/04 - Template Structure",
