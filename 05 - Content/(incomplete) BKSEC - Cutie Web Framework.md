@@ -9,7 +9,7 @@ creation_date: 2026-02-14
 last_modified: 2026-02-14
 ---
 
-# 🚩 [[BKSEC - Cutie Web Framework]]
+# 🚩 [[(incomplete) BKSEC - Cutie Web Framework]]
 **Primary:** [[01 - Web Security]]
 
 **Secondary:** [[02 - (incomplete) Data Exfiltration]]
