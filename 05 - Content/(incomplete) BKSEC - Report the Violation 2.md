@@ -4,7 +4,7 @@ tags:
 up:
   - "[[02 - (incomplete) Data Exfiltration]]"
   - "[[02 - Enumeration]]"
-platform: HackTheBox
+platform: BKSEC Training
 difficulty: Medium
 creation_date: 2026-02-21
 last_modified: 2026-02-21
