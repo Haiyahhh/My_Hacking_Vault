@@ -28,7 +28,32 @@ last_modified: 2026-02-21
 ### Gobuster Scan
 The scan revealed only the directory `/changelog` that has been previously mentioned in the description of the challenge.
 ```bash
-# Paste initial scan here
+gobuster dir -u http://103.77.175.40:8255/ -w ~/Downloads/SecLists/Discovery/Web-Content/raft-medium-directories-lowercase.txt
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://103.77.175.40:8255/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /home/kali/Downloads/SecLists/Discovery/Web-Content/raft-medium-directories-lowercase.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/changelog            (Status: 200) [Size: 449]
+Progress: 4963 / 26583 (18.67%)[ERROR] error on word advent: timeout occurred during the request
+[ERROR] error on word adv_images: timeout occurred during the request
+[ERROR] error on word advisor: timeout occurred during the request
+[...]
+Progress: 24713 / 26583 (92.97%)[ERROR] error on word gesuch: timeout occurred during the request
+Progress: 26583 / 26583 (100.00%)
+===============================================================
+Finished
+===============================================================
+
 ````
 
 ### Web Enumeration
