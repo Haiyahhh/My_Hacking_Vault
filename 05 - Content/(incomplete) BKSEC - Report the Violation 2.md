@@ -379,7 +379,18 @@ I modified the SQLi payload to `1 AND SUBSTR((SELECT ${column_name} FROM securit
 The flag was found in the `content` column. Since the admin only spend 5 seconds each report, I only exfiltrate 10 positions at a time.
 
 ---
-## Loot & Flags
+## Flags
 **Flag:** BKSEC{I_th1nk_th4t_l0c4lhost_1s_s4f3_8MF3qVKpOf}
 
 ---
+
+## Lessons
+### 1. A Content Security Policy (CSP) is Only as Strong as its Weakest Link
+- **Allowing `'unsafe-eval'`** defeats the whole purpose of blocking inline scripts. It allows reactive framework to turn raw strings into executable code.
+- **Whitelisting an entire CDN** practically whitelisting millions of libraries, which akin to not doing anything.
+- **FIX:** 
+	- **Host JS files locally** instead of relying on public CDNs. 
+	- **Remove `'unsafe-eval'`**
+
+### 2. Always use Parameterized Queries.
+- The heading explains itself. Always use **Parameterized Queries** to prevent SQLi attacks.
