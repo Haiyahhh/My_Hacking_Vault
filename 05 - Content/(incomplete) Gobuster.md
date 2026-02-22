@@ -14,15 +14,27 @@ last_modified: 2026-02-08
 
 ## Installation
 ```bash
-# Install command (e.g., sudo apt install nmap)
+sudo apt install gobuster
 ````
 
-## Common Commands
+## Core Modes
+This defines what you are brute-forcing.
 
-|**Command**|**Description**|
+|**Mode**|**Description**|
 |---|---|
-|`cmd -flag`|Does thing A|
-|`cmd -flag2`|Does thing B|
+|`dir`|Directories|
+|`dns`|Subdomains|
+|`vhost`|Virtual hosts (one IP hosts multiple sites)|
+|`s3`|Public Amazon S3 buckets|
+|`fuzz`|Generic fuzzing mode|
+
+## Common Commands
+1. Directory Brute-Forcing
+```bash
+gobuster dir -u <target_URL> -w ~/Downloads/SecLists/.
+```
+1. Search for Specific File Extensions (`.html`, `.php`, `.bak`, `.txt`,...)
+2. 
 
 ## Tips & Tricks
 
