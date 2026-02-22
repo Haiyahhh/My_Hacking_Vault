@@ -14,7 +14,7 @@ last_modified: 2026-02-17
 
 **Secondary:** [[02 - Enumeration]]
 
-**Related Tools:** [[(incomplete) BurpSuite]], [[(incomplete) Arjun]], [[(incomplete) Hashcat]]
+**Related Tools:** [[(incomplete) BurpSuite]], [[Arjun]], [[(incomplete) Hashcat]]
 
 
 ## Executive Summary

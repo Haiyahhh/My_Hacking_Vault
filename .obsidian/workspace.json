@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Report the Violation 2.md",
+                "file": "05 - Content/BKSEC - Happy Soldier Revenge.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Report the Violation 2"
+              "title": "BKSEC - Happy Soldier Revenge"
             }
           },
           {
@@ -238,16 +238,17 @@
   },
   "active": "da97f4f5813c96fa",
   "lastOpenFiles": [
-    "05 - Content/(incomplete) SQL Injection.md",
-    "05 - Content/(incomplete) SQLmap.md",
     "05 - Content/BKSEC - Cutie Web Framework.md",
     "05 - Content/BKSEC - Happy Soldier.md",
     "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/BKSEC - Maze Maze Mazeeee.md",
-    "05 - Content/BKSEC - Report the Violation 2.md",
     "05 - Content/BKSEC - Report the Violation.md",
-    "05 - Content/BKSEC - Happy Soldier Revenge.md",
+    "05 - Content/BKSEC - Report the Violation 2.md",
+    "05 - Content/CVE-2026-24061.md",
     "05 - Content/(incomplete) Arjun.md",
+    "05 - Content/BKSEC - Happy Soldier Revenge.md",
+    "05 - Content/(incomplete) SQL Injection.md",
+    "05 - Content/(incomplete) SQLmap.md",
     "06 - Images/Pasted image 20260222101403.png",
     "06 - Images/Pasted image 20260222100025.png",
     "06 - Images/Pasted image 20260222095313.png",
@@ -273,7 +274,6 @@
     "05 - Content/(incomplete) PHP Object Injection.md",
     "05 - Content/(incomplete) FFUF.md",
     "05 - Content/(incomplete) Gobuster.md",
-    "05 - Content/(incomplete) Hashcat.md",
     "Untitled.base",
     "03 - Content",
     "04 - Templates/04 - Template Structure",

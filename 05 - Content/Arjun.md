@@ -7,7 +7,7 @@ aliases: []
 creation_date: 2026-02-10
 last_modified: 2026-02-10
 ---
-# 🛠️ [[(incomplete) Arjun]]
+# 🛠️ [[Arjun]]
 **Primary:** [[01 - Web Security]]
 
 **Secondary:** [[02 - Enumeration]]
@@ -30,24 +30,14 @@ sudo apt install arjun
 |`arjun -i targets.txt`|Scan multiple targets|
 |`arjun -u <target_URL> --passive`|Query external databases for past parameters|
 |`arjun -u <target_URL> --stable`|Dealing with rate-limiting by adding random delay|
+|`arjun -u <target_URL> --rate-limit <some_number>`|Limit the number of request per second|
 |`arjun -u <target_URL> --headers "Cookie: session=<...>; Authorization: <...>"`|Authenticated scanning| 
-
-## Advanced Commands 
-|**Command**|**Description**|
-|---|---|
-|`arjun -u <target_URL> -oJ results.json`|Output into another|
-
-## Tips & Tricks
-
-- Tip 1...
-    
+|`arjun -u <target_URL> -oJ results.json`|Output into a json file |
 
 ## Related Usage
 
 ### CTFs
+[[BKSEC - Happy Soldier]]
+[[BKSEC - Happy Soldier Revenge]]
 
 ### Techniques
-
----
-
-**References:** [Link](https://www.google.com/search?q=url)
