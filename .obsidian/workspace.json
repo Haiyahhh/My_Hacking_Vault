@@ -6,7 +6,6 @@
       {
         "id": "5d567fb322bc92b1",
         "type": "tabs",
-        "dimension": 36.67205169628433,
         "children": [
           {
             "id": "b97813b33fb6939c",
@@ -28,37 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/BKSEC - Cutie Web Framework.md",
+                "file": "05 - Content/(incomplete) Arjun.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "BKSEC - Cutie Web Framework"
+              "title": "(incomplete) Arjun"
             }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "ed977cc2475e2ac9",
-        "type": "tabs",
-        "dimension": 63.32794830371567,
-        "children": [
-          {
-            "id": "6504ada13d92c3ee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Content/BKSEC - Cutie Web Framework.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "BKSEC - Cutie Web Framework"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -125,7 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 386.50418853759766
   },
   "right": {
     "id": "c9584ff9768d1b3f",
@@ -260,39 +238,39 @@
   },
   "active": "da97f4f5813c96fa",
   "lastOpenFiles": [
+    "05 - Content/(incomplete) SQL Injection.md",
+    "05 - Content/(incomplete) SQLmap.md",
+    "05 - Content/BKSEC - Cutie Web Framework.md",
+    "05 - Content/BKSEC - Happy Soldier.md",
+    "05 - Content/BKSEC - Low Effort SNS.md",
+    "05 - Content/BKSEC - Maze Maze Mazeeee.md",
+    "05 - Content/BKSEC - Report the Violation 2.md",
+    "05 - Content/BKSEC - Report the Violation.md",
+    "05 - Content/BKSEC - Happy Soldier Revenge.md",
+    "05 - Content/(incomplete) Arjun.md",
     "06 - Images/Pasted image 20260222101403.png",
     "06 - Images/Pasted image 20260222100025.png",
     "06 - Images/Pasted image 20260222095313.png",
     "06 - Images/Pasted image 20260222094835.png",
-    "05 - Content/BKSEC - Report the Violation 2.md",
-    "05 - Content/BKSEC - Cutie Web Framework.md",
     "05 - Content/(incomplete) Cross-site Scripting.md",
     "05 - Content/(incomplete) BurpSuite.md",
     "01 - Primary Categories/01 - CTF operation.md",
     "conflict-files-obsidian-git.md",
     "06 - Images/Pasted image 20260221173315.png",
     "06 - Images/Pasted image 20260221170557.png",
-    "05 - Content/BKSEC - Report the Violation.md",
-    "05 - Content/BKSEC - Maze Maze Mazeeee.md",
-    "05 - Content/BKSEC - Happy Soldier Revenge.md",
-    "05 - Content/BKSEC - Happy Soldier.md",
-    "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/HTB - GiveBack.md",
     "05 - Content/(incomplete) Client-side Template Injection.md",
     "06 - Images/Pasted image 20260221162525.png",
     "06 - Images/Pasted image 20260221101302.png",
     "06 - Images/Pasted image 20260221100712.png",
     "06 - Images/Pasted image 20260221095824.png",
-    "06 - Images/Pasted image 20260221095631.png",
     "05 - Content/(incomplete) Server-side Request Forgery.md",
     "04 - Templates/04 - Template Structure/0406 - Writeup.md",
     "05 - Content/(incomplete) CSP (Content Security Policy) Bypass.md",
     "02 - Secondary Categories/02 - (incomplete) Data Exfiltration.md",
     "02 - Secondary Categories/02 - Content Security Policy Bypass.md",
     "02 - Secondary Categories/02 - Argument Injection.md",
-    "05 - Content/(incomplete) SQLmap.md",
     "05 - Content/(incomplete) PHP Object Injection.md",
-    "05 - Content/(incomplete) Arjun.md",
     "05 - Content/(incomplete) FFUF.md",
     "05 - Content/(incomplete) Gobuster.md",
     "05 - Content/(incomplete) Hashcat.md",
