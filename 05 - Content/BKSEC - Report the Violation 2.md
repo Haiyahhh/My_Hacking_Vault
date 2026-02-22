@@ -10,7 +10,7 @@ creation_date: 2026-02-21
 last_modified: 2026-02-21
 ---
 
-# 🚩 [[(incomplete) BKSEC - Report the Violation 2]]
+# 🚩 [[BKSEC - Report the Violation 2]]
 **Primary:** [[01 - Web Security]]
 
 **Secondary:** [[02 - Enumeration]], [[02 - (incomplete) Data Exfiltration]]

@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/(incomplete) BKSEC - Report the Violation 2.md",
+                "file": "05 - Content/BKSEC - Report the Violation 2.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "(incomplete) BKSEC - Report the Violation 2"
+              "title": "BKSEC - Report the Violation 2"
             }
           },
           {
@@ -28,12 +28,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/(incomplete) BKSEC - Report the Violation 2.md",
+                "file": "05 - Content/(incomplete) Cross-site Scripting.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "(incomplete) BKSEC - Report the Violation 2"
+              "title": "(incomplete) Cross-site Scripting"
             }
           }
         ],
@@ -50,12 +50,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/(incomplete) BKSEC - Report the Violation 2.md",
+                "file": "05 - Content/BKSEC - Report the Violation 2.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "(incomplete) BKSEC - Report the Violation 2"
+              "title": "BKSEC - Report the Violation 2"
             }
           }
         ]
@@ -260,9 +260,11 @@
   },
   "active": "da97f4f5813c96fa",
   "lastOpenFiles": [
+    "05 - Content/(incomplete) BurpSuite.md",
+    "05 - Content/(incomplete) BKSEC - Cutie Web Framework.md",
+    "05 - Content/BKSEC - Report the Violation 2.md",
     "01 - Primary Categories/01 - CTF operation.md",
     "conflict-files-obsidian-git.md",
-    "05 - Content/(incomplete) BKSEC - Report the Violation 2.md",
     "06 - Images/Pasted image 20260221173315.png",
     "06 - Images/Pasted image 20260221170557.png",
     "05 - Content/BKSEC - Report the Violation.md",
@@ -271,7 +273,6 @@
     "05 - Content/BKSEC - Happy Soldier.md",
     "05 - Content/BKSEC - Low Effort SNS.md",
     "05 - Content/HTB - GiveBack.md",
-    "05 - Content/(incomplete) BurpSuite.md",
     "05 - Content/(incomplete) Client-side Template Injection.md",
     "06 - Images/Pasted image 20260221162525.png",
     "06 - Images/Pasted image 20260221101302.png",
@@ -281,7 +282,6 @@
     "06 - Images/Pasted image 20260221095106.png",
     "05 - Content/(incomplete) Cross-site Scripting.md",
     "05 - Content/(incomplete) Server-side Request Forgery.md",
-    "05 - Content/(incomplete) BKSEC - Cutie Web Framework.md",
     "04 - Templates/04 - Template Structure/0406 - Writeup.md",
     "05 - Content/(incomplete) CSP (Content Security Policy) Bypass.md",
     "02 - Secondary Categories/02 - (incomplete) Data Exfiltration.md",
