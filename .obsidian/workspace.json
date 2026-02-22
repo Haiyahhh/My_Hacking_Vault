@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Content/(incomplete) Arjun.md",
+                "file": "05 - Content/Arjun.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "(incomplete) Arjun"
+              "title": "Arjun"
             }
           }
         ],
@@ -236,7 +236,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "da97f4f5813c96fa",
+  "active": "eec856571e37fbc0",
   "lastOpenFiles": [
     "05 - Content/BKSEC - Cutie Web Framework.md",
     "05 - Content/BKSEC - Happy Soldier.md",
@@ -245,7 +245,7 @@
     "05 - Content/BKSEC - Report the Violation.md",
     "05 - Content/BKSEC - Report the Violation 2.md",
     "05 - Content/CVE-2026-24061.md",
-    "05 - Content/(incomplete) Arjun.md",
+    "05 - Content/Arjun.md",
     "05 - Content/BKSEC - Happy Soldier Revenge.md",
     "05 - Content/(incomplete) SQL Injection.md",
     "05 - Content/(incomplete) SQLmap.md",
