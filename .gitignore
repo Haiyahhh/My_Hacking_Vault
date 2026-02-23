@@ -1,0 +1,11 @@
+# Ignore Obsidian Workspace layouts (stops the endless sync loops)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace-desktop.json
+
+# Ignore Obsidian trash
+.trash/
+
+# OS generated files
+.DS_Store
+desktop.ini
