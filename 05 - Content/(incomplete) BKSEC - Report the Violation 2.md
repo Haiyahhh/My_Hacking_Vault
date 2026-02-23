@@ -4,13 +4,13 @@ tags:
 up:
   - "[[02 - (incomplete) Data Exfiltration]]"
   - "[[02 - Enumeration]]"
-platform: BKSEC Training
+platform: HackTheBox
 difficulty: Medium
 creation_date: 2026-02-21
 last_modified: 2026-02-21
 ---
 
-# 🚩 [[BKSEC - Report the Violation 2]]
+# 🚩 [[(incomplete) BKSEC - Report the Violation 2]]
 **Primary:** [[01 - Web Security]]
 
 **Secondary:** [[02 - Enumeration]], [[02 - (incomplete) Data Exfiltration]]
@@ -53,6 +53,7 @@ Progress: 26583 / 26583 (100.00%)
 ===============================================================
 Finished
 ===============================================================
+
 ````
 
 ### Web Enumeration
@@ -125,8 +126,8 @@ Visiting the dashboard I receive the `Forbidden`. I needed to XSS into this page
 ## Cross-site Scripting
 Looking at comment-posting request, I compare it with the request from the previous version of the page and it seems like the most suspicious is the `Content-Security-Policy` header:
 - `default-src 'none'`: Only allow mentioned resource.
-- `style-src 'self'`: Only allow CSS style loaded from the same origin.
-- `img-src 'self'`: Only allow images loaded from the same origin.
+- `style-src 'self'`: Only allow CSS style loaded from the same domain.
+- `img-src 'self'`: Only allow images loaded from the same domain.
 - `frame-src 'none'`: disable `<iframe>` or `<frame>`
 - `base-uri 'none'`: disable `<base>`
 - `connect-src 'self'`: the browser's java script can only send background network request to its own server (things like `fetch()`, `XMLHttpRequest`).
@@ -379,18 +380,7 @@ I modified the SQLi payload to `1 AND SUBSTR((SELECT ${column_name} FROM securit
 The flag was found in the `content` column. Since the admin only spend 5 seconds each report, I only exfiltrate 10 positions at a time.
 
 ---
-## Flags
+## Loot & Flags
 **Flag:** BKSEC{I_th1nk_th4t_l0c4lhost_1s_s4f3_8MF3qVKpOf}
 
 ---
-
-## Lessons
-### 1. A Content Security Policy (CSP) is Only as Strong as its Weakest Link
-- **Allowing `'unsafe-eval'`** defeats the whole purpose of blocking inline scripts. It allows reactive framework to turn raw strings into executable code.
-- **Whitelisting an entire CDN** practically whitelisting millions of libraries, which akin to not doing anything.
-- **FIX:** 
-	- **Host JS files locally** instead of relying on public CDNs. 
-	- **Remove `'unsafe-eval'`**
-
-### 2. Always use Parameterized Queries.
-- The heading explains itself. Always use **Parameterized Queries** to prevent SQLi attacks.
