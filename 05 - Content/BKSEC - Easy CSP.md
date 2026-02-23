@@ -203,7 +203,3 @@ I decide to take a look at the cookie instead and got the flag there with the pa
 --- 
 ## Loot & Flags
 **Flag:** BKSEC{CSP_byP4ss_w1th_Angul4r_G4dg3tz}
-
----
-
-**References:** [Link](https://www.google.com/search?q=url)
