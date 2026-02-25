@@ -26,14 +26,52 @@ last_modified: 2026-02-24
 ## Reconnaissance
 ### Gobuster Scans
 ```bash
-# Insert Gobuster scan against the URL
+gobuster dir -u http://103.77.175.40:8211/ -w ~/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt -x php,html,txt,bak
+
+===============================================================
+Gobuster v3.8
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://103.77.175.40:8211/
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /home/kali/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.8
+[+] Extensions:              html,txt,bak,php
+[+] Timeout:                 10s
+===============================================================
+Starting gobuster in directory enumeration mode
+===============================================================
+/add                  (Status: 405) [Size: 153]
+/sort                 (Status: 500) [Size: 126]
+Progress: 88845 / 88845 (100.00%)
 ````
+Two endpoints `/add` and `/sort` were found.
 
 ### Arjun Scans
 ```bash
-# Insert Arjun scan agains the URL
+arjun -u http://103.77.175.40:8211/          
+
+[banner]
+[*] Scanning 0/1: http://103.77.175.40:8211/
+[*] Probing the target for stability
+[*] Analysing HTTP response for anomalies
+[+] Extracted 2 parameters from response for testing: date, title
+[*] Logicforcing the URL endpoint
+[!] No parameters were discovered.
 ```
 
+```bash
+arjun -u http://103.77.175.40:8211/sort
+ 
+[Banner]
+[*] Scanning 0/1: http://103.77.175.40:8211/sort
+[*] Probing the target for stability
+[*] Analysing HTTP response for anomalies
+[*] Logicforcing the URL endpoint
+[!] No parameters were discovered.
+```
 ### Web Enumeration
 The website is a event management service where if I input an event and its date the event will be shown on the website.
 
@@ -41,12 +79,15 @@ In challenges like this, I often think about an SQLi vulnerability as the data a
 
 Looking at the requests, in the response to `/add` I found that the cookie is rather new that was not like previous challenges. 
 
-![[Pasted image 20260225082318.png]]
+![[Pasted image 20260224213718.png]]
 
 The page is using Flask session cookie of the `itsdangerous` library ([[(incomplete) Cookie Cracking]]) that can be cracked for a secret key with a dictionary attack. So I tried extracting the cookie and cracking it with [Flask-Unsign](https://github.com/Paradoxis/Flask-Unsign) against `rockyou.txt`.
 
 ```bash
-# Insert Flask-Unsign results
+flask-unsign --unsign --cookie 'eyJ1c2VyX3Nlc3Npb24iOiI1ZWEyYmMyOC04ZDNlLTQxZmMtOTFjZi01ZGE5Zjk0YjVjMDYifQ.aZ5fTA.4v8nGpMHWrmL3KAnEQ7YWSeigAU' --wordlist /usr/share/wordlists/rockyou.txt --no-literal-eval
+[*] Session decodes to: {'user_session': '5ea2bc28-8d3e-41fc-91cf-5da9f94b5c06'}
+[*] Starting brute-forcer with 8 threads..
+[!] Failed to find secret key after 14344392 attempts.nd
 ```
 
 However, the cracking failed.
@@ -54,7 +95,45 @@ However, the cracking failed.
 I tried fuzzing the input field with special characters to see if the input were unsanitized using both [[(incomplete) FFUF]] and manual fuzzing.
 
 ```bash
-# Insert FFUF command and output
+ffuf -w ~/Downloads/SecLists/Fuzzing/special-chars.txt \                  
+     -X POST \
+     -d "title=FUZZ&date=2026-02-01" \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -u http://103.77.175.40:8211/add
+     
+[Banner]
+/                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+,                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+?                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 97ms]
+{                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+^                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+>                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+$                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+:                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+"                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+~                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 98ms]
+(                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 100ms]
+)                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 100ms]
+<                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 101ms]
+|                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 106ms]
+%                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 111ms]
+;                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 114ms]
+-                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 117ms]
+\                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 121ms]
+}                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 128ms]
+'                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 131ms]
+[                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 136ms]
+.                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 140ms]
+_                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 145ms]
++                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 148ms]
+=                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 154ms]
+#                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 162ms]
+@                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 168ms]
+!                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 172ms]
+]                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 173ms]
+`                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 176ms]
+*                       [Status: 302, Size: 219, Words: 18, Lines: 6, Duration: 185ms]
+:: Progress: [32/32] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::
 ```
 
 After the fuzzing, I found that these characters: ``/,?{^$:~()|%;-\}[]._+=#@!`*`` were not escaped. This might hinting some sort of Server-side Template Injection ([[(incomplete) Server-side Template Injection|SSTI]]) so I tried inputting `{{7*7}}` (Which is the correspond payload) into the title field. However, the payload also failed. 
@@ -63,7 +142,7 @@ After the fuzzing, I found that these characters: ``/,?{^$:~()|%;-\}[]._+=#@!`*`
 
  I even tried to examine the input with [[[(incomplete) SQLmap]]] but it was not use, none of the input field seemed to be injectable according to the tool. The tools still may be wrong though, but this time I think it was right since `'` and `"` were safely escaped. Same thing happened with `<` and `>` so maybe XSS is also not the way to go in this page.
 
-I decided to go for the next target that is the `/sort` endpoint, according to the source code of the index page and the output of [[Arjun]], the page has a parameter called `key` that takes the `title` or `date` as input when I clicked on the sorting buttons. This might be hinting an `ORDER BY` [[(incomplete) SQL Injection|SQLi]] vulnerability.
+I decided to go for the next target that is the `/sort` endpoint, according to the source code of the index page, the page has a parameter called `key` that takes the `title` or `date` as input when I clicked on the sorting buttons. This might be hinting an `ORDER BY` [[(incomplete) SQL Injection|SQLi]] vulnerability.
 
 So I wanted to try the theory by injecting into the request the payload `title DESC`, however, the server seems to be implementing some sort of database wiping after a few seconds that every time I tried inputting a new event, the table was cleared out and only the newly input event was displayed.
 
