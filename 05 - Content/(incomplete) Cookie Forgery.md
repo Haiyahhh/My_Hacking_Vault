@@ -7,7 +7,7 @@ aliases: []
 creation_date: 2026-02-25
 last_modified: 2026-02-25
 ---
-# 🧠 [[(incomplete) Cookie Cracking]]
+# 🧠 [[(incomplete) Cookie Forgery]]
 **Primary:** <% tp.file.cursor(1) %>
 
 **Secondary:**

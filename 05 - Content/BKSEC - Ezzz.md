@@ -81,7 +81,7 @@ Looking at the requests, in the response to `/add` I found that the cookie is ra
 
 ![[Pasted image 20260224213718.png]]
 
-The page is using Flask session cookie of the `itsdangerous` library ([[(incomplete) Cookie Cracking]]) that can be cracked for a secret key with a dictionary attack. So I tried extracting the cookie and cracking it with [Flask-Unsign](https://github.com/Paradoxis/Flask-Unsign) against `rockyou.txt`.
+The page is using Flask session cookie of the `itsdangerous` library ([[(incomplete) Cookie Forgery]]) that can be cracked for a secret key with a dictionary attack. So I tried extracting the cookie and cracking it with [Flask-Unsign](https://github.com/Paradoxis/Flask-Unsign) against `rockyou.txt`.
 
 ```bash
 flask-unsign --unsign --cookie 'eyJ1c2VyX3Nlc3Npb24iOiI1ZWEyYmMyOC04ZDNlLTQxZmMtOTFjZi01ZGE5Zjk0YjVjMDYifQ.aZ5fTA.4v8nGpMHWrmL3KAnEQ7YWSeigAU' --wordlist /usr/share/wordlists/rockyou.txt --no-literal-eval
