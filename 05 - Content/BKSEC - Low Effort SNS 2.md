@@ -10,7 +10,7 @@ creation_date: 2026-02-26
 last_modified: 2026-02-26
 ---
 
-# 🚩 [[(incomplete) BKSEC - Low Effort SNS 2]]
+# 🚩 [[BKSEC - Low Effort SNS 2]]
 **Primary:** [[01 - Web Security]]
 
 **Secondary:** [[02 - (incomplete) Impersonation]], [[02 - (incomplete) Data Exfiltration]]
@@ -391,9 +391,9 @@ print(forged_token)
 print("-" * 60)
 ```
 
-After I got the forged token I attacked the secret endpoint directly using `curl`:
+After I got the forged token I attacked the `/secret` endpoint directly using `curl`:
 ```bash
-curl -H "Authorization: Bearer <JWT>" http://localhost:8888/secret/1
+curl -H "Authorization: Bearer <JWT>" http://localhost:8888/secret
 ```
 
 ## Loot & Flags
