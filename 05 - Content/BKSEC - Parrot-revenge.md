@@ -793,7 +793,7 @@ Unfortunately, all of Linpeas's output was just false positive. When I look into
 
 ![[Pasted image 20260301230946.png]]
 
-The current shell also have zero capability.
+The current shell also have zero capabilities.
 
 ---
 
