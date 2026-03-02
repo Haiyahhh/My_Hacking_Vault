@@ -5,7 +5,7 @@ up:
   - "[[02 - Remote Code Execution]]"
   - "[[02 - (incomplete) Data Exfiltration]]"
 platform: BKSEC - Training
-difficulty: Hard
+difficulty: Medium
 creation_date: 2026-02-28
 last_modified: 2026-02-28
 ---
@@ -694,7 +694,7 @@ Now that my RCE setup is finally complete.
 
 ---
 
-## Finding the Second Flag
+## Linux Enumeration 1
 The second flag is really hard to find. 
 
 ### Environment
@@ -789,13 +789,31 @@ I decide to rely on automation tools by uploading `linpeas` to the server and ru
 
 ![[Pasted image 20260301231023.png]]
 
-Unfortunately, all of Linpeas's output was just false positive. When I look into the files they are perfectly normal. It seems like the box has no vertical privilege escalation to root.
+Unfortunately, all of `Linpeas`'s output was just false positive. When I look into the files they are perfectly normal. It seems like the box has no vertical privilege escalation to root.
 
 ![[Pasted image 20260301230946.png]]
 
 The current shell also have zero capabilities.
 
 ---
+## Linux Enumeration 2
+I got kind of desperate after looking for clues for an extensive amount of time so I step back and ask the Organizers for hints, there are two hints that I was given:
+
+>**There is no vertical escalation to root, then try horizontal escalation.**
+
+>**If you don't have tools, then what do you do? Think broader.** 
+
+As for the first hints, I was thinking about escalate to other groups, or users... but there was no vulnerable **SUID** or **SGUI**. But I still try to look into the file system more. About the second hints, at first I think he was talking about installing tools on the system... but later realizes that that might not be the case.
+
+Then I come across this video on YouTube from one my favorite channel: `Hack The Clown`
+
+<div style="text-align: center;">
+<iframe width="600" height="315" src="https://www.youtube.com/embed/vgTpbMvImWs?si=HyxTZM0eKApHp9gD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+I precisely followed the instruction and finally make some progress when I look through the `/proc/net/arp` folder which tells me about the networking of the container I'm currently in.
+
+![[Pasted image 20260302101638.png]]
 
 ## Loot & Flags
 
