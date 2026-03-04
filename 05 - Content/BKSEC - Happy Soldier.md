@@ -29,7 +29,7 @@ last_modified: 2026-02-10
 
 ## Reconnaissance
 ### Gobuster Scan
-```bash
+```bash unwrap:true
 # dir scan
 gobuster dir --url http://103.77.175.40:8141 --wordlist ~/Downloads/SecLists/Discovery/Web-Content/raft-small-directories-lowercase.txt --exclude-length 280
 ===============================================================
