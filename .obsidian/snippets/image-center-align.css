@@ -1,0 +1,19 @@
+/* Center the outer container */
+.internal-embed[alt*="center"] {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* Center the inner wrapper */
+.internal-embed[alt*="center"] .image-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+}
+
+/* Ensure the image respects the layout */
+.internal-embed[alt*="center"] img {
+    display: block !important;
+    margin: 0 auto !important;
+}

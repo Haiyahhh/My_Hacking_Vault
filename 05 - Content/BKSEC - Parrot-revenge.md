@@ -32,11 +32,11 @@ last_modified: 2026-02-28
 ### Web Enumeration
 The URL leads to a website that has an input field.
 
-![[Pasted image 20260228210433.png]]
+![[Pasted image 20260228210433.png#center]]
 
 Upon reading the source code, inputting into the field will send a POST request with a parameter called `word` to itself
 
-![[Pasted image 20260228210701.png]]
+![[Pasted image 20260228210701.png#center]]
 
 Fuzzing the field with special characters (since the last Parrot challenges always starts with fuzzing them) it revealed that the server only accept these special characters: `\`, `/`, `-`, `+`, ` `, `<` and `>`.
 
@@ -51,27 +51,27 @@ I spend some more time testing and got that the input also only receive input th
 ## OS Command Injection
 Firing up **BurpSuite** and starts testing commands. I tried URL encodings and double URLencodings to bypass the blacklist but it did not worked.
 
-![[Pasted image 20260228212856.png]]
+![[Pasted image 20260228212856.png#center]]
 
-![[Pasted image 20260228212913.png]]
+![[Pasted image 20260228212913.png#center]]
 
 However, this means that the backend check the length of the input after URL encode them (since URL encoding of the same string still passed). This means I can input a lot more different types of characters than I initially thought. The prementioned special characters after being URL encodes still behaves the same way.
 
-![[Pasted image 20260228213224.png]]
+![[Pasted image 20260228213224.png#center]]
 
 I play around the `\` a bit more since in Linux, `\` is the escape character. If the command is `echo $input` then \ will be treated as such. This theory can explain the its behavior when being stripped off when being in between 2 characters. So I test the payload `hell\\o`:
 
-![[Pasted image 20260228213754.png]]
+![[Pasted image 20260228213754.png#center]]
 
 I immediately try with the `+`:
 
-![[Pasted image 20260228213852.png]]
+![[Pasted image 20260228213852.png#center]]
 
 The results tells me that the `\` escaped the `+` but it was somehow still treated as a ` `. Maybe in the background there is a filter that completely filtered the `+` sign from the input and replace it with a ` `, the `\` then escape the ` ` .  I tried around some payload to figure out a way to slip my `+` in but I decided to move on with what I have at hand and leave the `+` problem for now.
 
 As for the `>` and `<` I think the reason it was not returned is because in Linux they are called **Input Redirection**, therefore when I input them into the `echo` command, they were not printed. If I add a `\` before them they will be printed.
 
-![[Pasted image 20260228215910.png]]
+![[Pasted image 20260228215910.png#center]]
 
 Now that I understand the way each of the special character I have at hand works, I starts crafting the payloads.
 
@@ -90,7 +90,7 @@ If this is the case, since I cannot use `;`, `|`, `&&` to interrupt the `echo` c
 ### 1. Bypass the Command Filter
 **Payload 1:** `%0Aid`
 
-![[Pasted image 20260228221403.png]]
+![[Pasted image 20260228221403.png#center]]
 
 It worked beautifully, so now I can partly bypass the filter. Now I need to enumerate the system, and I have to keep my payload under 12 characters. 
 
@@ -98,7 +98,7 @@ Strictly following the theory, I can inject commands if I add a `\` between its 
 
 **Payload 2:** `%0Al\s`
 
-![[Pasted image 20260228222356.png]]
+![[Pasted image 20260228222356.png#center]]
 
 Now I can see the files, however, I can not read them without using a `.` or a `*`, furthermore, the length of the file is too long. `index.php` has 9 characters, plus 1 newline character at the beginning of the payload gives me 10, there is no way I can add a command and a space with only 2 characters left. I also can not use a wildcard like `*` to reduce the name of the file, either.
 
@@ -106,20 +106,20 @@ I look around the server with the `ls` command a bit more
 
 **Payload 3:** `%0Al\s+-la+/`
 
-![[Pasted image 20260228223422.png]]
+![[Pasted image 20260228223422.png#center]]
 
 I can see the first flag right there in the `/flagnyQJe` file, it does not have any `.` so I should be able to extract it only if I can bypass the 12-character filter. 
 
 ### 2. Bypass the Length Filter
 Using `ls -la` and `ls -la /` I can see that there are 2 folders I can write in that is the `/tmp` folder and the `./images` folder. I decide to look into the `/tmp` folder. Only to find junk files from other participants.
 
-![[Pasted image 20260228224803.png]]
+![[Pasted image 20260228224803.png#center]]
 
 I check other folder that has short names `/usr`,  `/var`, `home`, `mnt`, `opt` but most of them are completely clean with no files, some other folders hold nested folders that I just cannot read because of the length filter, the most valuable folder is `/bin`, since it normally in `PATH` so I should be able to know some of the command that the server has:
 
 **Payload 4:** `%0Al\s+/bin`
 
-![[Pasted image 20260228225855.png]]
+![[Pasted image 20260228225855.png#center]]
 
 After testing some more, I reached a conclusion that I cannot bypass the 12-character filter with only 1 request, I need to find a way to pass my command with multiple requests. To do so I need to store the fragments of my command somewhere then use the `sh` command to execute it.
 
@@ -142,9 +142,9 @@ Utilizing the underlying `echo` command that might already be in the codebase, I
 
 **Payload 5:** `b\\>/tmp/k`
 
-![[Pasted image 20260228231216.png]]
+![[Pasted image 20260228231216.png#center]]
 
-![[Pasted image 20260228231240.png]]
+![[Pasted image 20260228231240.png#center]]
 
 The payload will combine with `echo` to be `echo b\\>/tmp/k` this will override the `/tmp/k` or create a new one if it does not exist without having to create one with a `touch` command.
 
@@ -273,7 +273,7 @@ However, to truly achieve RCE I need to completely bypass the special characters
 **Thought Process**
 In order to completely bypass the special character starts I considering obfuscation. Instead of sending the raw `*` I can choose to send its encoding that does not contain the forbidden characters like hexadecimal encoding `\x2a` or octal encoding `\052`. I can encode special characters with their encoding and send the command the contains the special character to a `printf` command in decoder file `/tmp/d` file, when I execute the decoder, `printf` will print the command that contains the encoded characters to another file `/tmp/k`, I can then execute the `/tmp/k` to achieve RCE.
 
-![[IMG_20260301_001031.jpg]]
+![[IMG_20260301_001031.jpg#center]]
 
 However, this trick has a problem that is every time I inject an octal or hexadecimal encoding I have to add a `\\\` line to `/tmp/d` the shortest payload to do so is `\\\\\\>>/tmp/d` has a length that is greater than 12, this making the injection impossible.
 
@@ -286,7 +286,7 @@ To resolve this problem, I come up with a plan:
 - Executing `/tmp/p` will print the modified base64 string to `/tmp/b`, a swapper in `/tmp/s` that I will have injected beforehand will swap all `-` with `+` and save the result to `/tmp/c`
 - A decoder in `/tmp/d` that I will also have injected beforehand will decode the base64 string in `/tmp/c` and save the result to `/tmp/k`
 
-![[IMG_20260301_005115.jpg]]
+![[IMG_20260301_005115.jpg#center]]
 
 In order for the plan to work I must first upload the decoder script first to the server to `/tmp/d`. The script is:
 ```bash
@@ -702,7 +702,7 @@ The second flag is really hard to find.
 env
 ```
 
-![[Pasted image 20260301220620.png]]
+![[Pasted image 20260301220620.png#center]]
 
 There is no hidden flag or credential inside the environment variables.
 
@@ -711,13 +711,13 @@ There is no hidden flag or credential inside the environment variables.
 find / -perm -g=s -type f -ls 2>/dev/null
 ```
 
-![[Pasted image 20260301220653.png]]
+![[Pasted image 20260301220653.png#center]]
 
 ```bash
 find / -perm -u=s -type f -ls 2>/dev/null
 ```
 
-![[Pasted image 20260301220741.png]]
+![[Pasted image 20260301220741.png#center]]
 
 All of the commands are very standard and are correctly configured, nothing special, no weird SUID or SGID commands here I can use to escalate privilege.
 
@@ -726,7 +726,7 @@ All of the commands are very standard and are correctly configured, nothing spec
 ls -la /etc/cron.*
 ```
 
-![[Pasted image 20260301220841.png]]
+![[Pasted image 20260301220841.png#center]]
 
 All cronjobs are normal, nothing really out of place, we can not write to any cronjobs nor any of them are connected insecurely. I checked the contents of all of them and knows that none of them seems to be exploitable.
 
@@ -739,7 +739,7 @@ There might be vulnerable version of an installed library or binary, moreover, t
 dpkg -l
 ```
 
-![[Pasted image 20260301220927.png]]
+![[Pasted image 20260301220927.png#center]]
 
 There are many tools missing like `netcat`, `ping`, `ss`, `netstat`, `getcap`, `sudo`, etc.
 
@@ -750,13 +750,13 @@ I can see the server has some compiler like `gcc`, `perl`, `cpp` but no `python`
 ps aux
 ```
 
-![[Pasted image 20260301221028.png]]
+![[Pasted image 20260301221028.png#center]]
 
 Overall there was no notable process, everything are completely normal, the shown processes are just the apache2 workers and my own processes.
 
 ### Users and Groups
 
-![[Pasted image 20260301220443.png]]
+![[Pasted image 20260301220443.png#center]]
 
 The only user that has a console on the server is root, meaning root is the only user I can switch to using `su`.
 
@@ -770,7 +770,7 @@ find / \
   ! -user root -print -ls 2>/dev/null
 ```
 
-![[Pasted image 20260301221956.png]]
+![[Pasted image 20260301221956.png#center]]
 
 The folder `/var/cache/apt/archives/partial` is not accessible. So overall, nothing to find here.
 
@@ -783,15 +783,15 @@ Inside the web directory also shows no information, passwords files in cache are
 
 I decide to rely on automation tools by uploading `linpeas` to the server and running it.
 
-![[Pasted image 20260301230925.png]]
+![[Pasted image 20260301230925.png#center]]
 
-![[Pasted image 20260301230932.png]]
+![[Pasted image 20260301230932.png#center]]
 
-![[Pasted image 20260301231023.png]]
+![[Pasted image 20260301231023.png#center]]
 
 Unfortunately, all of `Linpeas`'s output was just false positive. When I look into the files they are perfectly normal. It seems like the box has no vertical privilege escalation to root.
 
-![[Pasted image 20260301230946.png]]
+![[Pasted image 20260301230946.png#center]]
 
 The current shell also have zero capabilities.
 
@@ -813,11 +813,11 @@ Then I come across this video on YouTube from one my favorite channel: `Hack The
 
 I precisely followed the instruction and finally make some progress when I look through the `/proc/net/arp` folder which tells me about the networking of the container I'm currently in.
 
-![[Pasted image 20260302101638.png]]
+![[Pasted image 20260302101638.png#center]]
 
 The table tells me that there are 5 resolved IP addresses that are found to be on the same network as my current container which are `1.3.3.3`, `1.3.3.1`, `1.3.3.7`, `1.3.3.2`, `1.3.3.8`. There is something missing is `1.3.3.6`. Checking `/etc/hosts`, I can be sure that `1.3.3.6` is the internal IP address of my container.
 
-![[Pasted image 20260302123344.png]]
+![[Pasted image 20260302123344.png#center]]
 
 I start investigating the if these IP has any well-known ports open:
 
@@ -840,7 +840,7 @@ From this test I found that `1.3.3.1` is the default gateway, which is the host 
 curl -s -X POST http://1.3.3.7/ -d "word=okokok"
 ```
 
-![[Pasted image 20260302130043.png]]
+![[Pasted image 20260302130043.png#center]]
 
 I tried different payload and compare the length the of the returned document, but they were all the same.
 
@@ -855,7 +855,7 @@ At this point, my gut tells me that this might be a **Blind OS Command Injection
 word=%0Asleep+10
 ```
 
-![[Pasted image 20260302131907.png]]
+![[Pasted image 20260302131907.png#center]]
 
 The request timed out this means that the command was definitely executed, since I tried with other command the response came back almost immediately so this is definitely not a connection problem.
 
@@ -881,7 +881,7 @@ This command make 1.3.3.7 to leak the flag and post it to the `recv.php` file th
 
 By checking the exposed `dir.txt` file and decode the base64 string, I see the root directory:
 
-![[Pasted image 20260302133846.png]]
+![[Pasted image 20260302133846.png#center]]
 
 With another payload I can read the flag:
 

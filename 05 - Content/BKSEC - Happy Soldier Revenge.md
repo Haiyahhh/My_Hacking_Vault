@@ -160,7 +160,7 @@ Stopped: Tue Feb 17 09:49:08 2026
 The secret was not cracked. So we have to move to another method.
 
 **Exploit the Loose Comparison**
-The `if` condition `if($this->sig == md5($secret . $this->weapon))` uses a loose comparison between `$this->sig`. In PHP, the loose comparison == between **boolean** value `1` and a string always returns `TRUE`. Which means I can bypass this condition my modify the signature of the malicious `Player` object to hold the boolean value `1`.
+The `if` condition `if($this->sig == md5($secret . $this->weapon))` uses a loose comparison between `$this->sig`. In PHP, the loose comparison == between **boolean** value `1` and a string always returns `TRUE`. Which means I can bypass this condition by modifying the signature of the malicious `Player` object to hold the boolean value `1`.
 
 ```php
 O:6:"Player":5 {

@@ -1,6 +1,7 @@
 {
   "accentColor": "",
   "enabledCssSnippets": [
-    "no-wrap-code"
+    "no-wrap-code",
+    "image-center-align"
   ]
 }
