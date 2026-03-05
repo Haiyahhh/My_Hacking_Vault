@@ -16,7 +16,7 @@ last_modified: 2026-02-10
 
 **Related Techniques:** [[(incomplete) PHP Object Injection]]
 
-**Related Tools:** [[(incomplete) FFUF]], [[(incomplete) BurpSuite]], [[Arjun]]
+**Related Tools:** [[FFUF]], [[(incomplete) BurpSuite]], [[Arjun]]
 
 
 ## Executive Summary

@@ -92,7 +92,7 @@ flask-unsign --unsign --cookie 'eyJ1c2VyX3Nlc3Npb24iOiI1ZWEyYmMyOC04ZDNlLTQxZmMt
 
 However, the cracking failed.
 
-I tried fuzzing the input field with special characters to see if the input were unsanitized using both [[(incomplete) FFUF]] and manual fuzzing.
+I tried fuzzing the input field with special characters to see if the input were unsanitized using both [[FFUF]] and manual fuzzing.
 
 ```bash
 ffuf -w ~/Downloads/SecLists/Fuzzing/special-chars.txt \                  
