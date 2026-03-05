@@ -83,6 +83,8 @@ Used when not sure what is the type of the hash
 hashcat hash.txt
 ```
 
+
+## Related Usage
 ### CTFs
 [[BKSEC - Happy Soldier Revenge]]
 

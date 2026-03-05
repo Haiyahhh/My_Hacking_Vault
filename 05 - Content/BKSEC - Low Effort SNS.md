@@ -16,7 +16,7 @@ last_modified: 2026-02-08
 
 **Related Techniques:** [[(incomplete) SQL Injection]]
 
-**Related Tools:** [[(incomplete) SQLmap]] [[Gobuster]]
+**Related Tools:** [[SQLmap]] [[Gobuster]]
 
 ## Executive Summary
 * **URL:** `http://103.77.175.40:8021`
