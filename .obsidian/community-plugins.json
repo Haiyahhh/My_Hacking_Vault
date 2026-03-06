@@ -4,5 +4,6 @@
   "dataview",
   "obsidian-excalidraw-plugin",
   "obsidian-mind-map",
-  "code-styler"
+  "code-styler",
+  "obsidian-linter"
 ]
