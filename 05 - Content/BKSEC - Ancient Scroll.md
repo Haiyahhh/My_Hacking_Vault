@@ -3,6 +3,7 @@ tags:
   - 🚩
 up:
   - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[BKSEC-TTV]]"
 platform: BKSEC TTV
 difficulty: Hard
 creation_date: 2026-03-07
