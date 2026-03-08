@@ -499,9 +499,3 @@ The is using PHP 8.0.12. I ask Gemini for vulnerabilities and based on the found
 ![[Pasted image 20260307235020.png]]
 
 Pasting the PHP code directly into the placeholder I managed to achieve RCE and get the flag.
-
-
-
----
-
-**References:** [Link](https://www.google.com/search?q=url)
