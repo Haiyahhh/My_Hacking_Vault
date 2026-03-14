@@ -3,15 +3,16 @@ tags:
   - 🧠
 up:
   - "[[02 - Remote Code Execution]]"
-  - "[[02 - (incomplete) Data Exfiltration]]"
-aliases: [XSS]
+  - "[[02 - Data Exfiltration]]"
+aliases:
+  - XSS
 creation_date: 2026-02-08
 last_modified: 2026-02-08
 ---
 # 🧠 [[(incomplete) Cross-site Scripting]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - Remote Code Execution]] [[02 - (incomplete) Data Exfiltration]]
+**Secondary:** [[02 - Remote Code Execution]] [[02 - Data Exfiltration]]
 
 ## What is it?
 * **Concept:** (Explain it simply).

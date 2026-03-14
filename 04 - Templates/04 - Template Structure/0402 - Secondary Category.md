@@ -12,7 +12,7 @@ last_modified: <% tp.file.last_modified_date("YYYY-MM-DD") %>
 
 ---
 
-## 🧠 Techniques (Concepts)
+## 🧠 Techniques
 
 ```dataview
 TABLE creation_date AS "Created" 
@@ -21,7 +21,7 @@ WHERE contains(up, this.file.link) AND contains(tags, "🧠")
 SORT file.name ASC
 ```
 
-## 🛠️ Tools (Arsenal)
+## 🛠️ Tools
 
 ```dataview
 TABLE creation_date AS "Created"

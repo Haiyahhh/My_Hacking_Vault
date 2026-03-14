@@ -3,7 +3,7 @@ tags:
   - 🚩
 up:
   - "[[02 - Remote Code Execution]]"
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Data Exfiltration]]"
 platform: BKSEC - Training
 difficulty: Medium
 creation_date: 2026-02-28
@@ -13,7 +13,7 @@ last_modified: 2026-02-28
 # 🚩 [[BKSEC - Parrot-revenge]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - Remote Code Execution]], [[02 - (incomplete) Data Exfiltration]]
+**Secondary:** [[02 - Remote Code Execution]], [[02 - Data Exfiltration]]
 
 **Related Techniques:** [[(incomplete) OS Command Injection - Linux]], [[(incomplete) Living Off The Land]]
 

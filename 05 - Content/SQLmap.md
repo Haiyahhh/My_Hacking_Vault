@@ -2,18 +2,19 @@
 tags:
   - 🛠️
 up:
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Data Exfiltration]]"
   - "[[02 - Remote Code Execution]]"
   - "[[02 - Enumeration]]"
-  - "[[02 - (incomplete) Privilege Escalation]]"
-aliases: [sqlmap]
+  - "[[02 - Privilege Escalation]]"
+aliases:
+  - sqlmap
 creation_date: 2026-02-08
 last_modified: 2026-02-08
 ---
 # 🛠️ [[SQLmap]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - (incomplete) Data Exfiltration]], [[02 - Remote Code Execution]], [[02 - Enumeration]], [[02 - (incomplete) Privilege Escalation]]
+**Secondary:** [[02 - Data Exfiltration]], [[02 - Remote Code Execution]], [[02 - Enumeration]], [[02 - Privilege Escalation]]
 
 ## Installation
 ```bash

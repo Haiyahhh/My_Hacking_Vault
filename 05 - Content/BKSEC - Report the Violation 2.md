@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Data Exfiltration]]"
   - "[[02 - Enumeration]]"
 platform: BKSEC Training
 difficulty: Medium
@@ -13,7 +13,7 @@ last_modified: 2026-02-21
 # 🚩 [[BKSEC - Report the Violation 2]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - Enumeration]], [[02 - (incomplete) Data Exfiltration]]
+**Secondary:** [[02 - Enumeration]], [[02 - Data Exfiltration]]
 
 **Related Techniques:** [[(incomplete) SQL Injection|SQLi]], [[(incomplete) Cross-site Scripting|XSS]], [[(incomplete) CSP (Content Security Policy) Bypass]], [[(incomplete) Server-side Request Forgery]], [[(incomplete) Client-side Template Injection]] 
 

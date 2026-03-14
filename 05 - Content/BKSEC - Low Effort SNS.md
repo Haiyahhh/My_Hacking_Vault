@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Data Exfiltration]]"
 platform: BKSEC Training
 difficulty: Easy
 creation_date: 2026-02-08
@@ -12,7 +12,7 @@ last_modified: 2026-02-08
 # 🚩 [[BKSEC - Low Effort SNS]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - (incomplete) Data Exfiltration]]
+**Secondary:** [[02 - Data Exfiltration]]
 
 **Related Techniques:** [[(incomplete) SQL Injection]]
 

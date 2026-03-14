@@ -2,8 +2,8 @@
 tags:
   - 🚩
 up:
-  - "[[02 - (incomplete) Impersonation]]"
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Impersonation]]"
+  - "[[02 - Data Exfiltration]]"
 platform: BKSEC Training
 difficulty: Easy
 creation_date: 2026-02-26
@@ -13,9 +13,9 @@ last_modified: 2026-02-26
 # 🚩 [[BKSEC - Low Effort SNS 2]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - (incomplete) Impersonation]], [[02 - (incomplete) Data Exfiltration]]
+**Secondary:** [[02 - Impersonation]], [[02 - Data Exfiltration]]
 
-**Related Techniques:** [[(incomplete) Docker White-box Challenge Solving]], [[[(incomplete) Cookie Cracking]]]
+**Related Techniques:** [[Docker White-box Challenge Enumeration]], [[[(incomplete) Cookie Cracking]]]
 
 ## Executive Summary
 * **Key Technique:** Read and understand the white box. This leads to a private key leak that can then be used to forge a malicious **JWT token** that can bypass the security and allow impersonation as the admin to exfiltrate the flag. 

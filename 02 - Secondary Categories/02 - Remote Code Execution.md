@@ -14,7 +14,7 @@ Contents of this topic will revolve around vulnerabilities that allow remote com
 
 ---
 
-## 🧠 Techniques (Concepts)
+## 🧠 Techniques
 
 ```dataview
 TABLE creation_date AS "Created" 
@@ -23,7 +23,7 @@ WHERE contains(up, this.file.link) AND contains(tags, "🧠")
 SORT file.name ASC
 ```
 
-## 🛠️ Tools (Arsenal)
+## 🛠️ Tools
 
 ```dataview
 TABLE creation_date AS "Created"

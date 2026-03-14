@@ -2,16 +2,17 @@
 tags:
   - 🧠
 up:
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Data Exfiltration]]"
   - "[[02 - Remote Code Execution]]"
-aliases: [SQLi]
+aliases:
+  - SQLi
 creation_date: 2026-02-08
 last_modified: 2026-02-08
 ---
 # 🧠 [[(incomplete) SQL Injection]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - (incomplete) Data Exfiltration]], [[02 - Remote Code Execution]]
+**Secondary:** [[02 - Data Exfiltration]], [[02 - Remote Code Execution]]
 
 ## What is it?
 * **Concept:** (Explain it simply).

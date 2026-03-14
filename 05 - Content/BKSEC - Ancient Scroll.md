@@ -2,7 +2,7 @@
 tags:
   - 🚩
 up:
-  - "[[02 - (incomplete) Data Exfiltration]]"
+  - "[[02 - Data Exfiltration]]"
   - "[[BKSEC-TTV]]"
 platform: BKSEC TTV
 difficulty: Hard
@@ -13,7 +13,7 @@ last_modified: 2026-03-07
 # 🚩 [[BKSEC - Ancient Scroll]]
 **Primary:** [[01 - Web Security]]
 
-**Secondary:** [[02 - (incomplete) Data Exfiltration]]
+**Secondary:** [[02 - Data Exfiltration]]
 
 **Related Techniques:** [[(incomplete) PHP Object Injection]], [[(incomplete) PHP Archive Deserialization]]
 

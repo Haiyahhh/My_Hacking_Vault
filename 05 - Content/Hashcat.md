@@ -2,7 +2,7 @@
 tags:
   - 🛠️
 up:
-  - "[[02 - (incomplete) Credential Access]]"
+  - "[[02 - Credential Access]]"
 aliases: []
 creation_date: 2026-02-17
 last_modified: 2026-03-05
@@ -10,7 +10,7 @@ last_modified: 2026-03-05
 # 🛠️ [[Hashcat]]
 **Primary:** [[01 - Web Security]], [[01 - Network Security]]
 
-**Secondary:** [[02 - (incomplete) Credential Access]]
+**Secondary:** [[02 - Credential Access]]
 
 ## Installation
 
