@@ -492,12 +492,12 @@ The file is an SUID meaning I can execute it as a low-privilege user.
 ?>
 ```
 
-![[Pasted image 20260307234244.png]]
+![[Pasted image 20260307234244.png#center]]
 
 The is using PHP 8.0.12. I ask Gemini for vulnerabilities and based on the found information and it suggest me a PoC [here](https://github.com/mm0r1/exploits/blob/master/php-concat-bypass/exploit.php) that can bypass `disabled_functions()`
 
-![[Pasted image 20260307235020.png]]
+![[Pasted image 20260307235020.png#center]]
 
 Pasting the PHP code directly into the placeholder I managed to achieve RCE and get the flag.
 
-![[Pasted image 20260307235222.png]]
+![[Pasted image 20260307235222.png#center]]

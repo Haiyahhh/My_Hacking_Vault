@@ -329,7 +329,7 @@ I asked Gemini about possible obfuscation I may be able to use in order to bypas
 
 As for the `.` and `/` we can bypass with obfuscation, since `unserialize` method allow hex encoding by setting the string type to `S` instead of  `s`. Similarly we can use the same trick to bypass the `flag` and the `DivineKnowledge` filter.
 
-As for the `0:6:`, it is targeting the `Scroll` object specifically, I might either use another class that has different length or add the `+` or a space (`0: 6`) to bypass this
+As for the `0:6:`, it is targeting the `Scroll` object specifically, I might either use another class that has different length or add the `+` or a space (`0: 6`) to bypass this.
 
 ### includes/divine.php
 ```php
