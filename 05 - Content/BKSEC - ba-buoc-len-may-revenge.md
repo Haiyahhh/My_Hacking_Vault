@@ -327,8 +327,7 @@ if (!isset($_SESSION["logged"])) {
 
 ## Upload file vulnerability with LFI
 
-Looking at the `upload.php` file I know I can spoof the file extension and include it to execute the file with `index.php?page=`. the uploaded file will then be stored inside 
-`./user_submissions/`.
+Looking at the `upload.php` file I know I can spoof the file extension and include it to execute the file with `index.php?page=`. the uploaded file will then be stored inside `./user_submissions/`.
 
 Based on the **index.php** file I know that I can include the file and execute them as PHP based on the its regex filter:
 

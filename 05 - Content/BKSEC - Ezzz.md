@@ -14,7 +14,7 @@ last_modified: 2026-02-24
 
 **Secondary:**  [[02 - Data Exfiltration]]
 
-**Related Techniques:** [[(incomplete) SQL Injection|SQLi]] [[(incomplete) Server-side Request Forgery]]
+**Related Techniques:** [[(incomplete) SQL Injection|SQLi]]
 
 ## Executive Summary
 * **URL:** `http://103.77.175.40:8211/`
